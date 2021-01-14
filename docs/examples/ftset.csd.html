@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Minimal Example using Csound for WebAssembly</title>
+ </head>
+<body style="background-color:LightGrey;">
+    <script src="CsoundAudioNode.js"></script>
+    <script src="csound_loader.js"></script>
+    <script>
+    var handleMessage = function(message) {
+        var messages_textarea = document.getElementById("console");
+        var existing = messages_textarea.value;
+        messages_textarea.value = existing + message;
+        messages_textarea.scrollTop = messages_textarea.scrollHeight;
+    }
+    var onPlayClick = async function() {
+        var csd = document.getElementById('csd').value;
+        let csound = get_csound(handleMessage);
+        if (csound == null) {
+            return;
+        }
+        csound.CompileCsdText(csd);
+        csound.Start();
+        csound.Perform();
+    }
+    var onPlayStop = async function() {
+        let csound = get_csound(handleMessage);
+        csound.Stop();
+    }
+  </script>
+<h1 style="font-family:sans-serif;">ftset</h1>
+<p>
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will load. After that, clicking on <i>Play</i> will actually play. You can edit this code and replay it. 
+</p>
+<p>
+<input type="button" value="Play" onclick="onPlayClick()"/>
+<input type="button" value="Stop" onclick="onPlayStop()"/>
+<p>
+<textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;"><CsoundSynthesizer>
+<CsOptions>
+</CsOptions>
+<CsInstruments>
+
+; Required settings for WebAudio:
+
+sr = 48000
+ksmps = 128
+nchnls = 2
+nchnls_i = 1
+
+; Example file ftset
+
+/*
+
+ftset: 
+
+Write a value to the whole table, or a slice of it.
+
+Syntax:
+
+ftset ktablenum, kvalue, kstart=0, kend=0, kstep=1
+ftset itablenum, ivalue, istart=0, iend=0, istep=1
+
+ktablenum / itablenum: 
+table to be modified
+
+kvalue / ivalue: 
+value to write to the table
+
+kstart / istart: 
+    the index to start modifying
+
+kend / iend: 
+   the end index to stop modifying. This is NOT inclusive. 0=end of table
+   Any negative index will be interpreted as counting from the end of the 
+   table, so -2 will modify the whole table but the last two elements 
+
+kstep / istep: 
+    how many elements to skip
+
+See also: tablecopy, tableicopy, tab2array
+*/
+
+instr 1
+  ; clear the table
+  itable ftgentmp 0, 0, 13, -2,  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+  ftset itable, 0
+  ; print it at perf-time
+  ftprint itable, -1
+  turnoff
+endin
+
+instr 2
+  ; Set all elements but the last 5 to 99
+  itable ftgentmp 0, 0, 13, -2,  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+
+  ftset itable, 99, 0, -5
+  ftprint itable, -1
+  turnoff
+endin
+
+instr 3
+  ; ftset works at k-time so it can be used inside an if clause
+  ; Set all even elements to 0 at the 10th k-cycle
+  itable ftgentmp 0, 0, 10, -2,  0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+  kcycle = timeinstk()
+  if kcycle == 10 then
+    ftset itable, 0, 0, 0, 2
+  endif
+  println "cycle num: %d", kcycle
+  ftprint itable, -1  ; print at each cycle
+  ; turnoff the instrument if table was indeed modified
+  if tab:k(6, itable) == 0 then
+    println "Table was modified, turning off"
+    turnoff
+  endif
+endin
+
+</CsInstruments>
+<CsScore>
+i 1 0   0.1
+i 2 +   0.1
+i 3 +   0.1
+
+</CsScore>
+</CsoundSynthesizer>
+</textarea>
+<textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
+</textarea>
+</body>
+</html>

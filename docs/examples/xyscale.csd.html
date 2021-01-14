@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Minimal Example using Csound for WebAssembly</title>
+ </head>
+<body style="background-color:LightGrey;">
+    <script src="CsoundAudioNode.js"></script>
+    <script src="csound_loader.js"></script>
+    <script>
+    var handleMessage = function(message) {
+        var messages_textarea = document.getElementById("console");
+        var existing = messages_textarea.value;
+        messages_textarea.value = existing + message;
+        messages_textarea.scrollTop = messages_textarea.scrollHeight;
+    }
+    var onPlayClick = async function() {
+        var csd = document.getElementById('csd').value;
+        let csound = get_csound(handleMessage);
+        if (csound == null) {
+            return;
+        }
+        csound.CompileCsdText(csd);
+        csound.Start();
+        csound.Perform();
+    }
+    var onPlayStop = async function() {
+        let csound = get_csound(handleMessage);
+        csound.Stop();
+    }
+  </script>
+<h1 style="font-family:sans-serif;">xyscale</h1>
+<p>
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will load. After that, clicking on <i>Play</i> will actually play. You can edit this code and replay it. 
+</p>
+<p>
+<input type="button" value="Play" onclick="onPlayClick()"/>
+<input type="button" value="Stop" onclick="onPlayStop()"/>
+<p>
+<textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;"><CsoundSynthesizer>
+<CsOptions>
+; Select audio/midi flags here according to platform
+-odac     ;;;RT audio out
+;-iadc    ;;;uncomment -iadc if RT audio input is needed too
+; For Non-realtime ouput leave only the line below:
+; -o xyscale.wav -W ;;; for file output any platform
+
+; By Stefano Cucchi 2020
+
+</CsOptions>
+<CsInstruments>
+
+; Required settings for WebAudio:
+
+sr = 48000
+ksmps = 128
+nchnls = 2
+nchnls_i = 1
+
+; sr = 44100
+; ksmps = 32
+; nchnls = 2
+0dbfs = 1
+
+instr 1
+; In the instr 1  using f1 and f2 you reach the 4 corners (values)
+k00 = p4
+k10 = p5
+k01 = p6
+k11 = p7
+
+kx oscil 1, p8, p9
+ky oscil 1, p10, p11
+
+kout1 xyscale kx, ky, k00, k10, k01, k11 
+kout2 xyscale kx, ky, k00*3/2, k10*4/3, k01*5/4, k11*6/5
+
+a1 buzz 0.2, kout1, 8, 3
+a2 buzz 0.2, kout2, 4, 3
+
+outs a1, a2
+
+endin
+
+instr 2
+; In the instr 2 setting the first value to 0 or 1 (p8 & p9) you can start from the corner  (value) you want
+
+k00 = p4
+k10 = p5
+k01 = p6
+k11 = p7
+
+kx randomh 0, 1, 2, 2, p8 ; p8 is the X starting value
+ky randomh 0, 1, 2, 2, p9 ; p9 is the Y starting value
+
+kout1 xyscale kx, ky, k00, k10, k01, k11 
+kout2 xyscale kx, ky, k00*3/2, k10*4/3, k01*5/4, k11*6/5
+
+a1 buzz 0.2, kout1, 8, 3
+a2 buzz 0.2, kout2, 4, 3
+
+outs a1, a2
+
+endin
+
+
+</CsInstruments>
+<CsScore>
+
+
+f1 0 1024 -7 0 400 0 100 1 400 1 124 0
+f2 0 1024 -7 0 200 0 100 1 400 1 100 0 224 1
+f3 0 1024 10 1 
+
+i1 0 10 300 400 500 600 0.3 1 0.2 2
+i2 10 10 300 410 520 630 0 0
+
+e
+
+
+</CsScore>
+</CsoundSynthesizer>
+</textarea>
+<textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
+</textarea>
+</body>
+</html>
