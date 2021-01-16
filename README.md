@@ -6,9 +6,9 @@ http://michaelgogins.tumblr.com
 
 ## Introduction
 
-This repository hosts, and serves, online version of the __##Csound Reference 
+This repository hosts, and serves, an online version of the __##Csound Reference 
 Manual##__ that embeds the csound-extended-wasm build of Csound to play 
-examples live in Web browsers.
+examples live in standard Web browsers.
 
 ## Usage
 
@@ -24,11 +24,12 @@ Pull the latest sources.
 
 Build the manual according to instructions in the `README.md` file. Basically:
 ```
-make clean;make html-dist
+make clean;make html-dist;python2 makeframes.py
 ```
 
 Change back to the root directory of this repository. Execute:
 ```
+cp -rf manual/html/ docs/
 python create_playable_csound_manual.py
 ```
 
@@ -40,4 +41,4 @@ you can test the manual.
 
 ## Update the GitHub pages
 
-Using git, add the `docs` directory, commit your updates, and push them.
+Using git, add the entire `docs` directory, commit your updates, and push them.
