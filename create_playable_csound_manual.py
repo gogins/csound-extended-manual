@@ -156,3 +156,5 @@ for filename in source_pages:
                 source_page = source_file.read()
                 target_page = format_playable_example(source_filename, source_page)
                 target_file.write(target_page)
+                
+shutil.copy("index-frames.html", os.path.join(target_html_directory, "indexframes.html"))
