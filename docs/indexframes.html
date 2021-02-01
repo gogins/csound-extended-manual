@@ -4,12 +4,37 @@
         <title>Csound  Manual -- "Frames" Version</title>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
-    <body class="w3-container" style="background:white;">
-        <iframe class="w3-container" style="font-family:fixed;position:absolute;left:1vw;top:1vh;width:73vw;height:18vh;border:none;" id="title" target="rtop" src="title.html"></iframe>
-        <a href="player.html" class="w3-container" style="position:absolute;right:1vw;top:1vh;width:23vw;height:23vh" target="_blank">
-            <button>Online Csound Player/Editor</button>
-        </a>
-        <iframe name="rtop" class="w3-container" style="background:cornsilk;position:absolute;left:1vw;top:21vh;width:23vw;height:77vh;border:none;" id="rtop" target="rtop" src="contents.html"></iframe>
-        <iframe name="rbottom" class="w3-container" style="background:white;position:absolute;left:26vw;top:21vh;width:73vw;height:77vh;border:none;" id="rbottom" target="rbottom" src="credits.html"></iframe>
+    <body class="w3-margin" style="background:white;">
+        <div class="w3-margin w3-cell-row" style="background:lightblue;">
+            <iframe class="w3-cell" 
+                    style="width:100%;border:none;background:lightblue;" 
+                    id="title" 
+                    target="rtop" 
+                    src="title.html">
+            </iframe>
+            <div class="w3-cell w3-cell-middle" 
+                 style="width:25%;border:none;background:lightblue;">
+                 <a href="player.html" style="background:lightblue;" target="_blank">
+                    <button>Online Csound Player/Editor</button>
+                 </a>
+            </div>
+        </div>
+        <div class="w3-margin w3-cell-row" style="height:75vh;">
+            <div class="w3-margin w3-cell" style="width:25%;border:none;">
+                <iframe name="rtop" 
+                        style="width:100%;height:75vh;border:none;background:cornsilk;" 
+                        id="rtop" target="rtop" 
+                        src="contents.html">
+                </iframe>
+            </div>
+            <div class="w3-margin w3-cell" style="background:floralwhite;border:none;">
+                <iframe name="rbottom" 
+                        style="width:100%;height:75vh;border:none;" 
+                        id="rbottom" 
+                        target="rbottom" 
+                        src="credits.html">
+                </iframe>
+            </div>
+        </div>
     </body>
 </html>

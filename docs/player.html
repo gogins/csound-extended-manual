@@ -24,8 +24,14 @@ var csound_message_callback = function(message) {
 var onPlayClick = async function() {
     let messages_textarea = document.getElementById("console");
     messages_textarea.value = "";
-    let csound_ = get_csound(csound_message_callback);
+    let csound_ = await get_csound(csound_message_callback);
     if (csound_ == null) {
+        return;
+    }
+    let seconds = await csound_.GetScoreTime();
+    csound_message_callback("Score time: " + seconds + "\n");
+    if (seconds > 0) {
+        csound_message_callback("Already playing...\n");
         return;
     }
     csd = document.getElementById('csd').value;
@@ -37,15 +43,19 @@ var onPlayClick = async function() {
 // functions called herein are async but must be called with 
 // await to enforce the correct order of execution.
 var onPlayStop = async function() {
-    let csound_ = get_csound(csound_message_callback);
-    await csound_.Stop();
-    await csound_.Cleanup();
-    await csound_.Reset();
+    let csound_ = await get_csound(csound_message_callback);
+    let seconds = await csound_.GetScoreTime();
+    csound_message_callback("Score time: " + seconds + "\n");
+    if (seconds > 0) {
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
+    }
 };
 </script>
 <h2>Csound Player</h2>
 <p>
-Any self-contained Csound piece (.csd file) can be performed by pasting it into the text area below, and clicking on the <b>Play</b> button. Click on the <b>Stop</b> button to end the performance. The second text area will show Csound's runtime messages. You can edit the .csd file in the text area, but you must select it all and copy it out somewhere else in order to save it. The .csd should (and sometimes must) set sr (probably 48000), ksmps = 128, nchnls, nchnls_i, and sample word format to be consistent with the host.
+Any self-contained Csound piece (.csd file) can be performed by pasting it into the text area below, and clicking on the <b>Play</b> button. Click on the <b>Stop</b> button to end the performance. The second text area will show Csound's runtime messages. You can edit the .csd file in the text area, but you must select it all and copy it out somewhere else in order to save it. For WebAudio, the .csd should set sr = 48000 and ksmps = 128.
 </p>
 <p>
 <input id="play" type="button" value="Play" onclick="onPlayClick()">
@@ -54,14 +64,13 @@ Any self-contained Csound piece (.csd file) can be performed by pasting it into 
 <textarea id='csd' style="width:98vw;height:50vh;font-family:monospace;background-color:MidnightBlue;color:NavajoWhite;">
 <CsoundSynthesizer>
 <CsOptions>
--d -f -m195 -odac
+-d -m195 -odac:plughw:1,0
 </CsOptions>
 <CsInstruments>
 ; The value of sr must match the host.
 sr          =           48000
 ; The value of 128 is required by WebAudio.
 ksmps       =           128
-; The values of both nchnls and nchnls_i must match the host.
 nchnls      =           2
 0dbfs       =           100000
 ;--------------------------------------------------------
