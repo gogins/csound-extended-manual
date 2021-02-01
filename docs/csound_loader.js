@@ -34,9 +34,6 @@ csound_node = null;
 csound_audio_node = null;
 csound_is_loaded = false;
 
-<<<<<<< HEAD
-var load_csound = async function(csound_message_callback_) {
-=======
 var get_operating_system = function() {
     let operating_system = "unknown";
     let userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -66,7 +63,7 @@ var get_operating_system = function() {
  * There is an issue on Android in that csound may be undefined when the page is 
  * first rendered, and be defined only when the user plays the piece.
  */
-var load_csound = function(csound_message_callback_) {
+var load_csound = async function(csound_message_callback_) {
     let operating_system = get_operating_system();
     if (operating_system === "Android" && typeof csound === 'undefined') {
         csound_message_callback("Operating system is Android, but Csound is not yet defined.\n");
@@ -75,7 +72,6 @@ var load_csound = function(csound_message_callback_) {
         // console.log.
         return;
     }
->>>>>>> bdbaaee4c9de304aef0b96fc271ed8225705490e
     if (typeof csound !== 'undefined') {
         csound_injected = csound;
         csound_is_loaded = true;
@@ -141,3 +137,4 @@ var get_csound = async function(csound_message_callback_) {
         csound_message_callback_("Csound is still loading, wait a bit...\n");
     }
 }       
+

@@ -39,20 +39,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm64260"></a>
+        <a id="idm66136"></a>
         <h2>Description</h2>
         <p>
       Trace an exponential curve between specified points.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm64263"></a>
+        <a id="idm66139"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>expon</strong></span> ia, idur, ib</pre>
         <pre class="synopsis">kres <span class="command"><strong>expon</strong></span> ia, idur, ib</pre>
       </div>
       <div class="refsect1">
-        <a id="idm64269"></a>
+        <a id="idm66145"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ia</em></span> -- starting value. Zero is illegal for exponentials.
@@ -65,28 +65,28 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm64279"></a>
+        <a id="idm66155"></a>
         <h2>Performance</h2>
         <p>
       These units generate control or audio signals whose values can pass through 2 specified points. The <span class="emphasis"><em>idur</em></span> value may or may not equal the instrument's performance time: a shorter performance will truncate the specified pattern, while a longer one will cause the defined segment to continue on in the same direction.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm64283"></a>
+        <a id="idm66159"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the expon opcode. Click to play: <a class="ulink" href="examples/expon.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">expon.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm64288"></a>
+          <a id="idm66164"></a>
           <p class="title">
             <strong>Example 273. Example of the expon opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm64295"></a>
+              <a id="idm66171"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -139,14 +139,16 @@ a<span class="n">sig</span>   <span class="nb">vco2</span> <span class="mf">.6</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm64426"></a>
+        <a id="idm66302"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="expseg.html" title="expseg"><em class="citetitle">expseg</em></a>,
       <a class="link" href="expsegr.html" title="expsegr"><em class="citetitle">expsegr</em></a>,
       <a class="link" href="line.html" title="line"><em class="citetitle">line</em></a>,
       <a class="link" href="linseg.html" title="linseg"><em class="citetitle">linseg</em></a>,
-      <a class="link" href="linsegr.html" title="linsegr"><em class="citetitle">linsegr</em></a>
+      <a class="link" href="linsegr.html" title="linsegr"><em class="citetitle">linsegr</em></a>,
+      <a class="link" href=""><em class="citetitle">triglinseg</em></a>,
+      <a class="link" href=""><em class="citetitle">trigexpseg</em></a>
     </p>
       </div>
     </div>

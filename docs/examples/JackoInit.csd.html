@@ -6,30 +6,46 @@
     <script src="CsoundAudioNode.js"></script>
     <script src="csound_loader.js"></script>
     <script>
-    var handleMessage = function(message) {
+    var csound_message_callback = function(message) {
         var messages_textarea = document.getElementById("console");
         var existing = messages_textarea.value;
         messages_textarea.value = existing + message;
         messages_textarea.scrollTop = messages_textarea.scrollHeight;
     }
     var onPlayClick = async function() {
-        var csd = document.getElementById('csd').value;
-        let csound = get_csound(handleMessage);
-        if (csound == null) {
+        let messages_textarea = document.getElementById("console");
+        messages_textarea.value = "";
+        let csound_ = await get_csound(csound_message_callback);
+        if (csound_ == null) {
             return;
         }
-        csound.CompileCsdText(csd);
-        csound.Start();
-        csound.Perform();
+        let seconds = await csound_.GetScoreTime();
+        csound_message_callback('Score time: ' + seconds + '\n');
+        if (seconds > 0) {
+            csound_message_callback('Already playing...\n');
+            return;
+        }
+        let csd = document.getElementById('csd').value;
+        await csound_.CompileCsdText(csd);
+        await csound_.Start();
+        await csound_.Perform();
+        
     }
     var onPlayStop = async function() {
-        let csound = get_csound(handleMessage);
-        csound.Stop();
+        let csound_ = await get_csound(csound_message_callback);
+        let seconds = await csound_.GetScoreTime();
+        csound_message_callback("Score time: " + seconds + "\n");
+        if (seconds > 0) {
+            await csound_.Stop();
+            await csound_.Cleanup();
+            await csound_.Reset();
+    }
+        
     }
   </script>
 <h1 style="font-family:sans-serif;">JackoInit</h1>
 <p>
-This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will load. After that, clicking on <i>Play</i> will actually play. You can edit this code and replay it. 
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will spend a few seconds loading, then play. You can edit this code and replay it. 
 </p>
 <p>
 <input type="button" value="Play" onclick="onPlayClick()"/>
