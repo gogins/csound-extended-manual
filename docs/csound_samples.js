@@ -101,40 +101,40 @@
 Module['FS_createPath']("/dependencies", "csound", true, true);
 Module['FS_createPath']("/dependencies/csound", "samples", true, true);
 
-      /** @constructor */
-      function DataRequest(start, end, audio) {
-        this.start = start;
-        this.end = end;
-        this.audio = audio;
-      }
-      DataRequest.prototype = {
-        requests: {},
-        open: function(mode, name) {
-          this.name = name;
-          this.requests[name] = this;
-          Module['addRunDependency']('fp ' + this.name);
-        },
-        send: function() {},
-        onload: function() {
-          var byteArray = this.byteArray.subarray(this.start, this.end);
-          this.finish(byteArray);
-        },
-        finish: function(byteArray) {
-          var that = this;
-  
+          /** @constructor */
+          function DataRequest(start, end, audio) {
+            this.start = start;
+            this.end = end;
+            this.audio = audio;
+          }
+          DataRequest.prototype = {
+            requests: {},
+            open: function(mode, name) {
+              this.name = name;
+              this.requests[name] = this;
+              Module['addRunDependency']('fp ' + this.name);
+            },
+            send: function() {},
+            onload: function() {
+              var byteArray = this.byteArray.subarray(this.start, this.end);
+              this.finish(byteArray);
+            },
+            finish: function(byteArray) {
+              var that = this;
+      
           Module['FS_createDataFile'](this.name, null, byteArray, true, true, true); // canOwn this data in the filesystem, it is a slide into the heap that will never change
           Module['removeRunDependency']('fp ' + that.name);
   
-          this.requests[this.name] = null;
-        }
-      };
-  
-          var files = metadata['files'];
-          for (var i = 0; i < files.length; ++i) {
-            new DataRequest(files[i]['start'], files[i]['end'], files[i]['audio']).open('GET', files[i]['filename']);
-          }
-  
-    
+              this.requests[this.name] = null;
+            }
+          };
+      
+              var files = metadata['files'];
+              for (var i = 0; i < files.length; ++i) {
+                new DataRequest(files[i]['start'], files[i]['end'], files[i]['audio']).open('GET', files[i]['filename']);
+              }
+      
+        
       function processPackageData(arrayBuffer) {
         assert(arrayBuffer, 'Loading data file failed.');
         assert(arrayBuffer instanceof ArrayBuffer, 'bad input to processPackageData');
@@ -172,7 +172,7 @@ Module['FS_createPath']("/dependencies/csound", "samples", true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/dependencies/csound/samples/README", "start": 0, "end": 504, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-96000-left.dat", "start": 504, "end": 377336, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-44100-right.dat", "start": 377336, "end": 565752, "audio": 0}, {"filename": "/dependencies/csound/samples/sf_GMbank.sf2", "start": 565752, "end": 4757668, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-96000-right.dat", "start": 4757668, "end": 5134500, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-48000-right.dat", "start": 5134500, "end": 5322916, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-44100-left.dat", "start": 5322916, "end": 5511332, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-48000-left.dat", "start": 5511332, "end": 5699748, "audio": 0}], "remote_package_size": 5699748, "package_uuid": "75053215-77f6-40b8-a741-458f5d510fd0"});
+   loadPackage({"files": [{"filename": "/dependencies/csound/samples/hrtf-44100-left.dat", "start": 0, "end": 188416, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-96000-left.dat", "start": 188416, "end": 565248, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-48000-left.dat", "start": 565248, "end": 753664, "audio": 0}, {"filename": "/dependencies/csound/samples/README", "start": 753664, "end": 754168, "audio": 0}, {"filename": "/dependencies/csound/samples/sf_GMbank.sf2", "start": 754168, "end": 4946084, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-48000-right.dat", "start": 4946084, "end": 5134500, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-96000-right.dat", "start": 5134500, "end": 5511332, "audio": 0}, {"filename": "/dependencies/csound/samples/hrtf-44100-right.dat", "start": 5511332, "end": 5699748, "audio": 0}], "remote_package_size": 5699748, "package_uuid": "9e0b0733-f1e1-46dd-bd3d-ac7c77cb8c91"});
   
   })();
   
