@@ -3,8 +3,8 @@
 echo "Started fresh build of live Csound Reference Manual..."
 bash update-dependency-submodules.sh
 cd manual
-git checkout master
 git stash
+git checkout master
 git pull
 make clean
 make html-dist
