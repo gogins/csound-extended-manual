@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Started fresh build of live Csound Reference Manual..."
-
+bash update-dependency-submodules.sh
 cd manual
 git pull
 make clean
