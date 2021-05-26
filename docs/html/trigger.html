@@ -9,8 +9,8 @@
     <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
-    <link rel="prev" href="trhighest.html" title="trhighest" />
-    <link rel="next" href="trigseq.html" title="trigseq" />
+    <link rel="prev" href="trigexpseg.html" title="trigexpseg" />
+    <link rel="next" href="triglinseg.html" title="triglinseg" />
   </head>
   <body>
     <div class="navheader">
@@ -19,9 +19,9 @@
           <th colspan="3" align="center">trigger</th>
         </tr>
         <tr>
-          <td width="20%" align="left"><a accesskey="p" href="trhighest.html">Prev</a> </td>
+          <td width="20%" align="left"><a accesskey="p" href="trigexpseg.html">Prev</a> </td>
           <th width="60%" align="center">Orchestra Opcodes and Operators</th>
-          <td width="20%" align="right"> <a accesskey="n" href="trigseq.html">Next</a></td>
+          <td width="20%" align="right"> <a accesskey="n" href="triglinseg.html">Next</a></td>
         </tr>
       </table>
       <hr />
@@ -39,19 +39,19 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm238446"></a>
+        <a id="idm242794"></a>
         <h2>Description</h2>
         <p>
       Informs when a krate signal crosses a threshold.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm238449"></a>
+        <a id="idm242797"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kout <span class="command"><strong>trigger</strong></span> ksig, kthreshold, kmode</pre>
       </div>
       <div class="refsect1">
-        <a id="idm238453"></a>
+        <a id="idm242801"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>ksig</em></span> -- input signal
@@ -82,20 +82,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm238488"></a>
+        <a id="idm242836"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the trigger opcode. It uses the file <a class="ulink" href="examples/trigger.csd" target="_top"><em class="citetitle">trigger.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm238493"></a>
+          <a id="idm242841"></a>
           <p class="title">
-            <strong>Example 1093. Example of the trigger opcode.</strong>
+            <strong>Example 1110. Example of the trigger opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm238500"></a>
+              <a id="idm242848"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -115,7 +115,7 @@
 <span class="kd">instr</span> <span class="nf">1</span>
 
 k<span class="n">mtr</span> <span class="nb">lfo</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>			<span class="c1">;triangle wave</span>
-k<span class="n">mode</span> <span class="o">=</span> <span class="nb">p4</span>
+k<span class="n">mode</span> <span class="o">=</span> <span class="vi">p4</span>
 k<span class="n">tr</span>  <span class="nb">trigger</span> k<span class="n">mtr</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> k<span class="n">mode</span>
      <span class="nb">printk2</span>  k<span class="n">tr</span>
      <span class="nb">schedkwhen</span> k<span class="n">tr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.3</span>
@@ -125,7 +125,7 @@ k<span class="n">tr</span>  <span class="nb">trigger</span> k<span class="n">mtr
 
 <span class="kd">instr</span> <span class="nf">2</span>                                            
 
-a<span class="n">env</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span><span class="nb">p3</span><span class="o">*</span><span class="mf">.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">p3</span><span class="o">*</span><span class="mf">.3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">p3</span><span class="o">*</span><span class="mf">.6</span><span class="p">,</span><span class="mi">0</span>	<span class="c1">;envelope</span>
+a<span class="n">env</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span><span class="vi">p3</span><span class="o">*</span><span class="mf">.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="vi">p3</span><span class="o">*</span><span class="mf">.3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="vi">p3</span><span class="o">*</span><span class="mf">.6</span><span class="p">,</span><span class="mi">0</span>	<span class="c1">;envelope</span>
 a<span class="n">1</span>   <span class="nb">poscil</span> <span class="mf">.3</span><span class="o">*</span>a<span class="n">env</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span>
      <span class="nb">outs</span> a<span class="n">1</span><span class="p">,</span> a<span class="n">1</span>
 
@@ -148,7 +148,7 @@ a<span class="n">1</span>   <span class="nb">poscil</span> <span class="mf">.3</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm238620"></a>
+        <a id="idm242968"></a>
         <h2>Credits</h2>
         <p>
       </p>
@@ -169,18 +169,18 @@ a<span class="n">1</span>   <span class="nb">poscil</span> <span class="mf">.3</
       <hr />
       <table width="100%" summary="Navigation footer">
         <tr>
-          <td width="40%" align="left"><a accesskey="p" href="trhighest.html">Prev</a> </td>
+          <td width="40%" align="left"><a accesskey="p" href="trigexpseg.html">Prev</a> </td>
           <td width="20%" align="center">
             <a accesskey="u" href="OpcodesTop.html">Up</a>
           </td>
-          <td width="40%" align="right"> <a accesskey="n" href="trigseq.html">Next</a></td>
+          <td width="40%" align="right"> <a accesskey="n" href="triglinseg.html">Next</a></td>
         </tr>
         <tr>
-          <td width="40%" align="left" valign="top">trhighest </td>
+          <td width="40%" align="left" valign="top">trigexpseg </td>
           <td width="20%" align="center">
             <a accesskey="h" href="index.html">Home</a>
           </td>
-          <td width="40%" align="right" valign="top"> trigseq</td>
+          <td width="40%" align="right" valign="top"> triglinseg</td>
         </tr>
       </table>
     </div>

@@ -39,19 +39,19 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm160491"></a>
+        <a id="idm162674"></a>
         <h2>Description</h2>
         <p>
       Writes samples to quad channel 2 of an external device or stream.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm160494"></a>
+        <a id="idm162677"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>outq2</strong></span> asig</pre>
       </div>
       <div class="refsect1">
-        <a id="idm160498"></a>
+        <a id="idm162681"></a>
         <h2>Performance</h2>
         <p>
       Sends audio samples to an accumulating output buffer (created at the beginning of performance) which serves to collect the output of all active instruments before the sound is written to disk. There can be any number of these output units in an instrument.
@@ -61,20 +61,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm160507"></a>
+        <a id="idm162690"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the outq2 opcode. Click to play: <a class="ulink" href="examples/outq2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">outq2.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm160512"></a>
+          <a id="idm162695"></a>
           <p class="title">
-            <strong>Example 694. Example of the outq2 opcode.</strong>
+            <strong>Example 703. Example of the outq2 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm160519"></a>
+              <a id="idm162702"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -95,7 +95,7 @@
 
 a<span class="n">sig</span> <span class="nb">vco2</span> <span class="mf">.05</span><span class="p">,</span> <span class="mi">30</span>	<span class="c1">; sawtooth waveform at low volume</span>
 
-k<span class="n">cut</span> <span class="nb">line</span> <span class="mi">300</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mi">60</span>	<span class="c1">; Vary cutoff frequency</span>
+k<span class="n">cut</span> <span class="nb">line</span> <span class="mi">300</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mi">60</span>	<span class="c1">; Vary cutoff frequency</span>
 k<span class="n">resonance</span> <span class="o">=</span> <span class="mi">7</span>
 i<span class="n">numlayer</span> <span class="o">=</span> <span class="mi">2</span>
 a<span class="n">sig</span> <span class="nb">lowresx</span> a<span class="n">sig</span><span class="p">,</span> k<span class="n">cut</span><span class="p">,</span> k<span class="n">resonance</span><span class="p">,</span> i<span class="n">numlayer</span>
@@ -118,7 +118,7 @@ a<span class="n">sig</span> <span class="nb">lowresx</span> a<span class="n">sig
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm160586"></a>
+        <a id="idm162769"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="out.html" title="out"><em class="citetitle">out</em></a>,
@@ -135,7 +135,7 @@ a<span class="n">sig</span> <span class="nb">lowresx</span> a<span class="n">sig
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm160611"></a>
+        <a id="idm162794"></a>
         <h2>Credits</h2>
         <p>
       </p>

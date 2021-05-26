@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm25689"></a>
+        <a id="idm26025"></a>
         <h2>Description</h2>
         <p>Plugin opcode in serial.</p>
         <p>
@@ -47,12 +47,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm25693"></a>
+        <a id="idm26029"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kval <span class="command"><strong>arduinoRead</strong></span> iPort, iStream[, iSmooth]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm25697"></a>
+        <a id="idm26033"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>iPort</em></span> -- port number obtained from a
@@ -71,20 +71,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm25708"></a>
+        <a id="idm26044"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the arduinoRead opcode. It uses the file <a class="ulink" href="examples/arduinoRead.csd" target="_top"><em class="citetitle">arduinoRead.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm25713"></a>
+          <a id="idm26049"></a>
           <p class="title">
-            <strong>Example 57. Example of the arduinoRead opcode.</strong>
+            <strong>Example 58. Example of the arduinoRead opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm25720"></a>
+              <a id="idm26056"></a>
               <pre class="programlisting">
 Arduino-Joystick2Csound1g-fm1-port (version with smoothing)
 
@@ -92,7 +92,7 @@ Arduino-Joystick2Csound1g-fm1-port (version with smoothing)
 - Use JoystickX to offset and control the modulation index of
   the foscil opcode from 0-40 via the scale opcode
 - Use JoystickY to offset and control the Frequency of the foscil
-  opcode up<span class="err">/</span>down two octaves via the scale opcode
+  opcode up/down two octaves via the scale opcode
 
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 
@@ -141,7 +141,7 @@ k<span class="n">Xscaled</span> <span class="nb">scale</span> k<span class="n">X
 
 	 		<span class="nb">outs</span>	a<span class="n">Out</span> <span class="o">*</span> k<span class="n">Amp</span><span class="p">,</span> a<span class="n">Out</span> <span class="o">*</span> k<span class="n">Amp</span>
 
-<span class="nb">printks</span> <span class="s">"Button=</span><span class="si">%d</span><span class="s">, RawX=</span><span class="si">%d</span><span class="s">, ScaleX=</span><span class="si">%d</span><span class="s">, RawY=</span><span class="si">%d</span><span class="s">, ScaleY=</span><span class="si">%d</span><span class="s"> </span><span class="se">\\</span><span class="s">n"</span><span class="p">,</span> \
+<span class="nb">printks</span> <span class="s">"Button=</span><span class="si">%d</span><span class="s">, RawX=</span><span class="si">%d</span><span class="s">, ScaleX=</span><span class="si">%d</span><span class="s">, RawY=</span><span class="si">%d</span><span class="s">, ScaleY=</span><span class="si">%d</span><span class="s"> </span><span class="se">\\n</span><span class="s">"</span><span class="p">,</span> <span class="w">\</span>
             <span class="mf">.5</span><span class="p">,</span> k<span class="n">SW</span><span class="p">,</span> k<span class="n">X</span><span class="p">,</span> k<span class="n">Xscaled</span><span class="p">,</span> k<span class="n">Y</span><span class="p">,</span> k<span class="n">Yscaled</span>
 
  <span class="kd">endin</span>
@@ -152,7 +152,7 @@ k<span class="n">Xscaled</span> <span class="nb">scale</span> k<span class="n">X
 
 <span class="nb">f</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">16384</span> <span class="mi">10</span> <span class="mi">1</span>
 
-<span class="nb">i</span> <span class="mi">1</span> <span class="mi">0</span> <span class="cp">z</span>
+<span class="nb">i</span> <span class="mi">1</span> <span class="mi">0</span> <span class="kc">z</span>
 
 <span class="nb">e</span>
 
@@ -216,8 +216,8 @@ void put_val(int senChan, int senVal)
         <span class="c1">// the sensor data stream "senVal"</span>
 {       <span class="c1">// The packing of the data is sssssvvv 0vvvvvvv where s is a</span>
         <span class="c1">// senChan bit, v a senVal bit and 0 is zero` bit</span>
-  int low = senVal<span class="err">&amp;</span>0x7f<span class="c1">;</span>
-  int hi = ((senVal&gt;&gt;7)<span class="err">&amp;</span>0x0f) | ((senChan<span class="err">&amp;</span>0x0f)<span class="err">&lt;</span><span class="nt">&lt;4</span><span class="err">);</span>
+  int low = senVal&amp;0x7f<span class="c1">;</span>
+  int hi = ((senVal&gt;&gt;7)&amp;0x0f) | ((senChan&amp;0x0f)<span class="err">&lt;</span><span class="nt">&lt;4</span><span class="err">);</span>
   <span class="err">Serial.write(low);</span> <span class="err">Serial.write(hi);</span>
 <span class="err">}</span>
 
@@ -271,7 +271,7 @@ void put_val(int senChan, int senVal)
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26116"></a>
+        <a id="idm26449"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="arduinoStart.html" title="arduinoStart"><em class="citetitle"></em>arduinoStart</a>,
@@ -279,7 +279,7 @@ void put_val(int senChan, int senVal)
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26123"></a>
+        <a id="idm26456"></a>
         <h2>Credits</h2>
         <p>
       </p>

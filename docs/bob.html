@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm34975"></a>
+        <a id="idm35435"></a>
         <h2>Description</h2>
         <p>
       Bob is based on bob~ by Miller Puckette in Pure Data. The design is based on the papers by Tim Stilson, Timothy E. Stinchcombe, and Antti Huovilainen.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm34978"></a>
+        <a id="idm35438"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">asig <span class="command"><strong>bob</strong></span> ain, xcf, xres, xsat [, iosamps, istor]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm34982"></a>
+        <a id="idm35442"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>iosamps</em></span> -- number of times of oversampling used in the filtering process. This will determine the maximum sharpness of the filter resonance (Q). More oversampling allows higher Qs, less oversampling will limit the resonance. The default is 2 times (iosamps=0).
@@ -61,7 +61,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm34988"></a>
+        <a id="idm35448"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> -- input signal
@@ -87,20 +87,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm34999"></a>
+        <a id="idm35459"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the bob opcode. Click to play: <a class="ulink" href="examples/bob.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">bob.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm35004"></a>
+          <a id="idm35464"></a>
           <p class="title">
-            <strong>Example 102. Example of the bob opcode.</strong>
+            <strong>Example 104. Example of the bob opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm35011"></a>
+              <a id="idm35471"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -123,15 +123,15 @@ ga<span class="n">2</span> <span class="nb">init</span> <span class="mi">0</span
     <span class="nb">seed</span> <span class="mi">777</span>
 
 <span class="kd">instr</span> <span class="nf">7</span>
-a<span class="n">0</span>  <span class="nb">vco2</span>     <span class="mi">1</span><span class="p">,</span> <span class="nb">cpsmidinn</span><span class="p">(</span><span class="nb">p4</span><span class="p">)</span> <span class="c1">; a saw wave to be filtered</span>
+a<span class="n">0</span>  <span class="nb">vco2</span>     <span class="mi">1</span><span class="p">,</span> <span class="nb">cpsmidinn</span><span class="p">(</span><span class="vi">p4</span><span class="p">)</span> <span class="c1">; a saw wave to be filtered</span>
 k<span class="n">1</span>  <span class="nb">jspline</span>  <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">0.7</span><span class="c1">; add some jitter to filter resonance</span>
-k<span class="n">A</span>  <span class="nb">linseg</span>   <span class="mi">0</span><span class="p">,</span>        <span class="nb">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>     <span class="p">(</span><span class="mi">17</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>   <span class="nb">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="c1">; overal amplitude envelope</span>
-k<span class="n">7</span>  <span class="nb">linseg</span>   <span class="mi">70</span><span class="p">,</span>       <span class="nb">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">700</span><span class="p">,</span>   <span class="nb">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>     <span class="mi">700</span><span class="p">,</span>     <span class="nb">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">70</span><span class="c1">; filter cutoff envelope</span>
-k<span class="n">77</span> <span class="nb">expseg</span>   <span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>  <span class="nb">p3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>  <span class="mf">7.7</span><span class="p">,</span>   <span class="nb">p3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>     <span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="c1">; filter resonance modulation</span>
+k<span class="n">A</span>  <span class="nb">linseg</span>   <span class="mi">0</span><span class="p">,</span>        <span class="vi">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>     <span class="p">(</span><span class="mi">17</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="vi">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>   <span class="vi">p3</span><span class="o">/</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="c1">; overal amplitude envelope</span>
+k<span class="n">7</span>  <span class="nb">linseg</span>   <span class="mi">70</span><span class="p">,</span>       <span class="vi">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">700</span><span class="p">,</span>   <span class="vi">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>     <span class="mi">700</span><span class="p">,</span>     <span class="vi">p3</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">70</span><span class="c1">; filter cutoff envelope</span>
+k<span class="n">77</span> <span class="nb">expseg</span>   <span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>  <span class="vi">p3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>  <span class="mf">7.7</span><span class="p">,</span>   <span class="vi">p3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>     <span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="c1">; filter resonance modulation</span>
 a<span class="n">1</span>  <span class="n">bob</span>      a<span class="n">0</span> <span class="o">*</span> k<span class="n">A</span><span class="p">,</span> k<span class="n">7</span> <span class="o">-</span> k<span class="n">1</span> <span class="o">*</span> <span class="mi">70</span><span class="p">,</span> k<span class="n">77</span> <span class="o">+</span> k<span class="n">1</span><span class="p">,</span> <span class="mi">3</span><span class="c1">; PD bob~ ported</span>
 a<span class="n">1</span>           <span class="o">/=</span> <span class="mi">7</span><span class="c1">; some normalization to avoid overload</span>
-a<span class="n">L</span>           <span class="o">=</span> <span class="nb">p5</span> <span class="o">*</span> a<span class="n">1</span><span class="c1">; and then panning</span>
-a<span class="n">R</span>           <span class="o">=</span> a<span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="nb">p5</span><span class="p">)</span>
+a<span class="n">L</span>           <span class="o">=</span> <span class="vi">p5</span> <span class="o">*</span> a<span class="n">1</span><span class="c1">; and then panning</span>
+a<span class="n">R</span>           <span class="o">=</span> a<span class="n">1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="vi">p5</span><span class="p">)</span>
     <span class="nb">outs</span>     a<span class="n">L</span><span class="p">,</span> a<span class="n">R</span>
 
 ga<span class="n">1</span>          <span class="o">+=</span>  a<span class="n">L</span><span class="o">/</span><span class="mi">7</span><span class="c1">; AUX send</span>
@@ -168,14 +168,14 @@ ga<span class="n">2</span>          <span class="o">=</span> <span class="mi">0<
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm35244"></a>
+        <a id="idm35704"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="moogladder.html" title="moogladder"><em class="citetitle">moogladder</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm35249"></a>
+        <a id="idm35709"></a>
         <h2>Credits</h2>
         <p>By: Gleb Rogozinsky 2020</p>
         <p>New in version 6.15</p>

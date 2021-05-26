@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm97723"></a>
+        <a id="idm98748"></a>
         <h2>Description</h2>
         <p>Plugin opcode in emugens.</p>
         <p>
@@ -49,12 +49,12 @@
 	  </p>
       </div>
       <div class="refsect1">
-        <a id="idm97730"></a>
+        <a id="idm98755"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>ftslicei</strong></span> ifnsource, ifndest [, istart, iend, istep ]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm97734"></a>
+        <a id="idm98759"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ifnsource</em></span> -- The table number to copy data from
@@ -74,23 +74,23 @@
 	  </p>
       </div>
       <div class="refsect1">
-        <a id="idm97749"></a>
+        <a id="idm98774"></a>
         <h2>Performance</h2>
       </div>
       <div class="refsect1">
-        <a id="idm97751"></a>
+        <a id="idm98776"></a>
         <h2>Examples</h2>
         <p>
       For an example, refer to the ftslice opcode: <a class="ulink" href="examples/ftslice.csd" target="_top"><em class="citetitle">ftslice.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm97756"></a>
+          <a id="idm98781"></a>
           <p class="title">
-            <strong>Example 395. Example of the ftslice opcode.</strong>
+            <strong>Example 400. Example of the ftslice opcode.</strong>
           </p>
           <div class="example-contents">
             <div class="refsect1">
-              <a id="idm97758"></a>
+              <a id="idm98783"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -123,14 +123,14 @@ See also: tablecopy, tableicopy, tab2array
   i<span class="n">dest</span> <span class="nb">ftgentmp</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">0</span>   <span class="c1">; empty table of size 11</span>
 
   <span class="c1">; copy only even elements</span>
-  <span class="n">ftslice</span> i<span class="n">fn</span><span class="p">,</span> i<span class="n">dest</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>
-  <span class="n">ftprint</span> i<span class="n">dest</span>
+  <span class="nb">ftslice</span> i<span class="n">fn</span><span class="p">,</span> i<span class="n">dest</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>
+  <span class="nb">ftprint</span> i<span class="n">dest</span>
 
   <span class="c1">; copy too many elements - only the elements which fit in the dest table</span>
   <span class="c1">; are copyed</span>
 
-  <span class="n">ftslice</span> i<span class="n">fn</span><span class="p">,</span> i<span class="n">dest</span>
-  <span class="n">ftprint</span> i<span class="n">dest</span>  
+  <span class="nb">ftslice</span> i<span class="n">fn</span><span class="p">,</span> i<span class="n">dest</span>
+  <span class="nb">ftprint</span> i<span class="n">dest</span>  
 
   <span class="nb">turnoff</span>
 <span class="kd">endin</span>
@@ -150,7 +150,7 @@ See also: tablecopy, tableicopy, tab2array
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm97850"></a>
+        <a id="idm98875"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="ftslice.html" title="ftslice"><em class="citetitle">ftslice</em></a>,
@@ -164,7 +164,7 @@ See also: tablecopy, tableicopy, tab2array
 	  </p>
       </div>
       <div class="refsect1">
-        <a id="idm97869"></a>
+        <a id="idm98894"></a>
         <h2>Credits</h2>
         <p>By: Eduardo Moguillansky 2018</p>
         <p>New plugin in version 6.12</p>

@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm140081"></a>
+        <a id="idm141768"></a>
         <h2>Description</h2>
         <p>
       Sends noteon and noteoff messages to the MIDI OUT port when triggered by a value different than zero.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm140084"></a>
+        <a id="idm141771"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>midion2</strong></span> kchn, knum, kvel, ktrig</pre>
       </div>
       <div class="refsect1">
-        <a id="idm140088"></a>
+        <a id="idm141775"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kchn</em></span> -- MIDI channel (1-16)
@@ -70,21 +70,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm140104"></a>
+        <a id="idm141791"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the midion2 opcode. Click to play: <a class="ulink" href="examples/midion2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">midion2.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm140109"></a>
+          <a id="idm141796"></a>
           <p class="title">
-            <strong>Example 589. Example of the midion2 opcode.</strong>
+            <strong>Example 596. Example of the midion2 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm140116"></a>
+              <a id="idm141803"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -100,7 +100,7 @@
 
 <span class="kd">instr</span> <span class="nf">1</span>
 
-k<span class="n">cps</span> <span class="nb">line</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.1</span>	
+k<span class="n">cps</span> <span class="nb">line</span> <span class="mi">3</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.1</span>	
 k<span class="n">lf</span>  <span class="nb">lfo</span> <span class="mi">1</span><span class="p">,</span> k<span class="n">cps</span><span class="p">,</span> <span class="mi">3</span>	<span class="c1">;use a unipolar square to trigger</span>
 k<span class="n">tr</span>  <span class="nb">trigger</span> k<span class="n">lf</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>	<span class="c1">;from 3 times to .1 time per sec.</span>
      <span class="nb">midion2</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> k<span class="n">tr</span>
@@ -121,7 +121,7 @@ k<span class="n">tr</span>  <span class="nb">trigger</span> k<span class="n">lf<
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm140179"></a>
+        <a id="idm141866"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="moscil.html" title="moscil"><em class="citetitle">moscil</em></a>,
@@ -133,7 +133,7 @@ k<span class="n">tr</span>  <span class="nb">trigger</span> k<span class="n">lf<
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm140194"></a>
+        <a id="idm141881"></a>
         <h2>Credits</h2>
         <p>
       </p>

@@ -39,46 +39,46 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm90930"></a>
+        <a id="idm91932"></a>
         <h2>Description</h2>
         <p>
       Envelope follower unit generator.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm90933"></a>
+        <a id="idm91935"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>follow</strong></span> asig, idt</pre>
       </div>
       <div class="refsect1">
-        <a id="idm90937"></a>
+        <a id="idm91939"></a>
         <h2>Initialization</h2>
         <p>
 <span class="emphasis"><em>idt</em></span> -- This is the period, in seconds, that the average amplitude of <span class="emphasis"><em>asig</em></span> is reported. If the frequency of <span class="emphasis"><em>asig</em></span> is low then <span class="emphasis"><em>idt</em></span> must be large (more than half the period of <span class="emphasis"><em>asig</em></span> )
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm90945"></a>
+        <a id="idm91947"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> -- This is the signal from which to extract the envelope.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm90949"></a>
+        <a id="idm91951"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the follow opcode. Click to play: <a class="ulink" href="examples/follow.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">follow.csd</em></a>, and <a class="ulink" href="examples/beats.wav" target="_top"><em class="citetitle">beats.wav</em></a>.
       </p>
         <div class="example">
-          <a id="idm90956"></a>
+          <a id="idm91958"></a>
           <p class="title">
-            <strong>Example 359. Example of the follow opcode.</strong>
+            <strong>Example 364. Example of the follow opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm90963"></a>
+              <a id="idm91965"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -107,7 +107,7 @@ a<span class="n">sig</span> <span class="nb">soundin</span> <span class="s">"bea
 a<span class="n">s</span>   <span class="nb">soundin</span> <span class="s">"beats.wav"</span>
 a<span class="n">s</span>   <span class="o">=</span> a<span class="n">s</span><span class="o">*</span><span class="mf">.7</span>		<span class="c1">;reduce volume a bit</span>
 a<span class="n">t</span>   <span class="nb">tone</span>    a<span class="n">s</span><span class="p">,</span> <span class="mi">500</span>	<span class="c1">;smooth estimated envelope</span>
-a<span class="n">f</span>   <span class="nb">follow</span>  a<span class="n">t</span><span class="p">,</span> <span class="nb">p4</span>
+a<span class="n">f</span>   <span class="nb">follow</span>  a<span class="n">t</span><span class="p">,</span> <span class="vi">p4</span>
 a<span class="n">sin</span> <span class="nb">poscil3</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">440</span><span class="p">,</span> <span class="mi">1</span>
 <span class="c1">; "beats.wav" provides amplitude for poscil</span>
 a<span class="n">sig</span> <span class="nb">balance</span> a<span class="n">sin</span><span class="p">,</span> a<span class="n">f</span>
@@ -136,7 +136,7 @@ a<span class="n">sig</span> <span class="nb">balance</span> a<span class="n">sin
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm91066"></a>
+        <a id="idm92068"></a>
         <h2>Credits</h2>
         <p>
       </p>

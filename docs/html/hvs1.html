@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107041"></a>
+        <a id="idm108104"></a>
         <h2>Description</h2>
         <p>
       <span class="emphasis"><em>hvs1</em></span> allows one-dimensional Hyper Vectorial Synthesis (HVS) controlled by externally-updated k-variables.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107045"></a>
+        <a id="idm108108"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>hvs1</strong></span> kx, inumParms, inumPointsX, iOutTab, iPositionsTab, iSnapTab [, iConfigTab]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm107049"></a>
+        <a id="idm108112"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>inumParms</em></span> - number of parameters controlled by the HVS. Each HVS snapshot is made up of inumParms elements.
@@ -73,7 +73,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107068"></a>
+        <a id="idm108131"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kx</em></span> -  these are externally-modified variables which controls the motion of the pointer in the HVS matrix cube (or square or line in case of HVS matrices made up of less than 3 dimensions). The range of these input arguments must be 0 to 1.
@@ -94,7 +94,7 @@
       Snapshot order, as stored into the <span class="emphasis"><em>iSnapTab</em></span>, can or cannot follow the order of the pivot-points numbers. In fact it is possible to alter this order by means the <span class="emphasis"><em>iPositionsTab</em></span>, a table that remaps the position of each snapshot in relation to the pivot points. The <span class="emphasis"><em>iPositionsTab</em></span> is made up of the positions of the snapshots (contained in the <span class="emphasis"><em>iSnapTab</em></span>) in the two-dimensional grid. Each subsequent element is actually a pointer representing the position in the <span class="emphasis"><em>iSnapTab</em></span>. For example, in a 2-dimensional HVS matrix such as the following (in this case having <span class="emphasis"><em>inumPointsX</em></span> = 3 and <span class="emphasis"><em>inumPointsY</em></span> = 5:
     </p>
         <div class="table">
-          <a id="idm107088"></a>
+          <a id="idm108151"></a>
           <p class="title">
             <strong>Table 9. </strong>
           </p>
@@ -165,21 +165,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107137"></a>
+        <a id="idm108200"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the hvs1 opcode. It uses the file <a class="ulink" href="examples/hvs1.csd" target="_top"><em class="citetitle">hvs1.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm107142"></a>
+          <a id="idm108205"></a>
           <p class="title">
-            <strong>Example 440. Example of the hvs1 opcode.</strong>
+            <strong>Example 445. Example of the hvs1 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm107149"></a>
+              <a id="idm108212"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -204,9 +204,9 @@ i<span class="n">numLinesX</span> <span class="nb">init</span> <span class="mi">
 i<span class="n">numParms</span>  <span class="nb">init</span> <span class="mi">3</span>
 i<span class="n">OutTab</span> <span class="nb">ftgen</span>   <span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>      <span class="mi">0</span>
 i<span class="n">PosTab</span> <span class="nb">ftgen</span>   <span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>     <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span>
-i<span class="n">SnapTab</span>    <span class="nb">ftgen</span>   <span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> \
+i<span class="n">SnapTab</span>    <span class="nb">ftgen</span>   <span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="w">\</span>
                               <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span>   <span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span>    <span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span>
-k<span class="n">1</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mi">1</span>
+k<span class="n">1</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mi">1</span>
 <span class="nb">printk</span> <span class="mf">0.2</span><span class="p">,</span> k<span class="n">1</span>
 <span class="c1">;               kx,   inumParms,  inumPointsX,  iOutTab,  iPosTab,  iSnapTab  [, iConfigTab]</span>
         <span class="nb">hvs1</span>    k<span class="n">1</span><span class="p">,</span>  i<span class="n">numParms</span><span class="p">,</span> i<span class="n">numLinesX</span><span class="p">,</span> i<span class="n">OutTab</span><span class="p">,</span> i<span class="n">PosTab</span><span class="p">,</span> i<span class="n">SnapTab</span>  <span class="c1">;, iConfigTab</span>
@@ -242,7 +242,7 @@ a<span class="n">osc6</span> <span class="nb">oscil</span> k<span class="n">0</s
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107505"></a>
+        <a id="idm108569"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="hvs2.html" title="hvs2"><em class="citetitle">hvs2</em></a>,
@@ -251,7 +251,7 @@ a<span class="n">osc6</span> <span class="nb">oscil</span> k<span class="n">0</s
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm107514"></a>
+        <a id="idm108578"></a>
         <h2>Credits</h2>
         <p>Author: Gabriel Maldonado</p>
         <p>New in version 5.06</p>

@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm131354"></a>
+        <a id="idm132782"></a>
         <h2>Description</h2>
         <p>
     Generate control signal consisiting of held segments delimited
@@ -49,13 +49,13 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm131357"></a>
+        <a id="idm132785"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ksig <span class="command"><strong>lpsholdp</strong></span>  kphase, kvalue0, ktime0  [, kvalue1] [, ktime1] \
       [, kvalue2] [, ktime2] [...]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm131361"></a>
+        <a id="idm132789"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>ksig</em></span> - output signal
@@ -80,21 +80,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm131378"></a>
+        <a id="idm132806"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the lpsholdp opcode. It uses the file <a class="ulink" href="examples/lpsholdp.csd" target="_top"><em class="citetitle">lpsholdp.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm131383"></a>
+          <a id="idm132811"></a>
           <p class="title">
-            <strong>Example 546. Example of the lpsholdp opcode.</strong>
+            <strong>Example 552. Example of the lpsholdp opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm131390"></a>
+              <a id="idm132818"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -121,9 +121,9 @@ k<span class="n">phase1</span> <span class="nb">phasor</span> <span class="mi">3
 k<span class="n">modulation</span> <span class="nb">oscil</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">2</span>
 k<span class="n">phase2</span> <span class="nb">phasor</span> <span class="mi">3</span><span class="o">+</span>k<span class="n">modulation</span>
 
-k<span class="n">amp</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">p3</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
-k<span class="n">freq1</span>  <span class="nb">lpsholdp</span> k<span class="n">phase1</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p4</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p6</span><span class="p">),</span> <span class="mi">12</span>
-k<span class="n">freq2</span>  <span class="nb">lpsholdp</span> k<span class="n">phase2</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p4</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p6</span><span class="p">),</span> <span class="mi">12</span>
+k<span class="n">amp</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">p3</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
+k<span class="n">freq1</span>  <span class="nb">lpsholdp</span> k<span class="n">phase1</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p4</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p6</span><span class="p">),</span> <span class="mi">12</span>
+k<span class="n">freq2</span>  <span class="nb">lpsholdp</span> k<span class="n">phase2</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p4</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p5</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p6</span><span class="p">),</span> <span class="mi">12</span>
 
 a<span class="n">1</span> <span class="o">=</span> <span class="nb">poscil</span><span class="p">(</span>k<span class="n">amp</span><span class="p">,</span> k<span class="n">freq1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 a<span class="n">2</span> <span class="o">=</span> <span class="nb">poscil</span><span class="p">(</span>k<span class="n">amp</span><span class="p">,</span> k<span class="n">freq2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -152,7 +152,7 @@ a<span class="n">2</span> <span class="o">=</span> <span class="nb">poscil</span
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm131556"></a>
+        <a id="idm132984"></a>
         <h2>Credits</h2>
         <p>Written by Gabriel Maldonado.</p>
         <p>New in Csound 5 (Previously available only on CsoundAV)</p>

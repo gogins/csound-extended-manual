@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm128613"></a>
+        <a id="idm130032"></a>
         <h2>Description</h2>
         <p>
      This opcode implements streaming linear prediction analysis. Two versions
@@ -48,7 +48,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm128616"></a>
+        <a id="idm130035"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kCoef[],krms,kerr,kcps <span class="command"><strong>lpcanal</strong></span> asrc, kflg,
     kprd, isiz, iord[,iwin] </pre>
@@ -58,7 +58,7 @@
     ifn, isiz, iord[,iwin] </pre>
       </div>
       <div class="refsect1">
-        <a id="idm128624"></a>
+        <a id="idm130043"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>isiz</em></span> -- size of lpc input frame in samples.
@@ -74,7 +74,7 @@
         </p>
       </div>
       <div class="refsect1">
-        <a id="idm128634"></a>
+        <a id="idm130053"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kCoef[]</em></span> -- all-pole filter coefficients
@@ -108,7 +108,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm128652"></a>
+        <a id="idm130071"></a>
         <p>
         This opcode is part of a suite of streaming linear prediction
         opcodes. It analyses an input signal, either as an audio input
@@ -163,21 +163,21 @@
       </p>
       </div>
       <div class="refsect1">
-        <a id="idm128658"></a>
+        <a id="idm130077"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the lpcanal opcode using an audio input
       signal as lpc source. Click to play: <a class="ulink" href="examples/lpcanal.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">lpcanal.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm128663"></a>
+          <a id="idm130082"></a>
           <p class="title">
-            <strong>Example 530. Example of the lpcanal opcode.</strong>
+            <strong>Example 536. Example of the lpcanal opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm128670"></a>
+              <a id="idm130089"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -220,14 +220,14 @@ a<span class="n">3</span> <span class="nb">dcblock</span> a<span class="n">3</sp
       function table as lpc source. Click to play: <a class="ulink" href="examples/lpcanal-2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">lpcanal-2.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm128781"></a>
+          <a id="idm130200"></a>
           <p class="title">
-            <strong>Example 531. Another example of the lpcanal opcode.</strong>
+            <strong>Example 537. Another example of the lpcanal opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm128788"></a>
+              <a id="idm130207"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -245,7 +245,7 @@ gi<span class="n">fw</span> <span class="nb">ftgen</span> <span class="mi">0</sp
 
 <span class="kd">instr</span> <span class="nf">1</span>
 k<span class="n">1</span> <span class="nb">init</span> <span class="mi">0</span>
-k<span class="n">ts</span> <span class="o">=</span> <span class="nb">p4</span>
+k<span class="n">ts</span> <span class="o">=</span> <span class="vi">p4</span>
 k<span class="n">cfs</span><span class="p">[],</span>k<span class="n">rms</span><span class="p">,</span>k<span class="n">err</span><span class="p">,</span>k<span class="n">cps</span> <span class="n">lpcanal</span> k<span class="n">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>gi<span class="n">fn</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span><span class="vg">ksmps</span><span class="p">,</span>gi<span class="n">fw</span>
 <span class="k">if</span> k<span class="n">cps</span> <span class="o">&gt;</span> <span class="mi">180</span> <span class="k">then</span>
   k<span class="n">cps</span> <span class="o">=</span> <span class="mi">180</span>
@@ -275,7 +275,7 @@ a<span class="n">3</span> <span class="nb">dcblock</span> a<span class="n">3</sp
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm128938"></a>
+        <a id="idm130357"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="lpcfilter.html" title="lpcfilter"><em class="citetitle">lpcfilter</em></a>,

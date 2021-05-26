@@ -39,20 +39,20 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm137314"></a>
+        <a id="idm138988"></a>
         <h2>Description</h2>
         <p>
       Allows a floating-point 14-bit MIDI signal scaled with a minimum and a maximum range.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm137317"></a>
+        <a id="idm138991"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">idest <span class="command"><strong>midic14</strong></span> ictlno1, ictlno2, imin, imax [, ifn]</pre>
         <pre class="synopsis">kdest <span class="command"><strong>midic14</strong></span> ictlno1, ictlno2, kmin, kmax [, ifn]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm137323"></a>
+        <a id="idm138997"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>idest</em></span> -- output signal
@@ -74,7 +74,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm137339"></a>
+        <a id="idm139013"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kdest</em></span> -- output signal
@@ -105,21 +105,21 @@
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm137354"></a>
+        <a id="idm139028"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the midic14 opcode. Click to play: <a class="ulink" href="examples/midic14.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">midic14.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm137359"></a>
+          <a id="idm139033"></a>
           <p class="title">
-            <strong>Example 574. Example of the midic14 opcode.</strong>
+            <strong>Example 581. Example of the midic14 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm137366"></a>
+              <a id="idm139040"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -151,8 +151,8 @@
 	<span class="nb">printk2</span>	k<span class="n">Tune</span>
 
 	<span class="c1">; generate tones</span>
-	a<span class="n">sig</span> <span class="nb">oscili</span> <span class="nb">p5</span><span class="p">,</span> <span class="nb">p4</span><span class="o">*</span>k<span class="n">Tune</span>
-	a<span class="n">ref</span> <span class="nb">oscili</span> <span class="nb">p5</span><span class="p">,</span> <span class="nb">p4</span>
+	a<span class="n">sig</span> <span class="nb">oscili</span> <span class="vi">p5</span><span class="p">,</span> <span class="vi">p4</span><span class="o">*</span>k<span class="n">Tune</span>
+	a<span class="n">ref</span> <span class="nb">oscili</span> <span class="vi">p5</span><span class="p">,</span> <span class="vi">p4</span>
 
 	<span class="c1">; combine detuned tone and reference tone</span>
 	<span class="c1">; creates a beat effect from the detune</span>
@@ -175,7 +175,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm137455"></a>
+        <a id="idm139129"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="ctrl7.html" title="ctrl7"><em class="citetitle">ctrl7</em></a>,
@@ -189,7 +189,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm137474"></a>
+        <a id="idm139148"></a>
         <h2>Credits</h2>
         <p>
       </p>

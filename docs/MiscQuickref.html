@@ -616,8 +616,8 @@
       <p></p>
       <p>
 </p>
-      <pre class="synopsis">ksig <a class="link" href="loopxseg.html" title="loopxseg">loopxseg</a> kfreq, ktrig, iphase, ktime0, kvalue0 [, ktime1] [, kvalue1] \
-      [, ktime2] [, kvalue2] [...]</pre>
+      <pre class="synopsis">ksig <a class="link" href="loopxseg.html" title="loopxseg">loopxseg</a> kfreq, ktrig, iphase, kvalue0, ktime0  [, kvalue1] [, ktime1] \
+      [, kvalue2] [, ktime2] [...]</pre>
       <p></p>
       <p>
 </p>
@@ -653,13 +653,13 @@
       <p></p>
       <p>
 </p>
-      <pre class="synopsis">ares <a class="link" href="">trigexpseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
-      <pre class="synopsis">kres <a class="link" href="">trigexpseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
+      <pre class="synopsis">ares <a class="link" href="trigexpseg.html" title="trigexpseg">trigexpseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
+      <pre class="synopsis">kres <a class="link" href="trigexpseg.html" title="trigexpseg">trigexpseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
       <p></p>
       <p>
 </p>
-      <pre class="synopsis">ares <a class="link" href="">triglinseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
-      <pre class="synopsis">kres <a class="link" href="">triglinseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
+      <pre class="synopsis">ares <a class="link" href="triglinseg.html" title="triglinseg">triglinseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
+      <pre class="synopsis">kres <a class="link" href="triglinseg.html" title="triglinseg">triglinseg</a> kTrig, ia, idur1, ib [, idur2] [, ic] [...]</pre>
       <p></p>
       <p>
 </p>
@@ -734,7 +734,7 @@
       <p></p>
       <p>
 </p>
-      <pre class="synopsis">aI3, aV2, aV1 <a class="link" href="chuap.html" title="chuap">chuap</a> kL, kR0, kC1, kG, kGa, kGb, kE, kC2, iI3, iV2, iV1, ktime_step</pre>
+      <pre class="synopsis">aI3, aV2, aV1 <a class="link" href="chuap.html" title="chuap">chuap</a> kL, kR0, kC2, kG, kGa, kGb, kE, kC1, iI3, iV2, iV1, ktime_step</pre>
       <p></p>
       <p>
 </p>
@@ -1253,7 +1253,7 @@
       <p>
 </p>
       <pre class="synopsis">ar1, ar2 <a class="link" href="sflooper.html" title="sflooper">sflooper</a> ivel, inotenum, kamp, kpitch, ipreindex, kloopstart, kloopend, kcrossfade \
-      [, istart, imode, ifenv, iskip] </pre>
+      [, istart, imode, ifenv, iskip, iflag] </pre>
       <p></p>
       <p>
 </p>
@@ -2832,6 +2832,14 @@
       <p></p>
       <p>
 </p>
+      <pre class="synopsis">asig <a class="link" href="skf.html" title="skf">skf</a> asig, xcf, xK[, ihp, istor]</pre>
+      <p></p>
+      <p>
+</p>
+      <pre class="synopsis">asig <a class="link" href="spf.html" title="spf">spf</a> alp,ahp,abp, xcf, xR[, istor]</pre>
+      <p></p>
+      <p>
+</p>
       <pre class="synopsis">ahp,alp,abp,abr <a class="link" href="statevar.html" title="statevar">statevar</a> ain, xcf, xq [, iosamps, istor]</pre>
       <p></p>
       <p>
@@ -2840,7 +2848,16 @@
       <p></p>
       <p>
 </p>
+      <pre class="synopsis">ahp,alp,abp,abr <a class="link" href="svn.html" title="svn">svn</a> asig, xcf, xQ,
+    kdrive[, ifn,inm,imx, istor]</pre>
+      <p></p>
+      <p>
+</p>
       <pre class="synopsis">ares <a class="link" href="tbvcf.html" title="tbvcf">tbvcf</a> asig, xfco, xres, kdist, kasym [, iskip]</pre>
+      <p></p>
+      <p>
+</p>
+      <pre class="synopsis">asig <a class="link" href="vclpf.html" title="vclpf">vclpf</a> ain, xcf, xres[, istor]</pre>
       <p></p>
       <p>
 </p>
@@ -3182,6 +3199,8 @@
       <p>
 </p>
       <pre class="synopsis"><a class="link" href="turnoff2.html" title="turnoff2">turnoff2</a> kinsno, kmode, krelease
+        </pre>
+      <pre class="synopsis"><a class="link" href="turnoff2.html" title="turnoff2">turnoff2_i</a> insno, imode, irelease
     </pre>
       <p></p>
       <p>

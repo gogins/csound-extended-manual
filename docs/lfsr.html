@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119546"></a>
+        <a id="idm120828"></a>
         <h2>Description</h2>
         <p>
         Output is a series of pseudo-random positive integers. This is the technique
@@ -49,12 +49,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119549"></a>
+        <a id="idm120831"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">knum <span class="command"><strong>lfsr</strong></span> ilen, iprob [, iseed]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm119553"></a>
+        <a id="idm120835"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ilen</em></span> -- length of shift register, valid values are 1-31 (inclusive). The
@@ -72,27 +72,27 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119561"></a>
+        <a id="idm120843"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>knum</em></span> -- integer output
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119565"></a>
+        <a id="idm120847"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the lfsr opcode. Click to play: <a class="ulink" href="examples/lfsr.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">lfsr.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm119570"></a>
+          <a id="idm120852"></a>
           <p class="title">
-            <strong>Example 489. Example of the lfsr opcode.</strong>
+            <strong>Example 495. Example of the lfsr opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm119577"></a>
+              <a id="idm120859"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -123,10 +123,10 @@ gi<span class="n">Cent</span> <span class="o">=</span> <span class="nb">ftgen</s
 
 <span class="c1">; play a melodic sequence</span>
 <span class="kd">instr</span> <span class="nf">2</span>
-    i<span class="n">dur</span> <span class="o">=</span> <span class="nb">p3</span>
-    i<span class="n">amp</span> <span class="o">=</span> <span class="nb">p4</span>
-    i<span class="n">wav</span> <span class="o">=</span> <span class="nb">p5</span>
-    i<span class="n">tun</span> <span class="o">=</span> <span class="nb">p6</span>
+    i<span class="n">dur</span> <span class="o">=</span> <span class="vi">p3</span>
+    i<span class="n">amp</span> <span class="o">=</span> <span class="vi">p4</span>
+    i<span class="n">wav</span> <span class="o">=</span> <span class="vi">p5</span>
+    i<span class="n">tun</span> <span class="o">=</span> <span class="vi">p6</span>
 
     <span class="c1">; keep range small and transpose up 2 octaves to ensure audibility</span>
     <span class="c1">; we're interpreting these number like MIDI notes numbers for easy table lookups</span>
@@ -137,11 +137,11 @@ gi<span class="n">Cent</span> <span class="o">=</span> <span class="nb">ftgen</s
 <span class="kd">endin</span>
 
 <span class="kd">instr</span> <span class="nf">3</span>
-    i<span class="n">dur</span> <span class="o">=</span> <span class="nb">p3</span>
-    i<span class="n">amp</span> <span class="o">=</span> <span class="nb">ampdb</span><span class="p">(</span><span class="nb">p4</span><span class="p">)</span>
-    i<span class="n">wav</span> <span class="o">=</span> <span class="nb">p5</span>
-    i<span class="n">tun</span> <span class="o">=</span> <span class="nb">p6</span>
-    i<span class="n">note</span> <span class="o">=</span> <span class="nb">p7</span>
+    i<span class="n">dur</span> <span class="o">=</span> <span class="vi">p3</span>
+    i<span class="n">amp</span> <span class="o">=</span> <span class="nb">ampdb</span><span class="p">(</span><span class="vi">p4</span><span class="p">)</span>
+    i<span class="n">wav</span> <span class="o">=</span> <span class="vi">p5</span>
+    i<span class="n">tun</span> <span class="o">=</span> <span class="vi">p6</span>
+    i<span class="n">note</span> <span class="o">=</span> <span class="vi">p7</span>
 
 	k<span class="n">env</span> <span class="o">=</span> <span class="nb">linen</span><span class="p">(</span>i<span class="n">amp</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> i<span class="n">dur</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 	a<span class="n">out</span> <span class="o">=</span> <span class="nb">poscil3</span><span class="p">(</span>k<span class="n">env</span><span class="p">,</span> <span class="nb">tablekt</span><span class="p">(</span>i<span class="n">note</span><span class="p">,</span> i<span class="n">tun</span><span class="p">),</span> i<span class="n">wav</span><span class="p">)</span>
@@ -164,7 +164,7 @@ gi<span class="n">Cent</span> <span class="o">=</span> <span class="nb">ftgen</s
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119843"></a>
+        <a id="idm121125"></a>
         <h2>Credits</h2>
         <p>By: Dave Seidel 2020</p>
         <p>Based on code by Patrick Dowling in the Ornament &amp; Crime firmware.</p>

@@ -9,7 +9,7 @@
     <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
-    <link rel="prev" href="spdist.html" title="spdist" />
+    <link rel="prev" href="spf.html" title="spf" />
     <link rel="next" href="sprintf.html" title="sprintf" />
   </head>
   <body>
@@ -19,7 +19,7 @@
           <th colspan="3" align="center">splitrig</th>
         </tr>
         <tr>
-          <td width="20%" align="left"><a accesskey="p" href="spdist.html">Prev</a> </td>
+          <td width="20%" align="left"><a accesskey="p" href="spf.html">Prev</a> </td>
           <th width="60%" align="center">Orchestra Opcodes and Operators</th>
           <td width="20%" align="right"> <a accesskey="n" href="sprintf.html">Next</a></td>
         </tr>
@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm215244"></a>
+        <a id="idm218909"></a>
         <h2>Description</h2>
         <p>
       <span class="emphasis"><em>splitrig</em></span> splits a trigger signal (i.e. a timed sequence of control-rate impulses) into several channels following a structure designed by the user.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm215248"></a>
+        <a id="idm218913"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>splitrig</strong></span> ktrig, kndx, imaxtics, ifn, kout1 [,kout2,...,koutN]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm215252"></a>
+        <a id="idm218917"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>imaxtics</em></span> - number of tics belonging to largest pattern
@@ -61,7 +61,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm215258"></a>
+        <a id="idm218923"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> - incoming (input) signal
@@ -123,20 +123,20 @@ The <span class="emphasis"><em>kndx</em></span> variable chooses the number of t
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm215282"></a>
+        <a id="idm218947"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of splitrig opcode. Click to play: <a class="ulink" href="examples/splitrig.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">splitrig.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm215287"></a>
+          <a id="idm218952"></a>
           <p class="title">
-            <strong>Example 974. Example of the splitrig opcode.</strong>
+            <strong>Example 988. Example of the splitrig opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm215294"></a>
+              <a id="idm218959"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -159,15 +159,15 @@ gi<span class="n">1</span>  <span class="nb">ftgen</span> <span class="mi">1</sp
 <span class="mi">4</span><span class="p">,</span> <span class="err">\</span>       <span class="c1">; define # of rows of numtics of pattern 0 == index 0</span>
 <span class="err">\</span><span class="c1">; k1, k2, k3, k4</span>
    <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span><span class="err">\</span>                         
-   <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>\
-   <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>\
-   <span class="mi">5</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>\
-\
+   <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span><span class="w">\</span>
+   <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span><span class="w">\</span>
+   <span class="mi">5</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span><span class="w">\</span>
+<span class="w">\</span>
 <span class="mi">4</span><span class="p">,</span> <span class="err">\</span>     <span class="c1">; define # of rows of numtics of pattern 1 == index 1</span>
 <span class="err">\</span><span class="c1">; k1, k2, k3, k4</span>
-   <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>\
-   <span class="mi">8</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>\
-   <span class="mi">8</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>\
+   <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span><span class="w">\</span>
+   <span class="mi">8</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span><span class="w">\</span>
+   <span class="mi">8</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span><span class="w">\</span>
    <span class="mi">9</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>  <span class="mi">8</span>
 
 <span class="kd">instr</span> <span class="nf">1</span>
@@ -178,26 +178,26 @@ k<span class="n">1</span> <span class="nb">init</span> <span class="mi">0</span>
 k<span class="n">2</span> <span class="nb">init</span> <span class="mi">0</span>
 k<span class="n">3</span> <span class="nb">init</span> <span class="mi">0</span>
 k<span class="n">4</span> <span class="nb">init</span> <span class="mi">0</span>
-k<span class="n">ndx</span> <span class="o">=</span> <span class="nb">p4</span>    <span class="c1">;choose pattern 0 or 1</span>
+k<span class="n">ndx</span> <span class="o">=</span> <span class="vi">p4</span>    <span class="c1">;choose pattern 0 or 1</span>
 i<span class="n">maxtics</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">; number of tics</span>
 i<span class="n">fn</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nb">splitrig</span> k<span class="n">trig</span><span class="p">,</span> k<span class="n">ndx</span><span class="p">,</span> i<span class="n">maxtics</span><span class="p">,</span> i<span class="n">fn</span><span class="p">,</span> k<span class="n">1</span><span class="p">,</span> k<span class="n">2</span><span class="p">,</span> k<span class="n">3</span><span class="p">,</span> k<span class="n">4</span>
-<span class="k">if</span> <span class="p">(</span><span class="nb">p5</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">if</span> <span class="p">(</span><span class="vi">p5</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
    <span class="nb">schedkwhen</span> k<span class="n">trig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> k<span class="n">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span>  <span class="c1">; 1st column</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nb">p5</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">elseif</span> <span class="p">(</span><span class="vi">p5</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">then</span>
    <span class="nb">schedkwhen</span> k<span class="n">trig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> k<span class="n">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span>  <span class="c1">; 2nd column</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nb">p5</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">elseif</span> <span class="p">(</span><span class="vi">p5</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="k">then</span>
    <span class="nb">schedkwhen</span> k<span class="n">trig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> k<span class="n">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span>  <span class="c1">; 3rd column</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nb">p5</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">elseif</span> <span class="p">(</span><span class="vi">p5</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
    <span class="nb">schedkwhen</span> k<span class="n">trig</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> k<span class="n">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span>  <span class="c1">; 4th column</span>
 <span class="k">endif</span>
-<span class="nb">print</span> <span class="nb">p5</span>
+<span class="nb">print</span> <span class="vi">p5</span>
 <span class="kd">endin</span>
 
 <span class="kd">instr</span> <span class="nf">2</span>
 
 <span class="nb">prints</span> <span class="s">"instr 2</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> <span class="c1">;envelope </span>
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> <span class="c1">;envelope </span>
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">200</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -205,7 +205,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">3</span>
 
 <span class="nb">prints</span> <span class="s">"instr 3</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">300</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -213,7 +213,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">4</span>
 
 <span class="nb">prints</span> <span class="s">"instr 4</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">400</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -221,7 +221,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">5</span>
 
 <span class="nb">prints</span> <span class="s">"instr 5</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">500</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -229,7 +229,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">6</span>
 
 <span class="nb">prints</span> <span class="s">"instr 6</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">1500</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -237,7 +237,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">7</span>
 
 <span class="nb">prints</span> <span class="s">"instr 7</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">2000</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -245,7 +245,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">8</span>
 
 <span class="nb">prints</span> <span class="s">"instr 8</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">2500</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -253,7 +253,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
 <span class="kd">instr</span> <span class="nf">9</span>
 
 <span class="nb">prints</span> <span class="s">"instr 9</span><span class="se">\n</span><span class="s">"</span>
-a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mf">.05</span> 
+a<span class="n">res</span> <span class="nb">linen</span>  <span class="mf">.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mf">.05</span> 
 a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res</span><span class="p">,</span> <span class="mi">3000</span>
 <span class="nb">outs</span> a<span class="n">out</span><span class="p">,</span> a<span class="n">out</span>
 <span class="kd">endin</span>
@@ -287,7 +287,7 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm215803"></a>
+        <a id="idm219475"></a>
         <h2>Credits</h2>
         <p>Written by Gabriel Maldonado.</p>
         <p>New in Csound 5 (Previously available only on CsoundAV)</p>
@@ -297,14 +297,14 @@ a<span class="n">out</span>  <span class="nb">poscil</span> a<span class="n">res
       <hr />
       <table width="100%" summary="Navigation footer">
         <tr>
-          <td width="40%" align="left"><a accesskey="p" href="spdist.html">Prev</a> </td>
+          <td width="40%" align="left"><a accesskey="p" href="spf.html">Prev</a> </td>
           <td width="20%" align="center">
             <a accesskey="u" href="OpcodesTop.html">Up</a>
           </td>
           <td width="40%" align="right"> <a accesskey="n" href="sprintf.html">Next</a></td>
         </tr>
         <tr>
-          <td width="40%" align="left" valign="top">spdist </td>
+          <td width="40%" align="left" valign="top">spf </td>
           <td width="20%" align="center">
             <a accesskey="h" href="index.html">Home</a>
           </td>

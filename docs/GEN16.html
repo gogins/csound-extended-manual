@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm278715"></a>
+        <a id="idm283574"></a>
         <h2>Description</h2>
         <p>
       Creates a table from <span class="emphasis"><em>beg</em></span> value to <span class="emphasis"><em>end</em></span> value of <span class="emphasis"><em>dur</em></span> steps.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm278721"></a>
+        <a id="idm283580"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>f</strong></span> # time size 16 val1 dur1 type1 val2 [dur2 type2 val3 ... typeX valN]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm278725"></a>
+        <a id="idm283584"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>size</em></span> -- number of points in the table. Must
@@ -125,15 +125,15 @@ beg + (end - beg) * (1 - exp( i*type/(dur-1) )) / (1 - exp(type))<
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm278760"></a>
+        <a id="idm283619"></a>
         <div class="example">
-          <a id="idm278761"></a>
+          <a id="idm283620"></a>
           <p class="title">
-            <strong>Example 1264. A simple example of the GEN16 routine.</strong>
+            <strong>Example 1284. A simple example of the GEN16 routine.</strong>
           </p>
           <div class="example-contents">
             <div class="refsect1">
-              <a id="idm278763"></a>
+              <a id="idm283622"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -150,10 +150,10 @@ beg + (end - beg) * (1 - exp( i*type/(dur-1) )) / (1 - exp(type))<
 <span class="vg">nchnls</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="kd">instr</span> <span class="nf">1</span>
-  k<span class="n">cps</span> <span class="nb">init</span> <span class="mi">1</span><span class="o">/</span><span class="nb">p3</span>
+  k<span class="n">cps</span> <span class="nb">init</span> <span class="mi">1</span><span class="o">/</span><span class="vi">p3</span>
   k<span class="n">ndx</span> <span class="nb">phasor</span> k<span class="n">cps</span>
 
-  i<span class="n">fn</span> <span class="o">=</span> <span class="nb">p4</span>
+  i<span class="n">fn</span> <span class="o">=</span> <span class="vi">p4</span>
   i<span class="n">xmode</span> <span class="o">=</span> <span class="mi">1</span>
   k<span class="n">val</span> <span class="nb">table</span> k<span class="n">ndx</span><span class="p">,</span> i<span class="n">fn</span><span class="p">,</span> i<span class="n">xmode</span>
 
@@ -196,7 +196,7 @@ beg + (end - beg) * (1 - exp( i*type/(dur-1) )) / (1 - exp(type))<
         <br class="example-break" />
       </div>
       <div class="refsect1">
-        <a id="idm278924"></a>
+        <a id="idm283783"></a>
         <h2>Credits</h2>
         <p>
       </p>

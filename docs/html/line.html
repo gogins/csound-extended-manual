@@ -39,20 +39,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm120167"></a>
+        <a id="idm121449"></a>
         <h2>Description</h2>
         <p>
       Trace a straight line between specified points.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm120170"></a>
+        <a id="idm121452"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>line</strong></span> ia, idur, ib</pre>
         <pre class="synopsis">kres <span class="command"><strong>line</strong></span> ia, idur, ib</pre>
       </div>
       <div class="refsect1">
-        <a id="idm120176"></a>
+        <a id="idm121458"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ia</em></span> -- starting value.
@@ -65,7 +65,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm120185"></a>
+        <a id="idm121467"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>line</em></span> generates control or audio signals whose values move linearly from an initial value to a final one.
@@ -98,21 +98,21 @@
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm120199"></a>
+        <a id="idm121481"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the line opcode. It uses the file <a class="ulink" href="examples/line.csd" target="_top"><em class="citetitle">line.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm120204"></a>
+          <a id="idm121486"></a>
           <p class="title">
-            <strong>Example 492. Example of the line opcode.</strong>
+            <strong>Example 498. Example of the line opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm120211"></a>
+              <a id="idm121493"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -131,12 +131,12 @@
 
 <span class="kd">instr</span> <span class="nf">1</span> 
 
-k<span class="n">p</span> <span class="o">=</span> <span class="nb">p6</span>
+k<span class="n">p</span> <span class="o">=</span> <span class="vi">p6</span>
 <span class="c1">;choose between expon or line</span>
 <span class="k">if</span> <span class="p">(</span>k<span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span> 	
-  k<span class="n">pitch</span> <span class="nb">expon</span> <span class="nb">p4</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p5</span> 
+  k<span class="n">pitch</span> <span class="nb">expon</span> <span class="vi">p4</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p5</span> 
 <span class="k">elseif</span> <span class="p">(</span>k<span class="n">p</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
-  k<span class="n">pitch</span> <span class="nb">line</span> <span class="nb">p4</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p5</span> 
+  k<span class="n">pitch</span> <span class="nb">line</span> <span class="vi">p4</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p5</span> 
 <span class="k">endif</span>
 
 a<span class="n">sig</span>   <span class="nb">vco2</span> <span class="mf">.6</span><span class="p">,</span> k<span class="n">pitch</span> 
@@ -165,20 +165,20 @@ a<span class="n">sig</span>   <span class="nb">vco2</span> <span class="mf">.6</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm120342"></a>
+        <a id="idm121624"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="expon.html" title="expon"><em class="citetitle">expon</em></a>, 
       <a class="link" href="expseg.html" title="expseg"><em class="citetitle">expseg</em></a>, 
       <a class="link" href="expsegr.html" title="expsegr"><em class="citetitle">expsegr</em></a>, 
       <a class="link" href="linseg.html" title="linseg"><em class="citetitle">linseg</em></a>, 
-      <a class="link" href=""><em class="citetitle">triglinseg</em></a>,
-      <a class="link" href=""><em class="citetitle">trigexpseg</em></a>,
+      <a class="link" href="triglinseg.html" title="triglinseg"><em class="citetitle">triglinseg</em></a>,
+      <a class="link" href="trigexpseg.html" title="trigexpseg"><em class="citetitle">trigexpseg</em></a>,
       <a class="link" href="linsegr.html" title="linsegr"><em class="citetitle">linsegr</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm120359"></a>
+        <a id="idm121641"></a>
         <h2>Credits</h2>
       </div>
     </div>

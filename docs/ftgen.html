@@ -39,18 +39,18 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm95272"></a>
+        <a id="idm96284"></a>
         <h2>Description</h2>
         <p>Generate a score function table from within the orchestra.</p>
       </div>
       <div class="refsect1">
-        <a id="idm95275"></a>
+        <a id="idm96287"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">gir <span class="command"><strong>ftgen</strong></span> ifn, itime, isize, igen, iarga [, iargb ] [...]</pre>
         <pre class="synopsis">gir <span class="command"><strong>ftgen</strong></span> ifn, itime, isize, igen, iarray</pre>
       </div>
       <div class="refsect1">
-        <a id="idm95281"></a>
+        <a id="idm96293"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>gir</em></span> -- either a requested or automatically assigned table number above 100.
@@ -75,7 +75,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm95307"></a>
+        <a id="idm96319"></a>
         <h2>Performance</h2>
         <p>
       This is equivalent to table generation in the score with the <span class="emphasis"><em>f statement</em></span>.
@@ -114,21 +114,21 @@
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm95316"></a>
+        <a id="idm96328"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the ftgen opcode. Click to play: <a class="ulink" href="examples/ftgen.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">ftgen.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm95321"></a>
+          <a id="idm96333"></a>
           <p class="title">
-            <strong>Example 382. Example of the ftgen opcode.</strong>
+            <strong>Example 387. Example of the ftgen opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm95328"></a>
+              <a id="idm96340"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -151,7 +151,7 @@ gi<span class="n">saw</span>    <span class="nb">ftgen</span> <span class="mi">3
 
 <span class="kd">instr</span> <span class="nf">1</span>
 
-i<span class="n">fn</span> <span class="o">=</span> <span class="nb">p4</span>
+i<span class="n">fn</span> <span class="o">=</span> <span class="vi">p4</span>
 a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.6</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> i<span class="n">fn</span>
      <span class="nb">outs</span> a<span class="n">sig</span><span class="p">,</span> a<span class="n">sig</span>
 
@@ -175,16 +175,16 @@ a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.6</
       Here is another example of the ftgen opcode. Click to play: <a class="ulink" href="examples/ftgen-2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">ftgen-2.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm95484"></a>
+          <a id="idm96496"></a>
           <p class="title">
-            <strong>Example 383. Example of the ftgen opcode.</strong>
+            <strong>Example 388. Example of the ftgen opcode.</strong>
           </p>
           <div class="example-contents">
             <p>
           This example queries a file for it length to create an f-table of the appropriate size.
         </p>
             <div class="refsect1">
-              <a id="idm95487"></a>
+              <a id="idm96499"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -240,14 +240,14 @@ a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.6</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm95581"></a>
+        <a id="idm96593"></a>
         <h2>See also</h2>
         <p>
       <a class="link" href="ScoreGenRef.html" title="GEN Routines"><em class="citetitle">GEN routine overview</em></a>, <a class="link" href="ftgentmp.html" title="ftgentmp"><em class="citetitle">ftgentmp</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm95588"></a>
+        <a id="idm96600"></a>
         <h2>Credits</h2>
         <p>
       </p>

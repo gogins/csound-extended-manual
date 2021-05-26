@@ -39,19 +39,19 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm92243"></a>
+        <a id="idm93248"></a>
         <h2>Description</h2>
         <p>
       <span class="emphasis"><em>foutk</em></span> outputs <span class="emphasis"><em>N</em></span> k-rate signals to a specified file of <span class="emphasis"><em>N</em></span> channels.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm92249"></a>
+        <a id="idm93254"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>foutk</strong></span> ifilename, iformat, kout1 [, kout2, kout3,....,koutN]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm92253"></a>
+        <a id="idm93258"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ifilename</em></span> -- the output file's name (in double-quotes).
@@ -97,7 +97,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm92280"></a>
+        <a id="idm93285"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kout1,...koutN</em></span> -- control-rate signals to be written to the file. The expected range of the signals is determined by the selected sample format.
@@ -110,20 +110,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm92299"></a>
+        <a id="idm93304"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the foutk opcode. Click to play: <a class="ulink" href="examples/foutk.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">foutk.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm92304"></a>
+          <a id="idm93309"></a>
           <p class="title">
-            <strong>Example 367. Example of the foutk opcode.</strong>
+            <strong>Example 372. Example of the foutk opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm92311"></a>
+              <a id="idm93316"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -170,12 +170,12 @@ k<span class="n">amp</span> <span class="o">=</span> k<span class="n">amp</span>
 
 <span class="kd">instr</span> <span class="nf">2</span>
 
-k<span class="n">amp</span> <span class="nb">readk</span> <span class="s">"amp"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">p4</span> <span class="c1">; read amplitude values fro the file</span>
-k<span class="n">cps</span> <span class="nb">readk</span> <span class="s">"pitch"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nb">p4</span> <span class="c1">; read pitchvalues fro the file</span>
+k<span class="n">amp</span> <span class="nb">readk</span> <span class="s">"amp"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="vi">p4</span> <span class="c1">; read amplitude values fro the file</span>
+k<span class="n">cps</span> <span class="nb">readk</span> <span class="s">"pitch"</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="vi">p4</span> <span class="c1">; read pitchvalues fro the file</span>
 
 k<span class="n">cps</span> <span class="nb">portk</span> k<span class="n">cps</span><span class="p">,</span> <span class="mf">0.008</span>
-a<span class="n">sig</span> <span class="nb">oscili</span> k<span class="n">amp</span><span class="p">,</span> k<span class="n">cps</span><span class="o">*</span><span class="nb">p5</span><span class="p">,</span> <span class="mi">1</span> <span class="c1">; use amplitude &amp; pitch to play a sawtooth</span>
-k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">p3</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
+a<span class="n">sig</span> <span class="nb">oscili</span> k<span class="n">amp</span><span class="p">,</span> k<span class="n">cps</span><span class="o">*</span><span class="vi">p5</span><span class="p">,</span> <span class="mi">1</span> <span class="c1">; use amplitude &amp; pitch to play a sawtooth</span>
+k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="vi">p3</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
 
 <span class="nb">outs</span> a<span class="n">sig</span><span class="o">*</span>k<span class="n">declick</span><span class="p">,</span> a<span class="n">sig</span><span class="o">*</span>k<span class="n">declick</span>
 
@@ -202,7 +202,7 @@ k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm92506"></a>
+        <a id="idm93511"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="fiopen.html" title="fiopen"><em class="citetitle">fiopen</em></a>,
@@ -212,7 +212,7 @@ k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm92517"></a>
+        <a id="idm93522"></a>
         <h2>Credits</h2>
         <p>
       </p>

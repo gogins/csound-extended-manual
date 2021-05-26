@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm69908"></a>
+        <a id="idm70711"></a>
         <h2>Description</h2>
         <p>
       General purpose custom filter with no time-varying pole control. The filter coefficients implement the following difference equation:
@@ -65,20 +65,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm69918"></a>
+        <a id="idm70721"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>filter2</strong></span> asig, iM, iN, ib0, ib1, ..., ibM, ia1, ia2, ..., iaN</pre>
         <pre class="synopsis">kres <span class="command"><strong>filter2</strong></span> ksig, iM, iN, ib0, ib1, ..., ibM, ia1, ia2, ..., iaN</pre>
       </div>
       <div class="refsect1">
-        <a id="idm69924"></a>
+        <a id="idm70727"></a>
         <h2>Initialization</h2>
         <p>
       At initialization the number of zeros and poles of the filter are specified along with the corresponding zero and pole coefficients. The coefficients must be obtained by an external filter-design application such as Matlab and specified directly or loaded into a table via <a class="link" href="GEN01.html" title="GEN01"><em class="citetitle">GEN01</em></a>.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm69929"></a>
+        <a id="idm70732"></a>
         <h2>Performance</h2>
         <p>
       The<span class="emphasis"><em> filter2</em></span> opcodes perform filtering using a transposed form-II digital filter lattice with no time-varying control.
@@ -88,7 +88,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm69940"></a>
+        <a id="idm70743"></a>
         <h2>Examples</h2>
         <p>
       A first-order linear-phase lowpass FIR filter operating on a k-rate signal:
@@ -104,14 +104,14 @@ k1 <span class="opc">filter2</span> ksig, 2, 0, 0.5, 0.5   <span class="comment"
       Here is another example of the filter2 opcode. Click to play: <a class="ulink" href="examples/filter2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">filter2.csd</em></a>.
             </p>
         <div class="example">
-          <a id="idm69950"></a>
+          <a id="idm70753"></a>
           <p class="title">
-            <strong>Example 298. Example of the filter2 opcode.</strong>
+            <strong>Example 302. Example of the filter2 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm69957"></a>
+              <a id="idm70760"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -130,9 +130,9 @@ k1 <span class="opc">filter2</span> ksig, 2, 0, 0.5, 0.5   <span class="comment"
 
 <span class="kd">instr</span> <span class="nf">1</span>	 <span class="c1">; 2 saw waves of which one is slightly detuned</span>
  
-i<span class="n">b1</span>   <span class="o">=</span> <span class="nb">p5</span>  
-i<span class="n">vol</span>  <span class="o">=</span> <span class="nb">p6</span>				<span class="c1">;volume to compensate                                               </span>
-k<span class="n">cps</span>  <span class="nb">init</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p4</span><span class="p">)</span>
+i<span class="n">b1</span>   <span class="o">=</span> <span class="vi">p5</span>  
+i<span class="n">vol</span>  <span class="o">=</span> <span class="vi">p6</span>				<span class="c1">;volume to compensate                                               </span>
+k<span class="n">cps</span>  <span class="nb">init</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p4</span><span class="p">)</span>
 a<span class="n">sig1</span> <span class="nb">vco2</span> <span class="mf">.05</span><span class="p">,</span> k<span class="n">cps</span>			<span class="c1">;saw 1</span>
 a<span class="n">saw1</span> <span class="nb">filter2</span> a<span class="n">sig1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> i<span class="n">b1</span>	<span class="c1">;filter 1 </span>
 a<span class="n">sig2</span> <span class="nb">vco2</span> <span class="mf">.05</span><span class="p">,</span> k<span class="n">cps</span><span class="o">+</span><span class="mi">1</span>			<span class="c1">;saw 2                      </span>
@@ -158,14 +158,14 @@ a<span class="n">out</span>  <span class="o">=</span> <span class="p">(</span>a<
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm70081"></a>
+        <a id="idm70884"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="zfilter2.html" title="zfilter2"><em class="citetitle">zfilter2</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm70086"></a>
+        <a id="idm70889"></a>
         <h2>Credits</h2>
         <p>
       </p>

@@ -39,20 +39,20 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm119184"></a>
+        <a id="idm120466"></a>
         <h2>Description</h2>
         <p>
       A low frequency oscillator of various shapes.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119187"></a>
+        <a id="idm120469"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kres <span class="command"><strong>lfo</strong></span> kamp, kcps [, itype]</pre>
         <pre class="synopsis">ares <span class="command"><strong>lfo</strong></span> kamp, kcps [, itype]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm119193"></a>
+        <a id="idm120475"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>itype</em></span> (optional, default=0) -- determine the waveform of the oscillator. Default is 0.
@@ -86,7 +86,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119217"></a>
+        <a id="idm120499"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kamp</em></span> -- amplitude of output
@@ -96,21 +96,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119223"></a>
+        <a id="idm120505"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the lfo opcode. Click to play: <a class="ulink" href="examples/lfo.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">lfo.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm119228"></a>
+          <a id="idm120510"></a>
           <p class="title">
-            <strong>Example 487. Example of the lfo opcode.</strong>
+            <strong>Example 493. Example of the lfo opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm119235"></a>
+              <a id="idm120517"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -130,9 +130,9 @@
 <span class="kd">instr</span> <span class="nf">1</span>
 
 k<span class="n">cps</span>  <span class="o">=</span> <span class="mi">5</span>
-i<span class="n">type</span> <span class="o">=</span> <span class="nb">p4</span>	<span class="c1">;lfo type</span>
+i<span class="n">type</span> <span class="o">=</span> <span class="vi">p4</span>	<span class="c1">;lfo type</span>
 
-k<span class="n">lfo</span> <span class="nb">line</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="mi">20</span>
+k<span class="n">lfo</span> <span class="nb">line</span> <span class="mi">0</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="mi">20</span>
 a<span class="n">l</span>   <span class="nb">lfo</span> k<span class="n">lfo</span><span class="p">,</span> k<span class="n">cps</span><span class="p">,</span> i<span class="n">type</span>
 a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">220</span><span class="o">+</span>a<span class="n">l</span><span class="p">,</span> <span class="mi">1</span>
      <span class="nb">outs</span> a<span class="n">sig</span><span class="p">,</span> a<span class="n">sig</span>
@@ -157,19 +157,19 @@ a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.5</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119325"></a>
+        <a id="idm120607"></a>
         <p>
       Here is another example of the lfo opcode. Click to play: <a class="ulink" href="examples/lfo-advanced.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">lfo-advanced.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm119329"></a>
+          <a id="idm120611"></a>
           <p class="title">
-            <strong>Example 488. Advanced example of the lfo opcode.</strong>
+            <strong>Example 494. Advanced example of the lfo opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm119336"></a>
+              <a id="idm120618"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -192,17 +192,17 @@ a<span class="n">sig</span> <span class="nb">poscil</span> <span class="mf">.5</
 <span class="kd">instr</span> <span class="nf">1</span>
 
 <span class="c1">; LFO 1</span>
-k<span class="n">AmpLFO1</span> <span class="nb">linseg</span> <span class="nb">p6</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p7</span>
-k<span class="n">FreqLFO1</span> <span class="nb">linseg</span> <span class="nb">p8</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p9</span>
-k<span class="n">LFO1</span> <span class="nb">lfo</span> k<span class="n">AmpLFO1</span><span class="p">,</span> k<span class="n">FreqLFO1</span><span class="p">,</span> <span class="nb">p10</span>
+k<span class="n">AmpLFO1</span> <span class="nb">linseg</span> <span class="vi">p6</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p7</span>
+k<span class="n">FreqLFO1</span> <span class="nb">linseg</span> <span class="vi">p8</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p9</span>
+k<span class="n">LFO1</span> <span class="nb">lfo</span> k<span class="n">AmpLFO1</span><span class="p">,</span> k<span class="n">FreqLFO1</span><span class="p">,</span> <span class="vi">p10</span>
 
 <span class="c1">; LFO 2</span>
-k<span class="n">AmpLFO2</span> <span class="nb">linseg</span> <span class="nb">p7</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p6</span>
-k<span class="n">FreqLFO2</span> <span class="nb">linseg</span> <span class="nb">p9</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p8</span>
-k<span class="n">LFO2</span> <span class="nb">lfo</span> k<span class="n">AmpLFO2</span><span class="p">,</span> k<span class="n">FreqLFO1</span><span class="p">,</span> <span class="nb">p11</span>
+k<span class="n">AmpLFO2</span> <span class="nb">linseg</span> <span class="vi">p7</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p6</span>
+k<span class="n">FreqLFO2</span> <span class="nb">linseg</span> <span class="vi">p9</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p8</span>
+k<span class="n">LFO2</span> <span class="nb">lfo</span> k<span class="n">AmpLFO2</span><span class="p">,</span> k<span class="n">FreqLFO1</span><span class="p">,</span> <span class="vi">p11</span>
 
 <span class="c1">; AUDIO SIGNAL</span>
-a<span class="n">sig1</span> <span class="nb">oscili</span> <span class="nb">p4</span><span class="o">+</span>k<span class="n">LFO1</span><span class="p">,</span> <span class="nb">p5</span><span class="o">+</span>k<span class="n">LFO2</span><span class="p">,</span><span class="mi">1</span>
+a<span class="n">sig1</span> <span class="nb">oscili</span> <span class="vi">p4</span><span class="o">+</span>k<span class="n">LFO1</span><span class="p">,</span> <span class="vi">p5</span><span class="o">+</span>k<span class="n">LFO2</span><span class="p">,</span><span class="mi">1</span>
 
 <span class="c1">; LFO DELAY</span>
 k<span class="n">AmpDELAY1</span> <span class="nb">lfo</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">,</span> <span class="mi">1</span>
@@ -211,7 +211,7 @@ k<span class="n">AmpDELAY1</span> <span class="o">=</span> k<span class="n">AmpD
 <span class="c1">; DELAY SIGNAL</span>
 a<span class="n">del1</span> <span class="nb">vdelay</span> a<span class="n">sig1</span><span class="p">,</span> k<span class="n">AmpDELAY1</span><span class="p">,</span> <span class="mi">500</span>
 
-k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="nb">p12</span><span class="p">,</span> <span class="nb">p3</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="nb">p12</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span>
+k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="vi">p12</span><span class="p">,</span> <span class="vi">p3</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="vi">p12</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">0</span>
 <span class="nb">outch</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span>a<span class="n">sig1</span>  <span class="o">+</span> <span class="p">(</span>a<span class="n">del1</span> <span class="o">*</span><span class="mf">0.3</span><span class="p">))</span> <span class="o">*</span> k<span class="n">declick</span>
 <span class="nb">outch</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span>a<span class="n">sig1</span>  <span class="o">+</span> <span class="p">(</span>a<span class="n">del1</span> <span class="o">*</span><span class="mf">0.3</span><span class="p">))</span> <span class="o">*</span> k<span class="n">declick</span>
 
@@ -238,7 +238,7 @@ k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm119527"></a>
+        <a id="idm120809"></a>
         <h2>Credits</h2>
         <p>
       </p>

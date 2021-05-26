@@ -39,14 +39,14 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196299"></a>
+        <a id="idm198712"></a>
         <h2>Description</h2>
         <p>
       Returns a random number in a unipolar range at the rate given by the input argument.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196302"></a>
+        <a id="idm198715"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>rnd</strong></span>(x) (init- or control-rate only)</pre>
         <p>
@@ -54,28 +54,28 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196308"></a>
+        <a id="idm198721"></a>
         <h2>Performance</h2>
         <p>
       Returns a random number in the unipolar range 0 to <span class="emphasis"><em>x</em></span>.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196312"></a>
+        <a id="idm198725"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the rnd opcode. Click to play: <a class="ulink" href="examples/rnd.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">rnd.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm196317"></a>
+          <a id="idm198730"></a>
           <p class="title">
-            <strong>Example 894. Example of the rnd opcode.</strong>
+            <strong>Example 903. Example of the rnd opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm196324"></a>
+              <a id="idm198737"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -149,20 +149,20 @@ new alloc for instr 2:
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196402"></a>
+        <a id="idm198815"></a>
         <p>
       Here is another example of the rnd opcode. Click to play: <a class="ulink" href="examples/rnd-advanced.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">rnd-advanced.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm196406"></a>
+          <a id="idm198819"></a>
           <p class="title">
-            <strong>Example 895. Advanced example of the rnd opcode.</strong>
+            <strong>Example 904. Advanced example of the rnd opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm196413"></a>
+              <a id="idm198826"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -193,7 +193,7 @@ i<span class="n">rand2</span> <span class="o">=</span> <span class="nb">rnd</spa
 <span class="nb">print</span> i<span class="n">rand2</span>
 
 a<span class="n">1</span><span class="p">,</span> a<span class="n">2</span> <span class="nb">crossfm</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> i<span class="n">rand1</span><span class="p">,</span> i<span class="n">rand2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
-k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">p3</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
+k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="vi">p3</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span>
 
 <span class="nb">outch</span> <span class="mi">1</span><span class="p">,</span> a<span class="n">1</span><span class="o">*</span>k<span class="n">declick</span>
 <span class="nb">outch</span> <span class="mi">2</span><span class="p">,</span> a<span class="n">2</span><span class="o">*</span>k<span class="n">declick</span>
@@ -223,14 +223,14 @@ k<span class="n">declick</span> <span class="nb">linseg</span> <span class="mi">
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196537"></a>
+        <a id="idm198950"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="birnd.html" title="birnd"><em class="citetitle">birnd</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm196542"></a>
+        <a id="idm198955"></a>
         <h2>Credits</h2>
         <p>
       </p>

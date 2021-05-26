@@ -39,7 +39,7 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm162878"></a>
+        <a id="idm165062"></a>
         <h2>Description</h2>
         <p>
   The part2txt opcode takes a PVS_TRACKS fsig input and writes the
@@ -50,39 +50,39 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm162881"></a>
+        <a id="idm165065"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>part2txt</strong></span> SFile,ftrks</pre>
       </div>
       <div class="refsect1">
-        <a id="idm162885"></a>
+        <a id="idm165069"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>SFile</em></span> -- output filename 
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm162889"></a>
+        <a id="idm165073"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>ftrks</em></span> -- output pv stream in TRACKS format
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm162893"></a>
+        <a id="idm165077"></a>
         <h2>Example</h2>
         <p>
       Here is an example of the part2txt opcodes. Click to play: <a class="ulink" href="examples/part2txt.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">part2txt.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm162898"></a>
+          <a id="idm165082"></a>
           <p class="title">
-            <strong>Example 708. Example of the part2txt opcodes.</strong>
+            <strong>Example 717. Example of the part2txt opcodes.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm162905"></a>
+              <a id="idm165089"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -94,11 +94,11 @@
 i<span class="n">siz</span> <span class="o">=</span> <span class="mi">2048</span>
 i<span class="n">hsiz</span> <span class="o">=</span> i<span class="n">siz</span><span class="o">/</span><span class="mi">4</span>
 S<span class="n">1</span> <span class="o">=</span> <span class="s">"flutec3.wav"</span>
-<span class="nb">p3</span> <span class="o">=</span> <span class="nb">filelen</span><span class="p">(</span>S<span class="n">1</span><span class="p">)</span>
+<span class="vi">p3</span> <span class="o">=</span> <span class="nb">filelen</span><span class="p">(</span>S<span class="n">1</span><span class="p">)</span>
 a<span class="n">in</span> <span class="nb">diskin2</span> S<span class="n">1</span><span class="p">,</span><span class="mi">1</span>
-<span class="n">ffr</span><span class="p">,</span><span class="n">fphs</span>  <span class="nb">pvsifd</span>   a<span class="n">in</span><span class="p">,</span> i<span class="n">siz</span><span class="p">,</span> i<span class="n">hsiz</span><span class="p">,</span> <span class="mi">1</span>
-<span class="n">ftrk</span>      <span class="nb">partials</span> <span class="n">ffr</span><span class="p">,</span> <span class="n">fphs</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span>
-<span class="n">part2txt</span> <span class="s">"partialsh.txt"</span><span class="p">,</span><span class="n">ftrk</span>
+f<span class="n">fr</span><span class="p">,</span>f<span class="n">phs</span>  <span class="nb">pvsifd</span>   a<span class="n">in</span><span class="p">,</span> i<span class="n">siz</span><span class="p">,</span> i<span class="n">hsiz</span><span class="p">,</span> <span class="mi">1</span>
+f<span class="n">trk</span>      <span class="nb">partials</span> f<span class="n">fr</span><span class="p">,</span> f<span class="n">phs</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span>
+<span class="nb">part2txt</span> <span class="s">"partialsh.txt"</span><span class="p">,</span>f<span class="n">trk</span>
 <span class="kd">endin</span>
 
 <span class="nt">&lt;/CsInstruments&gt;</span>
@@ -115,7 +115,7 @@ a<span class="n">in</span> <span class="nb">diskin2</span> S<span class="n">1</s
         <p>The example above shows partial tracking of an ifd-analysis signal and cubic-phase additive resynthesis with pitch shifting.</p>
       </div>
       <div class="refsect1">
-        <a id="idm162973"></a>
+        <a id="idm165157"></a>
         <h2>Credits</h2>
         <p>
       </p>

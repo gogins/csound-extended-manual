@@ -39,19 +39,19 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98317"></a>
+        <a id="idm99345"></a>
         <h2>Description</h2>
         <p>
      Apply a gammatone filter of various orders to an audio signal.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98320"></a>
+        <a id="idm99348"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">aout <span class="command"><strong>gtf</strong></span> ain, kfreq, idecay[, iorder, iphase]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm98324"></a>
+        <a id="idm99352"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>idecay</em></span> -- rate of decay
@@ -66,7 +66,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98332"></a>
+        <a id="idm99360"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> -- audio signal to be filtered.
@@ -81,21 +81,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98340"></a>
+        <a id="idm99368"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the gtf opcode. Click to play: <a class="ulink" href="examples/gtf.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">gtf.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm98345"></a>
+          <a id="idm99373"></a>
           <p class="title">
-            <strong>Example 399. Example of the gtf opcode.</strong>
+            <strong>Example 404. Example of the gtf opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm98352"></a>
+              <a id="idm99380"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -117,12 +117,12 @@
 
 <span class="kd">instr</span> <span class="nf">1</span>	 
                                         
-k<span class="n">cps</span>  <span class="nb">init</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p4</span><span class="p">)</span> 
+k<span class="n">cps</span>  <span class="nb">init</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p4</span><span class="p">)</span> 
 a<span class="n">sig1</span> <span class="nb">vco2</span> <span class="mf">0.5</span><span class="p">,</span> k<span class="n">cps</span> <span class="c1">; SOUND</span>
 
-k<span class="n">freq1</span> <span class="nb">linseg</span> <span class="nb">p5</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p6</span> <span class="c1">; frequency filter 1</span>
-k<span class="n">freq2</span> <span class="nb">expseg</span> <span class="nb">p6</span><span class="p">,</span> <span class="nb">p3</span><span class="p">,</span> <span class="nb">p5</span> <span class="c1">; frequency filter 2</span>
-i<span class="n">decay</span> <span class="o">=</span> <span class="nb">p7</span> <span class="c1">; keep it very small</span>
+k<span class="n">freq1</span> <span class="nb">linseg</span> <span class="vi">p5</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p6</span> <span class="c1">; frequency filter 1</span>
+k<span class="n">freq2</span> <span class="nb">expseg</span> <span class="vi">p6</span><span class="p">,</span> <span class="vi">p3</span><span class="p">,</span> <span class="vi">p5</span> <span class="c1">; frequency filter 2</span>
+i<span class="n">decay</span> <span class="o">=</span> <span class="vi">p7</span> <span class="c1">; keep it very small</span>
 
 a<span class="n">filter1</span> <span class="n">gtf</span> a<span class="n">sig1</span><span class="p">,</span> k<span class="n">freq1</span><span class="p">,</span> i<span class="n">decay</span> <span class="c1">; SOUND - filter 1</span>
 a<span class="n">filter2</span> <span class="n">gtf</span> a<span class="n">sig1</span><span class="p">,</span> k<span class="n">freq2</span><span class="p">,</span> i<span class="n">decay</span> <span class="c1">; SOUND - filter 2</span>
@@ -155,10 +155,10 @@ a<span class="n">filter2</span> <span class="nb">balance</span> a<span class="n"
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98470"></a>
+        <a id="idm99498"></a>
       </div>
       <div class="refsect1">
-        <a id="idm98471"></a>
+        <a id="idm99499"></a>
         <h2>Credits</h2>
         <p>By: John ffitch 2019</p>
       </div>

@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm234924"></a>
+        <a id="idm239089"></a>
         <h2>Description</h2>
         <p>
     An event-sequencer in which time can be controlled by a
@@ -47,12 +47,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm234927"></a>
+        <a id="idm239092"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ktrig  <span class="command"><strong>timedseq</strong></span>  ktimpnt, ifn, kp1 [,kp2, kp3, ...,kpN]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm234931"></a>
+        <a id="idm239096"></a>
         <h2>Initialization</h2>
         <p>
     <span class="emphasis"><em>ifn</em></span> -- number of table containing sequence
@@ -60,7 +60,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm234935"></a>
+        <a id="idm239100"></a>
         <h2>Performance</h2>
         <p>
     <span class="emphasis"><em>ktri</em></span> -- output trigger signal
@@ -183,20 +183,20 @@ ktrig   <span class="opc">timedseq</span> ktimpnt ,1 ,kp1, kp2, kp3, kp4, kp5
   </p>
       </div>
       <div class="refsect1">
-        <a id="idm234973"></a>
+        <a id="idm239138"></a>
         <h2>Examples</h2>
         <p>
       Here is a complete example of the timedseq opcode. Click to play: <a class="ulink" href="examples/timedseq.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">timedseq.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm234978"></a>
+          <a id="idm239143"></a>
           <p class="title">
-            <strong>Example 1074. Example of the timedseq opcode.</strong>
+            <strong>Example 1090. Example of the timedseq opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm234985"></a>
+              <a id="idm239150"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -227,7 +227,7 @@ gi<span class="n">seq</span> <span class="nb">ftgen</span> <span class="mi">0</s
 <span class="kd">instr</span>	<span class="nf">1</span>
 
 i<span class="n">beats</span>	<span class="o">=</span> <span class="mi">8</span>						<span class="c1">;lengths of sequence in beats</span>
-i<span class="n">tempo</span>	<span class="o">=</span> <span class="nb">p4</span>						<span class="c1">;tempo</span>
+i<span class="n">tempo</span>	<span class="o">=</span> <span class="vi">p4</span>						<span class="c1">;tempo</span>
 i<span class="n">BPS</span>	<span class="o">=</span> i<span class="n">tempo</span><span class="o">/</span><span class="mi">60</span>					<span class="c1">;beats per second	</span>
 k<span class="n">phase</span>	<span class="nb">phasor</span>	i<span class="n">BPS</span><span class="o">/</span>i<span class="n">beats</span>				<span class="c1">;phasor to move through table</span>
 k<span class="n">pointer</span> <span class="o">=</span> k<span class="n">phase</span><span class="o">*</span>i<span class="n">beats</span>				<span class="c1">;multiply phase (range 0 - 1) by the number of beats contained within the sequence</span>
@@ -241,8 +241,8 @@ k<span class="n">trigger</span>   <span class="nb">timedseq</span> k<span class=
 							<span class="c1">;Durations here should be positive, because negative values for duration would indicate a held note.</span>
 <span class="kd">instr</span>	<span class="nf">2</span>
 
-a<span class="n">env</span>	<span class="nb">linseg</span>	<span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">p3</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">0</span>			<span class="c1">;amplitude envelope</span>
-a<span class="n">sig</span>	<span class="nb">vco2</span>	<span class="mf">0.4</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="nb">p4</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span>
+a<span class="n">env</span>	<span class="nb">linseg</span>	<span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="vi">p3</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">0</span>			<span class="c1">;amplitude envelope</span>
+a<span class="n">sig</span>	<span class="nb">vco2</span>	<span class="mf">0.4</span><span class="p">,</span> <span class="nb">cpspch</span><span class="p">(</span><span class="vi">p4</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span>
 	<span class="nb">outs</span>	a<span class="n">sig</span><span class="o">*</span>a<span class="n">env</span><span class="p">,</span> a<span class="n">sig</span><span class="o">*</span>a<span class="n">env</span>			
 <span class="kd">endin</span>
 
@@ -263,7 +263,7 @@ a<span class="n">sig</span>	<span class="nb">vco2</span>	<span class="mf">0.4</s
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm235258"></a>
+        <a id="idm239423"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="GEN02.html" title="GEN02"><em class="citetitle">GEN02</em></a>,
@@ -274,7 +274,7 @@ a<span class="n">sig</span>	<span class="nb">vco2</span>	<span class="mf">0.4</s
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm235271"></a>
+        <a id="idm239436"></a>
         <h2>Credits</h2>
         <p>
       Author: Gabriel Maldonado

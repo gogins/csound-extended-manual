@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm192738"></a>
+        <a id="idm195151"></a>
         <h2>Description</h2>
         <p>
      This opcode takes an array of filter paramerers in
@@ -48,13 +48,13 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm192741"></a>
+        <a id="idm195154"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">asig<span class="command"><strong>resonbnk</strong></span> ain,
     kPar[],kmin,kmax,iper[,imode,iscal,iskip] </pre>
       </div>
       <div class="refsect1">
-        <a id="idm192745"></a>
+        <a id="idm195158"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>iper</em></span> -- filter parameter interpolation
@@ -74,7 +74,7 @@
         </p>
       </div>
       <div class="refsect1">
-        <a id="idm192755"></a>
+        <a id="idm195168"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> -- output signal
@@ -93,7 +93,7 @@
                       </p>
       </div>
       <div class="refsect1">
-        <a id="idm192767"></a>
+        <a id="idm195180"></a>
         <p>
         This opcode is part of a suite of streaming linear prediction
         opcodes. It takes in an array of filter parameters in
@@ -106,21 +106,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm192769"></a>
+        <a id="idm195182"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the resonbnk opcode using an audio input
       signal as lpc source. It uses the file <a class="ulink" href="examples/resonbnk.csd" target="_top"><em class="citetitle">resonbnk.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm192774"></a>
+          <a id="idm195187"></a>
           <p class="title">
-            <strong>Example 876. Example of the resonbnk opcode.</strong>
+            <strong>Example 885. Example of the resonbnk opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm192781"></a>
+              <a id="idm195194"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -139,7 +139,7 @@ a<span class="n">1</span> <span class="nb">diskin</span> <span class="s">"fox.wa
 k<span class="n">cfs</span><span class="p">[],</span>k<span class="n">rms</span><span class="p">,</span>k<span class="n">err</span><span class="p">,</span>k<span class="n">cps</span> <span class="n">lpcanal</span> a<span class="n">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span>gi<span class="n">fw</span>
 a<span class="n">2</span> <span class="nb">rand</span> <span class="vg">0dbfs</span>
 k<span class="n">par</span><span class="p">[]</span> a<span class="n">poleparams</span> k<span class="n">cfs</span>
-k<span class="n">min</span> <span class="nb">expseg</span> <span class="mi">8000</span><span class="p">,</span><span class="nb">p3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="nb">p3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">600</span>
+k<span class="n">min</span> <span class="nb">expseg</span> <span class="mi">8000</span><span class="p">,</span><span class="vi">p3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="vi">p3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="mi">600</span>
 a<span class="n">3</span> <span class="n">resonbnk</span> a<span class="n">2</span><span class="o">*</span>k<span class="n">rms</span><span class="o">*</span>k<span class="n">err</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span>k<span class="n">par</span><span class="p">,</span>k<span class="n">min</span><span class="p">,</span><span class="mi">16000</span><span class="o">-</span>k<span class="n">min</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1</span>
   <span class="nb">out</span> a<span class="n">3</span>
 <span class="kd">endin</span>
@@ -160,7 +160,7 @@ a<span class="n">3</span> <span class="n">resonbnk</span> a<span class="n">2</sp
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm192898"></a>
+        <a id="idm195311"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="lpcanal.html" title="lpcanal"><em class="citetitle">lpcanal</em></a>,

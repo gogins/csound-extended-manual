@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm23703"></a>
+        <a id="idm24034"></a>
         <h2>Description</h2>
         <p>
      This opcode implements an allpole filter using direct
@@ -47,12 +47,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm23706"></a>
+        <a id="idm24037"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>allpole</strong></span> asig, kCoef[]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm23710"></a>
+        <a id="idm24041"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kCoef[]</em></span> -- all-pole filter coefficients
@@ -66,7 +66,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm23718"></a>
+        <a id="idm24049"></a>
         <p>
         This opcode is part of a suite of streaming linear prediction
         opcodes. It implements an allpole filter using coefficients
@@ -88,21 +88,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm23722"></a>
+        <a id="idm24053"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the allpole opcode using an audio input
       signal as lpc source. It uses the file <a class="ulink" href="examples/allpole.csd" target="_top"><em class="citetitle">allpole.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm23727"></a>
+          <a id="idm24058"></a>
           <p class="title">
-            <strong>Example 47. Example of the allpole opcode.</strong>
+            <strong>Example 48. Example of the allpole opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm23734"></a>
+              <a id="idm24065"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -145,14 +145,14 @@ a<span class="n">3</span> <span class="nb">dcblock</span> a<span class="n">3</sp
       function table as lpc source. It uses the file <a class="ulink" href="examples/allpole-2.csd" target="_top"><em class="citetitle">allpole-2.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm23845"></a>
+          <a id="idm24176"></a>
           <p class="title">
-            <strong>Example 48. Another example of the allpole opcode.</strong>
+            <strong>Example 49. Another example of the allpole opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm23852"></a>
+              <a id="idm24183"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -170,7 +170,7 @@ gi<span class="n">fw</span> <span class="nb">ftgen</span> <span class="mi">0</sp
 
 <span class="kd">instr</span> <span class="nf">1</span>
 k<span class="n">1</span> <span class="nb">init</span> <span class="mi">0</span>
-k<span class="n">ts</span> <span class="o">=</span> <span class="nb">p4</span>
+k<span class="n">ts</span> <span class="o">=</span> <span class="vi">p4</span>
 k<span class="n">cfs</span><span class="p">[],</span>k<span class="n">rms</span><span class="p">,</span>k<span class="n">err</span><span class="p">,</span>k<span class="n">cps</span> <span class="n">lpcanal</span> k<span class="n">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>gi<span class="n">fn</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span><span class="vg">ksmps</span><span class="p">,</span>gi<span class="n">fw</span>
 <span class="k">if</span> k<span class="n">cps</span> <span class="o">&gt;</span> <span class="mi">180</span> <span class="k">then</span>
   k<span class="n">cps</span> <span class="o">=</span> <span class="mi">180</span>
@@ -200,7 +200,7 @@ a<span class="n">3</span> <span class="nb">dcblock</span> a<span class="n">3</sp
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm24002"></a>
+        <a id="idm24333"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="lpcfilter.html" title="lpcfilter"><em class="citetitle">lpcfilter</em></a>,

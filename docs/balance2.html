@@ -39,19 +39,19 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm31157"></a>
+        <a id="idm31617"></a>
         <h2>Description</h2>
         <p>
       The rms power of asig can be interrogated, set, or adjusted to match that of a comparator signal.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm31160"></a>
+        <a id="idm31620"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">ares <span class="command"><strong>balance2</strong></span> asig, acomp [, ihp] [, iskip]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm31164"></a>
+        <a id="idm31624"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ihp</em></span> (optional) -- half-power point (in Hz) of a special internal low-pass filter. The default value is 10.
@@ -61,7 +61,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm31172"></a>
+        <a id="idm31632"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>asig</em></span> -- input audio signal
@@ -87,21 +87,21 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm31188"></a>
+        <a id="idm31648"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the balance2 opcode. Click to play: <a class="ulink" href="examples/balance2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">balance2.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm31193"></a>
+          <a id="idm31653"></a>
           <p class="title">
-            <strong>Example 82. Example of the balance2 opcode.</strong>
+            <strong>Example 84. Example of the balance2 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm31200"></a>
+              <a id="idm31660"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -127,7 +127,7 @@ a<span class="n">1</span> <span class="nb">reson</span> a<span class="n">src</sp
 a<span class="n">2</span> <span class="nb">reson</span> a<span class="n">1</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span>
 
 <span class="c1">; Balance the filtered signal with the source.</span>
-a<span class="n">fin</span> <span class="n">balance2</span> a<span class="n">2</span><span class="p">,</span> a<span class="n">src</span>
+a<span class="n">fin</span> <span class="nb">balance2</span> a<span class="n">2</span><span class="p">,</span> a<span class="n">src</span>
      <span class="nb">outs</span> a<span class="n">fin</span><span class="p">,</span> a<span class="n">fin</span>
 
 <span class="kd">endin</span>
@@ -150,7 +150,7 @@ a<span class="n">fin</span> <span class="n">balance2</span> a<span class="n">2</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm31279"></a>
+        <a id="idm31739"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="balance.html" title="balance"><em class="citetitle">balance</em></a>,
@@ -159,7 +159,7 @@ a<span class="n">fin</span> <span class="n">balance2</span> a<span class="n">2</
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm31288"></a>
+        <a id="idm31748"></a>
         <h2>Credits</h2>
         <p>
       </p>
