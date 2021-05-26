@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Started fresh build of live Csound Reference Manual..."
+sudo -k apt-get install -y docbook docbook-xsl xsltproc
 bash update-dependency-submodules.sh
 cd manual
 git stash
