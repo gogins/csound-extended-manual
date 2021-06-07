@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26474"></a>
+        <a id="idm26510"></a>
         <h2>Description</h2>
         <p>Plugin opcode in serial.</p>
         <p>
@@ -47,13 +47,13 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26478"></a>
+        <a id="idm26514"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kval <span class="command"><strong>arduinoReadF</strong></span> iPort, iStream1,
       iStream2, iStream3</pre>
       </div>
       <div class="refsect1">
-        <a id="idm26482"></a>
+        <a id="idm26518"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>iPort</em></span> -- port number obtained from a
@@ -84,20 +84,20 @@
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm26492"></a>
+        <a id="idm26528"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the arduinoReadF opcode. It uses the file <a class="ulink" href="examples/arduinoReadF.csd" target="_top"><em class="citetitle">arduinoReadF.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm26497"></a>
+          <a id="idm26533"></a>
           <p class="title">
             <strong>Example 59. Example of the arduinoReadF opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm26504"></a>
+              <a id="idm26540"></a>
               <pre class="programlisting">
 Arduino-Joystick2Csound1g-fm1-port (version with smoothing)
 
@@ -120,7 +120,7 @@ gi<span class="n">port</span> <span class="nb">init</span> <span class="mi">0</s
 
 <span class="c1">// NOTE: change USB port "/dev/cu.usbmodem1414301" to correspond</span>
 <span class="c1">//       with USB port used by Arduino on your system</span>
-gi<span class="n">port</span> a<span class="n">rduinoStart</span>  <span class="s">"//dev/ttyACM0"</span><span class="p">,</span> <span class="mi">9600</span>    <span class="c1">// for GNULinux</span>
+gi<span class="n">port</span> <span class="nb">arduinoStart</span>  <span class="s">"//dev/ttyACM0"</span><span class="p">,</span> <span class="mi">9600</span>    <span class="c1">// for GNULinux</span>
 
 <span class="kd">instr</span> <span class="nf">1</span>
 
@@ -208,7 +208,7 @@ void loop() {
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26627"></a>
+        <a id="idm26663"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="arduinoStart.html" title="arduinoStart"><em class="citetitle"></em>arduinoStart</a>,
@@ -217,7 +217,7 @@ void loop() {
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26636"></a>
+        <a id="idm26672"></a>
         <h2>Credits</h2>
         <p>
       </p>

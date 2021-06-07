@@ -1,0 +1,190 @@
+<html>
+<head>
+    <title>Minimal Example using Csound for WebAssembly</title>
+ </head>
+<body style="background-color:LightGrey;">
+    <script src="CsoundAudioNode.js"></script>
+    <script src="csound_loader.js"></script>
+    <script>
+    var csound_message_callback = function(message) {
+        var messages_textarea = document.getElementById("console");
+        var existing = messages_textarea.value;
+        messages_textarea.value = existing + message;
+        messages_textarea.scrollTop = messages_textarea.scrollHeight;
+    }
+    var onPlayClick = async function() {
+        let messages_textarea = document.getElementById("console");
+        messages_textarea.value = "";
+        let csound_ = await get_csound(csound_message_callback);
+        if (csound_ == null) {
+            return;
+        }
+        let seconds = await csound_.GetScoreTime();
+        csound_message_callback('Score time: ' + seconds + '\n');
+        if (seconds > 0) {
+            csound_message_callback('Already playing...\n');
+            return;
+        }
+        let csd = document.getElementById('csd').value;
+        await csound_.CompileCsdText(csd);
+        await csound_.Start();
+        await csound_.Perform();
+        
+    }
+    var onPlayStop = async function() {
+        let csound_ = await get_csound(csound_message_callback);
+        let seconds = await csound_.GetScoreTime();
+        csound_message_callback("Score time: " + seconds + "\n");
+        if (seconds > 0) {
+            await csound_.Stop();
+            await csound_.Cleanup();
+            await csound_.Reset();
+    }
+        
+    }
+  </script>
+<h1 style="font-family:sans-serif;">mvmfilter</h1>
+<p>
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will spend a few seconds loading, then play. You can edit this code and replay it. 
+</p>
+<p>
+<input type="button" value="Play" onclick="onPlayClick()"/>
+<input type="button" value="Stop" onclick="onPlayStop()"/>
+<p>
+<textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;"><CsoundSynthesizer>
+<CsOptions>
+; Select audio/midi flags here according to platform
+-odac     ;;;real-time audio out
+;-iadc    ;;;uncomment -iadc if RT audio input is needed too
+; For Non-realtime ouput leave only the line below:
+; -o mvmfilter.wav -W ;;; for file output any platform
+</CsOptions>
+<CsInstruments>
+
+; Required settings for WebAudio:
+
+sr = 48000
+ksmps = 128
+nchnls = 2
+nchnls_i = 1
+
+; sr=     44100
+; ksmps=32
+0dbfs=1
+; nchnls=2
+
+gaverb init 0
+
+instr highQResonator
+  ap mpulse .5, 0
+  a1 mvmfilter ap, p4, .25
+  out a1, a1
+endin
+  
+instr dustyResonator
+  ap dust .1, 30
+  a1 mvmfilter ap, p4, .15
+  out a1, a1
+endin
+
+instr oscillator
+  ap mpulse .5, 0
+  kenv mad; sr .1, .2, .6, .4
+  a1 mvmfilter ap, p4, 1e6
+  a1 *= kenv
+  out a1, a1
+endin
+
+instr resonatorBank1
+  ap mpulse .5, 0
+  kampenv madsr .01, .2, .6, .4
+  kenv init 1
+  iDecayTime init 1
+  a1 mvmfilter ap, p4*1*kenv, iDecayTime 
+  a2 mvmfilter ap, p4*3*kenv, iDecayTime*.8
+  a3 mvmfilter ap, p4*5*kenv, iDecayTime*.4
+  a4 mvmfilter ap, p4*7*kenv, iDecayTime*.3
+  a5 mvmfilter ap, p4*9*kenv, iDecayTime*.2
+  a6 mvmfilter ap, p4*11*kenv, iDecayTime*.1
+  aout = (a1+a2+a3+a4+a5+a6) * kampenv * (.1667)
+  gaverb += aout * .3 
+  out aout, aout
+endin
+  
+instr resonatorBank2
+  ap noise 0.005, 0
+  kampenv madsr .01, .2, .6, .4
+  kenv init 1
+  iDecayTime init 1
+  a1 mvmfilter ap, p4*1*kenv, iDecayTime
+  a2 mvmfilter ap, p4*3*kenv, iDecayTime*.8
+  a3 mvmfilter ap, p4*5*kenv, iDecayTime*.5
+  a4 mvmfilter ap, p4*7*kenv, iDecayTime*.4
+  a5 mvmfilter ap, p4*9*kenv, iDecayTime*.3
+  a6 mvmfilter ap, p4*11*kenv, iDecayTime*.2
+  aout = (a1+a2+a3+a4+a5+a6) * kampenv * (.1667)
+  gaverb += aout * .3 
+  out aout, aout
+endin
+
+instr harmonicArp
+  avco vco2 .01, 50
+  avco moogladder2 avco, 3000, .1
+  kenv linseg 1.3,p3,2
+  kampenv madsr 4, .1, 1, .4
+  iDecayTime init .02
+  a1 mvmfilter avco, p4*1*kenv, iDecayTime
+  a2 mvmfilter avco, p4*2*kenv, iDecayTime
+  a3 mvmfilter avco, p4*3*kenv, iDecayTime
+  a4 mvmfilter avco, p4*4*kenv, iDecayTime
+  a5 mvmfilter avco, p4*5*kenv, iDecayTime
+  a6 mvmfilter avco, p4*6*kenv, iDecayTime
+  aout = (a1+a2+a3+a4+a5+a6) * kampenv * .3
+  aout tanh aout
+  gaverb += aout*.3
+  out aout, aout
+endin
+
+instr reverb
+  adel	init 0
+  ain = gaverb
+  aleftout, arightout reverbsc ain, ain, .91, 12000
+  outs    aleftout, arightout
+  gaverb = 0
+endin
+
+</CsInstruments>
+<CsScore>
+s
+; mvmfilter is basically a damped resonator
+i "highQResonator" 	0 1 220
+
+; putting some 'dust' through it
+i "dustyResonator" 	2 2 300
+
+; with a large time-constant it becomes an oscillator
+i "oscillator" 		4 3 440
+
+s
+; It works for a modal synthesis type use
+i "resonatorBank1" 	0 5 50
+i "resonatorBank1" 	2 5 100
+i "resonatorBank1" 	4 5 150
+
+s
+; and some slightly more interesting effects...
+i "resonatorBank2" 	0 5 50
+i "resonatorBank2" 	2 5 125
+i "harmonicArp" 	4 12 100
+i "resonatorBank2" 	7 5 50
+i "resonatorBank2" 	10 5 180
+i "reverb"		0 21
+
+
+</CsScore>
+</CsoundSynthesizer>
+</textarea>
+<textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
+</textarea>
+</body>
+</html>

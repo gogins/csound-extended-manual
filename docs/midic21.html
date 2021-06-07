@@ -39,20 +39,20 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm139166"></a>
+        <a id="idm138368"></a>
         <h2>Description</h2>
         <p>
       Allows a floating-point 21-bit MIDI signal scaled with a minimum and a maximum range.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm139169"></a>
+        <a id="idm138371"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">idest <span class="command"><strong>midic21</strong></span> ictlno1, ictlno2, ictlno3, imin, imax [, ifn]</pre>
         <pre class="synopsis">kdest <span class="command"><strong>midic21</strong></span> ictlno1, ictlno2, ictlno3, kmin, kmax [, ifn]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm139175"></a>
+        <a id="idm138377"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>idest</em></span> -- output signal
@@ -77,7 +77,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm139193"></a>
+        <a id="idm138395"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>kdest</em></span> -- output signal
@@ -101,28 +101,29 @@
             </tr>
             <tr>
               <td align="left" valign="top">
-                <p>Please note that the <span class="emphasis"><em>midic</em></span> family of opcodes are designed for MIDI triggered events, and don't require a channel number since they will respond to the same channel as the one that triggered the instrument (see <a class="link" href="massign.html" title="massign"><em class="citetitle">massign</em></a>). However they will crash if called from a score driven event.</p>
+                <p>Please note that the <span class="emphasis"><em>midic</em></span> family of
+      opcodes are designed for MIDI triggered events, and do not require a channel number since they will respond to the same channel as the one that triggered the instrument (see <a class="link" href="massign.html" title="massign"><em class="citetitle">massign</em></a>). However they will crash if called from a score driven event.</p>
               </td>
             </tr>
           </table>
         </div>
       </div>
       <div class="refsect1">
-        <a id="idm139208"></a>
+        <a id="idm138410"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the midic21 opcode. Click to play: <a class="ulink" href="examples/midic21.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">midic21.csd</em></a>.
 
       </p>
         <div class="example">
-          <a id="idm139213"></a>
+          <a id="idm138415"></a>
           <p class="title">
-            <strong>Example 582. Example of the midic21 opcode.</strong>
+            <strong>Example 579. Example of the midic21 opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm139220"></a>
+              <a id="idm138422"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span>
 <span class="nt">&lt;CsOptions&gt;</span>
@@ -179,7 +180,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm139315"></a>
+        <a id="idm138517"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="ctrl7.html" title="ctrl7"><em class="citetitle">ctrl7</em></a>,
@@ -193,7 +194,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm139334"></a>
+        <a id="idm138536"></a>
         <h2>Credits</h2>
         <p>
       </p>

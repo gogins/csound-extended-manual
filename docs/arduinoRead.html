@@ -39,7 +39,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26025"></a>
+        <a id="idm26061"></a>
         <h2>Description</h2>
         <p>Plugin opcode in serial.</p>
         <p>
@@ -47,12 +47,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26029"></a>
+        <a id="idm26065"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">kval <span class="command"><strong>arduinoRead</strong></span> iPort, iStream[, iSmooth]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm26033"></a>
+        <a id="idm26069"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>iPort</em></span> -- port number obtained from a
@@ -71,20 +71,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26044"></a>
+        <a id="idm26080"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the arduinoRead opcode. Click to play: <a class="ulink" href="examples/arduinoRead.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">arduinoRead.csd</em></a>.
       </p>
         <div class="example">
-          <a id="idm26049"></a>
+          <a id="idm26085"></a>
           <p class="title">
             <strong>Example 58. Example of the arduinoRead opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm26056"></a>
+              <a id="idm26092"></a>
               <pre class="programlisting">
 Arduino-Joystick2Csound1g-fm1-port (version with smoothing)
 
@@ -107,13 +107,13 @@ gi<span class="n">port</span> <span class="nb">init</span> <span class="mi">0</s
 
 <span class="c1">// NOTE: change USB port "/dev/cu.usbmodem1414301" to correspond</span>
 <span class="c1">//       with USB port used by Arduino on your system</span>
-gi<span class="n">port</span> a<span class="n">rduinoStart</span>  <span class="s">"//dev/ttyACM0"</span><span class="p">,</span> <span class="mi">9600</span>    <span class="c1">// for GNULinux</span>
+gi<span class="n">port</span> <span class="nb">arduinoStart</span>  <span class="s">"//dev/ttyACM0"</span><span class="p">,</span> <span class="mi">9600</span>    <span class="c1">// for GNULinux</span>
 
 <span class="kd">instr</span> <span class="nf">1</span>
 
- k<span class="n">Y</span>  a<span class="n">rduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">1</span> <span class="c1">; Joystick Y</span>
- k<span class="n">X</span>  a<span class="n">rduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">2</span> <span class="c1">; Joystick X</span>
- k<span class="n">SW</span> a<span class="n">rduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">3</span> <span class="c1">; Joystick Button/Switch</span>
+ k<span class="n">Y</span>  <span class="nb">arduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">1</span> <span class="c1">; Joystick Y</span>
+ k<span class="n">X</span>  <span class="nb">arduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">2</span> <span class="c1">; Joystick X</span>
+ k<span class="n">SW</span> <span class="nb">arduinoRead</span> gi<span class="n">port</span><span class="p">,</span> <span class="mi">3</span> <span class="c1">; Joystick Button/Switch</span>
 
 k<span class="n">Amp</span>  <span class="nb">init</span> <span class="mi">0</span>
 k<span class="n">Freq</span> <span class="nb">init</span> <span class="mi">0</span>
@@ -271,7 +271,7 @@ void put_val(int senChan, int senVal)
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26449"></a>
+        <a id="idm26485"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="arduinoStart.html" title="arduinoStart"><em class="citetitle"></em>arduinoStart</a>,
@@ -279,7 +279,7 @@ void put_val(int senChan, int senVal)
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm26456"></a>
+        <a id="idm26492"></a>
         <h2>Credits</h2>
         <p>
       </p>
