@@ -71,11 +71,10 @@ def format_playable_example(filename, text):
         if (csound_ == null) {
             return;
         }
-        if (csound_.IsPlaying() == true) {
-            csound_message_callback('Already playing...\\n');
-            return;
-        }
         let csd = document.getElementById('csd').value;
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
         await csound_.CompileCsdText(csd);
         await csound_.Start();
         await csound_.Perform();
