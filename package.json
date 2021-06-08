@@ -1,0 +1,26 @@
+{
+  "main": "docs/indexframes.html",
+  "name": "indexframes",
+  "description": " csound-extended-manual",
+  "version": "0.1.0",
+  "keywords": [ "Csound", "node-webkit" ],
+  "nodejs": true,
+  "node-remote": "http://<all-urls>/*",
+  "window": {
+    "title": "indexframes",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true,
+    "maximized": true,
+    "position": "mouse",
+    "fullscreen": true
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": {
+    "--enable-logging": true,
+    "--v=1": 1,
+    "--device-scale-factor": 4
+  }
+}
