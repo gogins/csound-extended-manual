@@ -93,7 +93,7 @@
       <p>
     </p>
       <p>
-      While there is no theoretical maximum ratio, it makes no sense to have a very high ratio here, as the software buffer has to fill the hardware buffer before returning. If the ratio is high, it will take a long time, defeating the purpose of setting a small value for <a class="link" href="CommandFlagsCategory.html#FlagsCatMinusLowerB"><em class="citetitle">-b</em></a>.
+      While there is no theoretical maximum ratio, it makes no sense to have a very high ratio here, as the software buffer has to fill the hardware buffer before returning. If the ratio is high, it will take a long time, defeating the purpose of setting a small value for <a class="link" href="CommandFlagsCategory.html#FlagsCatMinusLowerB"><em class="citetitle">-b</em></a>
     </p>
       <p>
       The value of <a class="link" href="CommandFlagsCategory.html#FlagsCatMinusLowerB"><em class="citetitle">-b</em></a> is something that will need to be varied depending on the complexity of the instrument you're working with, but because it's intimately related to the value of ksmps, it's better to synchronise it with <a class="link" href="ksmps.html" title="ksmps"><em class="citetitle">ksmps</em></a> and go from there. One way to do it is to decide how long the release on your envelopes might need to be at maximum (for desired effect), set the release on all envelopes to maximum, give yourself a generous value for <a class="link" href="CommandFlagsCategory.html#FlagsCatMinusLowerB"><em class="citetitle">-b</em></a>,  and then play. If it breaks up, double ksmps, repeat until smooth, then bring the value of <a class="link" href="CommandFlagsCategory.html#FlagsCatMinusLowerB"><em class="citetitle">-b</em></a> down as far as possible.

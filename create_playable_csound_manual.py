@@ -71,9 +71,7 @@ def format_playable_example(filename, text):
         if (csound_ == null) {
             return;
         }
-        let seconds = await csound_.GetScoreTime();
-        csound_message_callback('Score time: ' + seconds + '\\n');
-        if (seconds > 0) {
+        if (csound_.IsPlaying() == true) {
             csound_message_callback('Already playing...\\n');
             return;
         }
@@ -85,14 +83,9 @@ def format_playable_example(filename, text):
     }
     var onPlayStop = async function() {
         let csound_ = await get_csound(csound_message_callback);
-        let seconds = await csound_.GetScoreTime();
-        csound_message_callback("Score time: " + seconds + "\\n");
-        if (seconds > 0) {
-            await csound_.Stop();
-            await csound_.Cleanup();
-            await csound_.Reset();
-    }
-        
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
     }
   </script>
 <h1 style="font-family:sans-serif;">'''
@@ -105,6 +98,7 @@ This should play if your Web browser has WebAssembly enabled (most do). Most exa
 <p>
 <input type="button" value="Play" onclick="onPlayClick()"/>
 <input type="button" value="Stop" onclick="onPlayStop()"/>
+<input type="button" value="Back" onclick="window.history.back()"/>
 <p>
 <textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;">'''
         fout.write(chunk)
@@ -148,9 +142,12 @@ for filename in source_pages:
             print('Rewriting:', source_pathname, 'to:', target_pathname)
             with open(source_pathname, 'r') as source_file:
                 source_page = source_file.read()
-                source_page = source_page.replace("It uses the file ", "Click to play: ")
+                source_page = source_page.replace("It uses the file ", "")
                 # Imitate a button.
-                source_page = source_page.replace('.csd" target="_top">', '.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;">')
+                # Original is like this:
+                # <a class="ulink" href="examples/abs.csd" target="_top"><em class="citetitle">abs.csd</em></a>.
+                source_page = source_page.replace('.csd" target="_top">', '.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play ')
+                source_page = source_page.replace('</em></a>.', '</em></a>')
                 with open(target_pathname, 'w') as target_file:
                     target_file.write(source_page)
         else:

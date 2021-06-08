@@ -74,20 +74,20 @@
       <span class="emphasis"><em>vadd_i</em></span> adds the value of <span class="emphasis"><em>ival</em></span> to each element of the vector contained in the table <span class="emphasis"><em>ifn</em></span>, starting from table index <span class="emphasis"><em>idstoffset</em></span>. This enables you to process a specific section of a table by specifying the offset and the number of elements to be processed. Offset is counted starting from 0, so if no offset is specified (or set to 0), the table will be modified from the beginning.
     </p>
         <p>
-      This opcode runs only on initialization, there is a k-rate version of this opcode called <a class="link" href="vadd.html" title="vadd"><em class="citetitle">vadd</em></a>.
+      This opcode runs only on initialization, there is a k-rate version of this opcode called <a class="link" href="vadd.html" title="vadd"><em class="citetitle">vadd</em></a>
     </p>
         <p>
       Negative values for <span class="emphasis"><em>idstoffset</em></span> are valid. Elements from the vector that are outside the table, will be discarded, and they will not wrap around the table.
     </p>
         <p>
-      In all these opcodes, the resulting vectors are stored in <span class="emphasis"><em>ifn</em></span>, overriding the intial vectors. If you want to keep initial vector, use <a class="link" href="vcopy.html" title="vcopy"><em class="citetitle">vcopy</em></a> or <a class="link" href="vcopy_i.html" title="vcopy_i"><em class="citetitle">vcopy_i</em></a> to copy it in another table. All these operators are designed to be used together with other opcodes that operate with vectorial signals such as <a class="link" href="vcella.html" title="vcella"><em class="citetitle">vcella</em></a>, <a class="link" href="adsynt.html" title="adsynt"><em class="citetitle">adsynt</em></a>, <a class="link" href="adsynt2.html" title="adsynt2"><em class="citetitle">adsynt2</em></a>, etc.  They can also be useful in conjunction with the spectral opcodes <a class="link" href="pvsftw.html" title="pvsftw"><em class="citetitle">pvsftw</em></a> and <a class="link" href="pvsftr.html" title="pvsftr"><em class="citetitle">pvsftr</em></a>.
+      In all these opcodes, the resulting vectors are stored in <span class="emphasis"><em>ifn</em></span>, overriding the intial vectors. If you want to keep initial vector, use <a class="link" href="vcopy.html" title="vcopy"><em class="citetitle">vcopy</em></a> or <a class="link" href="vcopy_i.html" title="vcopy_i"><em class="citetitle">vcopy_i</em></a> to copy it in another table. All these operators are designed to be used together with other opcodes that operate with vectorial signals such as <a class="link" href="vcella.html" title="vcella"><em class="citetitle">vcella</em></a>, <a class="link" href="adsynt.html" title="adsynt"><em class="citetitle">adsynt</em></a>, <a class="link" href="adsynt2.html" title="adsynt2"><em class="citetitle">adsynt2</em></a>, etc.  They can also be useful in conjunction with the spectral opcodes <a class="link" href="pvsftw.html" title="pvsftw"><em class="citetitle">pvsftw</em></a> and <a class="link" href="pvsftr.html" title="pvsftr"><em class="citetitle">pvsftr</em></a>
     </p>
       </div>
       <div class="refsect1">
         <a id="idm248067"></a>
         <h2>Examples</h2>
         <p>
-      Here is an example of the vadd_i opcode. Click to play: <a class="ulink" href="examples/vadd_i.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">vadd_i.csd</em></a>.
+      Here is an example of the vadd_i opcode. <a class="ulink" href="examples/vadd_i.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">vadd_i.csd</em></a>
 
       </p>
         <div class="example">
@@ -167,7 +167,7 @@ k<span class="n">count</span> <span class="o">=</span> k<span class="n">count</s
         <a id="idm248221"></a>
         <h2>See also</h2>
         <p>
-      <a class="link" href="vadd.html" title="vadd"><em class="citetitle">vadd</em></a>, <a class="link" href="vmult_i.html" title="vmult_i"><em class="citetitle">vmult_i</em></a>, <a class="link" href="vpow_i.html" title="vpow_i"><em class="citetitle">vpow_i</em></a> and <a class="link" href="vexp_i.html" title="vexp_i"><em class="citetitle">vexp_i</em></a>.
+      <a class="link" href="vadd.html" title="vadd"><em class="citetitle">vadd</em></a>, <a class="link" href="vmult_i.html" title="vmult_i"><em class="citetitle">vmult_i</em></a>, <a class="link" href="vpow_i.html" title="vpow_i"><em class="citetitle">vpow_i</em></a> and <a class="link" href="vexp_i.html" title="vexp_i"><em class="citetitle">vexp_i</em></a>
     </p>
       </div>
       <div class="refsect1">

@@ -54,7 +54,7 @@
         <h2>Csound command line flags</h2>
         <p>
         Listed below are the command line flags available in Csound6 in alphabetical order. Various platform
-        implementations may not react the same way to different flags! You can view the command line flags organized by category in <a class="link" href="CommandFlagsCategory.html" title="Command-line Flags (by Category)"><em class="citetitle">Command-line Flags (by Category)</em></a>.
+        implementations may not react the same way to different flags! You can view the command line flags organized by category in <a class="link" href="CommandFlagsCategory.html" title="Command-line Flags (by Category)"><em class="citetitle">Command-line Flags (by Category)</em></a>
       </p>
         <p>
         The command line arguments are of 2 types: <span class="emphasis"><em>flags</em></span> arguments (beginning with a <span class="quote">“<span class="quote">-</span>”</span>,<span class="quote">“<span class="quote">--</span>”</span> or <span class="quote">“<span class="quote">-+</span>”</span>), and <span class="emphasis"><em>name</em></span> arguments (such as filenames). Certain flag arguments take a following name or numeric argument. Flags that start with <span class="quote">“<span class="quote">--</span>”</span> and <span class="quote">“<span class="quote">-+</span>”</span> usually take an argument themselves using <span class="quote">“<span class="quote">=</span>”</span>.
@@ -509,13 +509,13 @@
             </dt>
             <dd>
               <p>
-              Input soundfile name. If not a full pathname, the file will be sought first in the current directory, then in that given by the environment variable <a class="link" href="CommandEnvironment.html" title="Csound Environment Variables"><em class="citetitle">SSDIR</em></a> (if defined), then by <a class="link" href="CommandEnvironment.html" title="Csound Environment Variables"><em class="citetitle">SFDIR</em></a>. The name <span class="emphasis"><em>stdin</em></span> will cause audio to be read from standard input.
+              Input soundfile name. If not a full pathname, the file will be sought first in the current directory, then in that given by the environment variable <a class="link" href="CommandEnvironment.html" title="Csound Environment Variables"><em class="citetitle">SSDIR</em></a> (if defined), then by <a class="link" href="CommandEnvironment.html" title="Csound Environment Variables"><em class="citetitle">SFDIR</em></a> The name <span class="emphasis"><em>stdin</em></span> will cause audio to be read from standard input.
             </p>
               <p>
               The name <span class="emphasis"><em>devaudio</em></span> or <span class="emphasis"><em>adc</em></span> will request sound from the host audio input device. It is possible to select a device number by appending an integer value in the range 0 to 1023, or a device name separated by a : character (e.g. -iadc3, -iadc:hw:1,1). It depends on the host audio interface whether a device number or a name should be used. In the first case, an out of range number usually results in an error and listing the valid device numbers.
             </p>
               <p>
-              The audio coming in using <span class="emphasis"><em>-i</em></span> can be received using opcodes like <a class="link" href="inch.html" title="inch"><em class="citetitle">inch</em></a>.
+              The audio coming in using <span class="emphasis"><em>-i</em></span> can be received using opcodes like <a class="link" href="inch.html" title="inch"><em class="citetitle">inch</em></a>
             </p>
             </dd>
             <dt>
@@ -615,7 +615,7 @@
             </dt>
             <dd>
               <p>
-              If set to 1, Csound will ignore all options specified in the csd file's CsOptions section. See <a class="link" href="CommandUnifile.html" title="Unified File Format for Orchestras and Scores"><em class="citetitle">Unified File Format for Orchestras and Scores</em></a>.
+              If set to 1, Csound will ignore all options specified in the csd file's CsOptions section. See <a class="link" href="CommandUnifile.html" title="Unified File Format for Orchestras and Scores"><em class="citetitle">Unified File Format for Orchestras and Scores</em></a>
             </p>
             </dd>
             <dt>
@@ -1228,7 +1228,7 @@
             <dd>
               <p>
             Set UDP port on which to listen for commands and instruments/orchestra code
-            (implies --daemon).  See <a class="link" href="udpserver.html" title="UDP Server"><em class="citetitle">UDP Server</em></a>.
+            (implies --daemon).  See <a class="link" href="udpserver.html" title="UDP Server"><em class="citetitle">UDP Server</em></a>
           </p>
             </dd>
             <dt>

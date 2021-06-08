@@ -53,7 +53,7 @@
         <a id="idm28000"></a>
         <h2>Initialization</h2>
         <p>
-            <span class="emphasis"><em>iatsfile</em></span> – the ATS number (n in ats.n) or the name in quotes of the analysis file made using <a class="ulink" href="http://www-ccrma.stanford.edu/~juan/ATS.html" target="_top"><em class="citetitle">ATS</em></a>.
+            <span class="emphasis"><em>iatsfile</em></span> – the ATS number (n in ats.n) or the name in quotes of the analysis file made using <a class="ulink" href="http://www-ccrma.stanford.edu/~juan/ATS.html" target="_top"><em class="citetitle">ATS</em></a>
         </p>
         <p><span class="emphasis"><em>ibands</em></span> – number of noise bands that will be used in the resynthesis (the noise has a maximum of 25 bands)
         </p>
@@ -65,7 +65,7 @@
       <div class="refsect1">
         <a id="idm28013"></a>
         <h2>Performance</h2>
-        <p><span class="emphasis"><em>ktimepnt</em></span> – The time pointer in seconds used to index the ATS file. Used for <span class="emphasis"><em>ATSaddnz</em></span> exactly the same as for <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a> and <a class="link" href="ATSadd.html" title="ATSadd"><em class="citetitle">ATSadd</em></a>.</p>
+        <p><span class="emphasis"><em>ktimepnt</em></span> – The time pointer in seconds used to index the ATS file. Used for <span class="emphasis"><em>ATSaddnz</em></span> exactly the same as for <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a> and <a class="link" href="ATSadd.html" title="ATSadd"><em class="citetitle">ATSadd</em></a></p>
         <p><span class="emphasis"><em>ATSaddnz</em></span> and <a class="link" href="ATSadd.html" title="ATSadd"><em class="citetitle">ATSadd</em></a> are based on <a class="link" href="pvadd.html" title="pvadd"><em class="citetitle">pvadd</em></a> by Richard Karpen and use files created by Juan Pampin's ATS (<a class="ulink" href="http://www-ccrma.stanford.edu/~juan/ATS.html" target="_top"><em class="citetitle">Analysis - Transformation - Synthesis</em></a>).
         </p>
         <p><span class="emphasis"><em>ATSaddnz</em></span> also reads from an ATS file but it resynthesizes the noise from noise energy data contained in the ATS file. It uses a modified randi function to create band limited noise and modulates that with a cosine wave, to synthesize a user specified selection of frequency bands. Modulating the noise is required to put the band limited noise in the correct place in the frequency spectrum.
@@ -84,7 +84,7 @@
         <a id="idm28038"></a>
         <h2>Examples</h2>
         <p>
-      Here is a complete example of the ATSaddnz opcode. Click to play: <a class="ulink" href="examples/ATSaddnz.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">ATSaddnz.csd</em></a>.
+      Here is a complete example of the ATSaddnz opcode. <a class="ulink" href="examples/ATSaddnz.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">ATSaddnz.csd</em></a>
 
       </p>
         <div class="example">
@@ -135,7 +135,7 @@ a<span class="n">sig</span>	<span class="nb">ATSaddnz</span> k<span class="n">ti
         <p>Here we synthesize only the 25th noise band (<span class="emphasis"><em>ibandoffset</em></span> of 24 and <span class="emphasis"><em>ibands</em></span> of 1).
         </p>
         <p>
-      Here is another example of the ATSaddnz opcode. Click to play: <a class="ulink" href="examples/ATSaddnz-2.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">ATSaddnz-2.csd</em></a>.
+      Here is another example of the ATSaddnz opcode. <a class="ulink" href="examples/ATSaddnz-2.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">ATSaddnz-2.csd</em></a>
       </p>
         <div class="example">
           <a id="idm28112"></a>

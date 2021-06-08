@@ -54,7 +54,7 @@
         <a id="idm28307"></a>
         <h2>Initialization</h2>
         <p>
-        <span class="emphasis"><em>iatsfile</em></span> – the ATS number (n in ats.n) or the name in quotes of the analysis file made using <a class="ulink" href="http://www-ccrma.stanford.edu/~juan/ATS.html" target="_top"><em class="citetitle">ATS</em></a>.
+        <span class="emphasis"><em>iatsfile</em></span> – the ATS number (n in ats.n) or the name in quotes of the analysis file made using <a class="ulink" href="http://www-ccrma.stanford.edu/~juan/ATS.html" target="_top"><em class="citetitle">ATS</em></a>
         </p>
         <p><span class="emphasis"><em>ipartials</em></span> – number of partials that will be used in the resynthesis (the noise has a maximum of 25 bands)
         </p>
@@ -66,7 +66,7 @@
       <div class="refsect1">
         <a id="idm28320"></a>
         <h2>Performance</h2>
-        <p><span class="emphasis"><em>ktimepnt</em></span> – The time pointer in seconds used to index the ATS file. Used for <span class="emphasis"><em>ATSbufread</em></span> exactly the same as for <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a>.</p>
+        <p><span class="emphasis"><em>ktimepnt</em></span> – The time pointer in seconds used to index the ATS file. Used for <span class="emphasis"><em>ATSbufread</em></span> exactly the same as for <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a></p>
         <p>
         <span class="emphasis"><em>kfmod</em></span> – an input for performing pitch transposition or frequency modulation on all of the synthesized partials, if no fm or pitch change is desired then use a 1 for this value.
         </p>
@@ -77,7 +77,7 @@
         are all dependent on <span class="emphasis"><em>ATSbufread</em></span> just as
         <a class="link" href="pvcross.html" title="pvcross"><em class="citetitle">pvcross</em></a>
         and <a class="link" href="pvinterp.html" title="pvinterp"><em class="citetitle">pvinterp</em></a> are
-        on <a class="link" href="pvbufread.html" title="pvbufread"><em class="citetitle">pvbufread</em></a>. <span class="emphasis"><em>ATSbufread</em></span>
+        on <a class="link" href="pvbufread.html" title="pvbufread"><em class="citetitle">pvbufread</em></a> <span class="emphasis"><em>ATSbufread</em></span>
         reads data from and ATS data file and stores it in an internal
         data table of frequency, amplitude pairs. The data stored by
         an <span class="emphasis"><em>ATSbufread</em></span> can only be accessed by
@@ -85,14 +85,14 @@
         of Csound, an <span class="emphasis"><em>ATSbufread</em></span>  must come
         before (but not necessarily directly) any dependent unit
         generator. Besides the fact that
-        <span class="emphasis"><em>ATSbufread</em></span> does not output any data directly, it works almost exactly as <a class="link" href="ATSadd.html" title="ATSadd"><em class="citetitle">ATSadd</em></a>. The ugen uses a time pointer (<span class="emphasis"><em>ktimepnt</em></span>) to index the data in time, <span class="emphasis"><em>ipartials</em></span>, <span class="emphasis"><em>ipartialoffset</em></span> and <span class="emphasis"><em>ipartialincr</em></span> to select which partials to store in the table and <span class="emphasis"><em>kfmod</em></span> to scale partials in frequency.
+        <span class="emphasis"><em>ATSbufread</em></span> does not output any data directly, it works almost exactly as <a class="link" href="ATSadd.html" title="ATSadd"><em class="citetitle">ATSadd</em></a> The ugen uses a time pointer (<span class="emphasis"><em>ktimepnt</em></span>) to index the data in time, <span class="emphasis"><em>ipartials</em></span>, <span class="emphasis"><em>ipartialoffset</em></span> and <span class="emphasis"><em>ipartialincr</em></span> to select which partials to store in the table and <span class="emphasis"><em>kfmod</em></span> to scale partials in frequency.
         </p>
       </div>
       <div class="refsect1">
         <a id="idm28355"></a>
         <h2>Examples</h2>
         <p>
-      Here is an example of the ATSbufread opcode. Click to play: <a class="ulink" href="examples/ATSbufread.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">ATSbufread.csd</em></a>.
+      Here is an example of the ATSbufread opcode. <a class="ulink" href="examples/ATSbufread.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">ATSbufread.csd</em></a>
 
       </p>
         <div class="example">

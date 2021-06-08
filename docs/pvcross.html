@@ -42,7 +42,7 @@
         <a id="idm181049"></a>
         <h2>Description</h2>
         <p>
-      <span class="emphasis"><em>pvcross</em></span> applies the amplitudes from one phase vocoder analysis file to the data from a second file and then performs the resynthesis. The data is passed, as described above, from a previously called <a class="link" href="pvbufread.html" title="pvbufread"><em class="citetitle">pvbufread</em></a> unit. The two k-rate amplitude arguments are used to scale the amplitudes of each files separately before they are added together and used in the resynthesis (see below for further explanation). The frequencies of the first file are not used at all in this process. This unit simply allows for cross-synthesis through the application of the amplitudes of the spectra of one signal to the frequencies of a second signal. Unlike <a class="link" href="pvinterp.html" title="pvinterp"><em class="citetitle">pvinterp</em></a>, <span class="emphasis"><em>pvcross</em></span> does allow for the use of the <span class="emphasis"><em>ispecwp</em></span> as in <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a> and <a class="link" href="vpvoc.html" title="vpvoc"><em class="citetitle">vpvoc</em></a>.
+      <span class="emphasis"><em>pvcross</em></span> applies the amplitudes from one phase vocoder analysis file to the data from a second file and then performs the resynthesis. The data is passed, as described above, from a previously called <a class="link" href="pvbufread.html" title="pvbufread"><em class="citetitle">pvbufread</em></a> unit. The two k-rate amplitude arguments are used to scale the amplitudes of each files separately before they are added together and used in the resynthesis (see below for further explanation). The frequencies of the first file are not used at all in this process. This unit simply allows for cross-synthesis through the application of the amplitudes of the spectra of one signal to the frequencies of a second signal. Unlike <a class="link" href="pvinterp.html" title="pvinterp"><em class="citetitle">pvinterp</em></a>, <span class="emphasis"><em>pvcross</em></span> does allow for the use of the <span class="emphasis"><em>ispecwp</em></span> as in <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a> and <a class="link" href="vpvoc.html" title="vpvoc"><em class="citetitle">vpvoc</em></a>
     </p>
       </div>
       <div class="refsect1">
@@ -54,7 +54,7 @@
         <a id="idm181067"></a>
         <h2>Initialization</h2>
         <p>
-      <span class="emphasis"><em>ifile</em></span> -- the <span class="emphasis"><em>pvoc</em></span> number (n in pvoc.n) or the name in quotes of the analysis file made using <span class="emphasis"><em>pvanal</em></span>. (See <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a>.)
+      <span class="emphasis"><em>ifile</em></span> -- the <span class="emphasis"><em>pvoc</em></span> number (n in pvoc.n) or the name in quotes of the analysis file made using <span class="emphasis"><em>pvanal</em></span>. (See <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a>)
     </p>
         <p>
       <span class="emphasis"><em>ispecwp</em></span> (optional, default=0) -- if non-zero, attempts to preserve the spectral envelope while
@@ -96,7 +96,7 @@ apv     <span class="opc">pvcross</span>   ktime2, 1, "clar.pvoc", 1<span class=
         <p>
     </p>
         <p>
-      Here is a complete example of the pvcross opcode. Click to play: <a class="ulink" href="examples/pvcross.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">pvcross.csd</em></a>
+      Here is a complete example of the pvcross opcode. <a class="ulink" href="examples/pvcross.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">pvcross.csd</em></a>
       </p>
         <div class="example">
           <a id="idm181114"></a>

@@ -76,13 +76,13 @@
       <span class="emphasis"><em>kmaxnum</em></span> -- maximum number of simultaneous instances of instrument <span class="emphasis"><em>kinsnum</em></span> allowed. If the number of existant instances of <span class="emphasis"><em>kinsnum</em></span> is &gt;= <span class="emphasis"><em>kmaxnum</em></span>, no new event is generated. If <span class="emphasis"><em>kmaxnum</em></span> is &lt;= 0, it is not used to limit event generation. If the <span class="emphasis"><em>kinsnum</em></span> is negative (to turn off an instrument), this test is bypassed.
     </p>
         <p>
-      <span class="emphasis"><em>kinsnum</em></span> -- instrument number. Equivalent to p1 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>.
+      <span class="emphasis"><em>kinsnum</em></span> -- instrument number. Equivalent to p1 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>
     </p>
         <p>
-      <span class="emphasis"><em>kwhen</em></span> -- start time of the new event. Equivalent to p2 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>. Measured from the time of the triggering event. <span class="emphasis"><em>kwhen</em></span> must be &gt;= 0. If <span class="emphasis"><em>kwhen</em></span> &gt; 0, the instrument will not be initialized until the actual time when it should start performing.
+      <span class="emphasis"><em>kwhen</em></span> -- start time of the new event. Equivalent to p2 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a> Measured from the time of the triggering event. <span class="emphasis"><em>kwhen</em></span> must be &gt;= 0. If <span class="emphasis"><em>kwhen</em></span> &gt; 0, the instrument will not be initialized until the actual time when it should start performing.
     </p>
         <p>
-      <span class="emphasis"><em>kdur</em></span> -- duration of event. Equivalent to p3 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>. If <span class="emphasis"><em>kdur</em></span> = 0, the instrument will only do an initialization pass, with no performance. If <span class="emphasis"><em>kdur</em></span> is negative, a held note is initiated. (See <a class="link" href="ihold.html" title="ihold"><em class="citetitle">ihold</em></a> and <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>.)
+      <span class="emphasis"><em>kdur</em></span> -- duration of event. Equivalent to p3 in a score <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a> If <span class="emphasis"><em>kdur</em></span> = 0, the instrument will only do an initialization pass, with no performance. If <span class="emphasis"><em>kdur</em></span> is negative, a held note is initiated. (See <a class="link" href="ihold.html" title="ihold"><em class="citetitle">ihold</em></a> and <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statement</em></a>)
     </p>
         <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
           <table border="0" summary="Note">
@@ -119,7 +119,7 @@
         <a id="idm202709"></a>
         <h2>Examples</h2>
         <p>
-      Here is an example of the schedkwhen opcode. Click to play: <a class="ulink" href="examples/schedkwhen.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">schedkwhen.csd</em></a>.
+      Here is an example of the schedkwhen opcode. <a class="ulink" href="examples/schedkwhen.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">schedkwhen.csd</em></a>
 
       </p>
         <div class="example">

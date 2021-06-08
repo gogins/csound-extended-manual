@@ -80,14 +80,14 @@
       The <span class="emphasis"><em>tabmorphi</em></span> family of opcodes is similar to the <a class="link" href="table.html" title="table"><em class="citetitle">table</em></a> family, but allows morphing between two tables chosen into a set of tables. Firstly the user has to provide a set of tables of equal length (ifn2 [, ifn3, ifn4, ..., ifnN]). Then he can choose a pair of tables in the set in order to perform the morphing: <span class="emphasis"><em>ktabnum1</em></span> and <span class="emphasis"><em>ktabnum2</em></span> are filled with numbers (zero represents the first table in the set, 1 the second, 2 the third and so on). Then determine the morphing between the two chosen tables with the <span class="emphasis"><em>kweightpoint</em></span> parameter. After that the resulting table can be indexed with the <span class="emphasis"><em>kindex</em></span> parameter like a normal <span class="emphasis"><em>table</em></span> opcode. If the value of this parameter surpasses the length of tables (which must be the same for all tables), then it is wrapped around.
     </p>
         <p>
-      <span class="emphasis"><em>tabmorphi</em></span> is identical to <a class="link" href="tabmorph.html" title="tabmorph"><em class="citetitle">tabmorph</em></a>, but it performs linear interpolation for non-integer values of <span class="emphasis"><em>kindex</em></span>, much like <a class="link" href="tablei.html" title="tablei"><em class="citetitle">tablei</em></a>.
+      <span class="emphasis"><em>tabmorphi</em></span> is identical to <a class="link" href="tabmorph.html" title="tabmorph"><em class="citetitle">tabmorph</em></a>, but it performs linear interpolation for non-integer values of <span class="emphasis"><em>kindex</em></span>, much like <a class="link" href="tablei.html" title="tablei"><em class="citetitle">tablei</em></a>
     </p>
       </div>
       <div class="refsect1">
         <a id="idm236155"></a>
         <h2>Examples</h2>
         <p>
-      Here is an example of the tabmorphi opcode. Click to play: <a class="ulink" href="examples/tabmorphi.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">tabmorphi.csd</em></a>.
+      Here is an example of the tabmorphi opcode. <a class="ulink" href="examples/tabmorphi.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">tabmorphi.csd</em></a>
       </p>
         <div class="example">
           <a id="idm236160"></a>

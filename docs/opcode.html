@@ -42,7 +42,7 @@
         <a id="idm154594"></a>
         <h2>Defining opcodes</h2>
         <p>
-      The <span class="emphasis"><em>opcode</em></span> and <span class="emphasis"><em>endop</em></span> statements allow defining a new opcode that can be used the same way as any of the built-in Csound opcodes. These opcode blocks are very similar to instruments (and are, in fact, implemented as special instruments), but cannot be called as a normal instrument e.g. with the <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statements</em></a>.
+      The <span class="emphasis"><em>opcode</em></span> and <span class="emphasis"><em>endop</em></span> statements allow defining a new opcode that can be used the same way as any of the built-in Csound opcodes. These opcode blocks are very similar to instruments (and are, in fact, implemented as special instruments), but cannot be called as a normal instrument e.g. with the <a class="link" href="i.html" title="i Statement (Instrument or Note Statement)"><em class="citetitle">i statements</em></a>
     </p>
         <p>
       A user-defined opcode block must precede the instrument (or other opcode) from which it is used. But it is possible to call the opcode from itself. This allows recursion of any depth that is limited only by available memory. Additionally, there is an experimental feature that allows running the opcode definition at a higher control rate than the <a class="link" href="kr.html" title="kr"><em class="citetitle">kr</em></a> value specified in the orchestra header.
@@ -467,7 +467,7 @@ xinarg1 [, xinarg2] [, xinarg3] ... [xinargN]  <span class="opc">xin</span>
         If there are many user opcode calls that are known to have no
         effect at performance time in an instrument, then it may save some
         CPU time to jump over groups of such opcodes with
-        <a class="link" href="kgoto.html" title="kgoto"><em class="citetitle">kgoto</em></a>.
+        <a class="link" href="kgoto.html" title="kgoto"><em class="citetitle">kgoto</em></a>
       </p>
               </td>
             </tr>
@@ -479,7 +479,7 @@ xinarg1 [, xinarg2] [, xinarg3] ... [xinargN]  <span class="opc">xin</span>
         <h2>Examples</h2>
         <p>
       Here is an example of a user-defined opcode. It uses the file
-      <a class="ulink" href="examples/opcode_example.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">opcode.csd</em></a>.
+      <a class="ulink" href="examples/opcode_example.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">opcode.csd</em></a>
 
       </p>
         <div class="example">

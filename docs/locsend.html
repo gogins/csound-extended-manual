@@ -42,7 +42,7 @@
         <a id="idm124761"></a>
         <h2>Description</h2>
         <p>
-      <span class="emphasis"><em>locsend</em></span> depends upon the existence of a previously defined <a class="link" href="locsig.html" title="locsig"><em class="citetitle">locsig</em></a>. The number of output signals must match the number in the previous <span class="emphasis"><em>locsig</em></span>. The output signals from <span class="emphasis"><em>locsend</em></span> are derived from the values given for distance and reverb in the <span class="emphasis"><em>locsig</em></span> and are ready to be sent to local or global reverb units (see example below). The reverb amount and the balance between the 2 or 4 channels are calculated in the same way as described in the Dodge book (an essential text!).
+      <span class="emphasis"><em>locsend</em></span> depends upon the existence of a previously defined <a class="link" href="locsig.html" title="locsig"><em class="citetitle">locsig</em></a> The number of output signals must match the number in the previous <span class="emphasis"><em>locsig</em></span>. The output signals from <span class="emphasis"><em>locsend</em></span> are derived from the values given for distance and reverb in the <span class="emphasis"><em>locsig</em></span> and are ready to be sent to local or global reverb units (see example below). The reverb amount and the balance between the 2 or 4 channels are calculated in the same way as described in the Dodge book (an essential text!).
     </p>
       </div>
       <div class="refsect1">
@@ -85,11 +85,11 @@
     </p>
         <p>
       In the above example, the signal, <span class="emphasis"><em>asig</em></span>, is sent around a complete circle once during the duration of a note while at the same time it becomes more and more <span class="quote">“<span class="quote">distant</span>”</span> from the listeners' location. <span class="emphasis"><em>locsig</em></span> sends the appropriate amount of the signal internally to <span class="emphasis"><em>locsend</em></span>. The outputs of the <span class="emphasis"><em>locsend</em></span> are added to global accumulators in a common Csound style and the global signals are used as inputs to the reverb units in a separate instrument.
- For an example, see <a class="link" href="locsig.html" title="locsig"><em class="citetitle">locsig</em></a>.  
+ For an example, see <a class="link" href="locsig.html" title="locsig"><em class="citetitle">locsig</em></a>  
       </p>
         <p>
       <span class="emphasis"><em>locsig</em></span> is useful for quad and stereo panning as well as fixed placed of sounds anywhere between two loudspeakers. Below is an example of the fixed placement of sounds in a stereo field.
-Click to play: <a class="ulink" href="examples/locsend_stereo.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">locsend_stereo.csd</em></a>.
+<a class="ulink" href="examples/locsend_stereo.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">locsend_stereo.csd</em></a>
       </p>
         <div class="example">
           <a id="idm124818"></a>

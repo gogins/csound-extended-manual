@@ -69,7 +69,7 @@
       The given values are poped from  the stack. The global stack works in LIFO order: after multiple <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a> calls, <span class="emphasis"><em>pop</em></span> should be used in reverse order.
     </p>
         <p>
-      Each <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a> or <span class="emphasis"><em>pop</em></span> operation can work on a "bundle" of multiple variables. When using <span class="emphasis"><em>pop</em></span>, the number, type, and order of items must match those used by the corresponding <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a>. That is, after a 'push Sfoo, ibar', you must call something like 'Sbar, ifoo pop', and not e.g. two separate 'pop' statements.
+      Each <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a> or <span class="emphasis"><em>pop</em></span> operation can work on a "bundle" of multiple variables. When using <span class="emphasis"><em>pop</em></span>, the number, type, and order of items must match those used by the corresponding <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a> That is, after a 'push Sfoo, ibar', you must call something like 'Sbar, ifoo pop', and not e.g. two separate 'pop' statements.
     </p>
         <p>
       <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a> and <span class="emphasis"><em>pop</em></span> opcodes can take variables of any type (i-, k-, a- and strings). Use of any combination of i, k, a, and S types is allowed. Variables of type 'a' and 'k' are passed at performance time only, while 'i' and 'S' are passed at init time only.
@@ -88,7 +88,7 @@
           <a id="idm295900"></a>
           <h2>Examples</h2>
           <p>
-      Here is an example of the pop opcode. Click to play: <a class="ulink" href="examples/pop.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">pop.csd</em></a>.
+      Here is an example of the pop opcode. <a class="ulink" href="examples/pop.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">pop.csd</em></a>
       </p>
           <div class="example">
             <a id="idm295905"></a>
@@ -150,7 +150,7 @@ k<span class="n">trig</span>	<span class="nb">metro</span> <span class="mf">5.0<
       <a class="link" href="stack.html" title="stack"><em class="citetitle">stack</em></a>,
       <a class="link" href="push.html" title="push"><em class="citetitle">push</em></a>,
       <a class="link" href="pop_f.html" title="pop_f"><em class="citetitle">pop_f</em></a> and 
-      <a class="link" href="push_f.html" title="push_f"><em class="citetitle">push_f</em></a>.
+      <a class="link" href="push_f.html" title="push_f"><em class="citetitle">push_f</em></a>
     </p>
         <p>Using this opcode is somewhat hackish, as you can read here: <a class="ulink" href="http://csound.1045644.n5.nabble.com/passing-a-string-to-a-UDO-td1099284.html" target="_top">http://csound.1045644.n5.nabble.com/passing-a-string-to-a-UDO-td1099284.html</a></p>
       </div>

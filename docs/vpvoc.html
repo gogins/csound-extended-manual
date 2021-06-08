@@ -54,7 +54,7 @@
         <a id="idm261994"></a>
         <h2>Initialization</h2>
         <p>
-      <span class="emphasis"><em>ifile</em></span> -- the pvoc number (n in pvoc.n) or the name in quotes of the analysis file made using <a class="link" href="pvanal.html" title="pvanal"><em class="citetitle">pvanal</em></a>. (See <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a>.)
+      <span class="emphasis"><em>ifile</em></span> -- the pvoc number (n in pvoc.n) or the name in quotes of the analysis file made using <a class="link" href="pvanal.html" title="pvanal"><em class="citetitle">pvanal</em></a> (See <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a>)
     </p>
         <p>
       <span class="emphasis"><em>ispecwp</em></span> (optional, default=0) -- if non-zero, attempts to preserve the spectral envelope while its frequency content is varied by <span class="emphasis"><em>kfmod</em></span>. The default value is zero.
@@ -79,7 +79,7 @@
       <span class="emphasis"><em>vpvoc</em></span> is identical to <a class="link" href="pvoc.html" title="pvoc"><em class="citetitle">pvoc</em></a> except that it takes the result of a previous <a class="link" href="tableseg.html" title="tableseg"><em class="citetitle">tableseg</em></a> or <a class="link" href="tablexseg.html" title="tablexseg"><em class="citetitle">tablexseg</em></a> and uses the resulting function table (passed internally to the <span class="emphasis"><em>vpvoc</em></span>), as an envelope over the magnitudes of the analysis data channels. Optionally, a table specified by <span class="emphasis"><em>ifn</em></span> may be used. 
     </p>
         <p>
-      The result is spectral enveloping. The function size used in the <span class="emphasis"><em>tableseg</em></span> should be <span class="emphasis"><em>framesize/2,</em></span> where framesize is the number of bins in the phase vocoder analysis file that is being used by the <span class="emphasis"><em>vpvoc</em></span>. Each location in the table will be used to scale a single analysis bin. By using different functions for <span class="emphasis"><em>ifn1</em></span>, <span class="emphasis"><em>ifn2</em></span>, etc.. in the <span class="emphasis"><em>tableseg</em></span>, the spectral envelope becomes a dynamically changing one. See also <a class="link" href="tableseg.html" title="tableseg"><em class="citetitle">tableseg</em></a> and <a class="link" href="tablexseg.html" title="tablexseg"><em class="citetitle">tablexseg</em></a>.
+      The result is spectral enveloping. The function size used in the <span class="emphasis"><em>tableseg</em></span> should be <span class="emphasis"><em>framesize/2,</em></span> where framesize is the number of bins in the phase vocoder analysis file that is being used by the <span class="emphasis"><em>vpvoc</em></span>. Each location in the table will be used to scale a single analysis bin. By using different functions for <span class="emphasis"><em>ifn1</em></span>, <span class="emphasis"><em>ifn2</em></span>, etc.. in the <span class="emphasis"><em>tableseg</em></span>, the spectral envelope becomes a dynamically changing one. See also <a class="link" href="tableseg.html" title="tableseg"><em class="citetitle">tableseg</em></a> and <a class="link" href="tablexseg.html" title="tablexseg"><em class="citetitle">tablexseg</em></a>
     </p>
       </div>
       <div class="refsect1">
@@ -113,7 +113,7 @@ apv     <span class="opc">vpvoc</span>        ktime, 1, "pvoc.file"</pre>
       The result would be a time-varying <span class="quote">“<span class="quote">spectral envelope</span>”</span> applied to the phase vocoder analysis data. Since this amplifies or attenuates the amount of signal at the frequencies that are paired with the amplitudes which are scaled by these functions, it has the effect of applying very accurate filters to the signal. In this example the first table would have the effect of a band-pass filter, gradually be band-rejected over half the note's duration, and then go towards no modification of the magnitudes over the second half.
    </p>
         <p>
-      Here is a complete example of the vpvoc opcode. Click to play: <a class="ulink" href="examples/vpvoc.csd.html" target="_top" style="background-color:LightGray;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"><em class="citetitle">vpvoc.csd</em></a>.
+      Here is a complete example of the vpvoc opcode. <a class="ulink" href="examples/vpvoc.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">vpvoc.csd</em></a>
       </p>
         <div class="example">
           <a id="idm262064"></a>
