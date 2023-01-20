@@ -13,6 +13,6 @@ python create_playable_csound_manual.py
 git add docs/
 git commit -a -m "Fresh build and commit."
 echo "Check with local Web server before pushing."
-python -m http.server -d docs/ 5103
+python3 -m http.server -d docs/ 5103
 # git push
 echo "Finished build of csound-extended-manual."
