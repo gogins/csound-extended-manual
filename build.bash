@@ -6,10 +6,10 @@ git checkout master
 git pull
 make clean
 make html-dist
-python2 makeframes.py
+python3 makeframes.py
 cd ..
 cp -rf manual/html docs/
-python create_playable_csound_manual.py
+python3 create_playable_csound_manual.py
 git add docs/
 git commit -a -m "Fresh build and commit."
 echo "Check with local Web server before pushing."
