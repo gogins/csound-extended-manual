@@ -27,8 +27,8 @@ import traceback
 The user must customize these variables. No additional configuration should be
 required. The manual must already have been built in the usual way.
 '''
-source_home = r'''/home/mkg/csound-extended-manual/manual'''
-target_home = r'''/home/mkg/csound-extended-manual/docs'''
+source_home = r'''~/csound-extended-manual/manual'''
+target_home = r'''~/csound-extended-manual/docs'''
 
 source_html_directory = os.path.join(source_home, 'html')
 source_examples_directory = os.path.join(source_html_directory, 'examples')
