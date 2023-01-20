@@ -26,7 +26,7 @@ Pull the latest sources.
 
 Build the manual according to instructions in the `README.md` file. Basically:
 ```
-make clean;make html-dist;python2 makeframes.py
+make clean;make html-dist;python3 makeframes.py
 ```
 
 Change back to the root directory of this repository. Execute:
