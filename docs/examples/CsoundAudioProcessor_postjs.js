@@ -122,6 +122,14 @@ class CsoundAudioProcessor extends AudioWorkletProcessor {
                 result = this.csound.IsPlaying();
                 this.port.postMessage(["IsPlayingResult", result]);
                 break;
+            case "KillInstance":
+                let p1 = data[1];
+                let insname = data[2];
+                let mode = data[3];
+                let release = data[4];
+                result = this.csound.KillInstance(p1, insname, mode, release);
+                this.port.postMessage(["KillInstance", result]);
+                break;
             case "IsScorePending":
                 result = this.csound.IsScorePending();
                 this.port.postMessage(["IsScorePending", result]);
@@ -131,7 +139,7 @@ class CsoundAudioProcessor extends AudioWorkletProcessor {
                 this.port.postMessage(["Message", result]);
                 break;
             case "MidiEvent":
-                this.csound.MidiEventIn(data[0], data[1], data[2]);
+                this.csound.MidiEventIn(data[1], data[2], data[3]);
                 break;
             case "Perform":
             {
