@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Minimal Example using Csound for WebAssembly</title>
+ </head>
+<body style="background-color:LightGrey;">
+    <script src="CsoundAudioNode.js"></script>
+    <script src="csound_loader.js"></script>
+    <script>
+    var csound_message_callback = function(message) {
+        var messages_textarea = document.getElementById("console");
+        var existing = messages_textarea.value;
+        messages_textarea.value = existing + message;
+        messages_textarea.scrollTop = messages_textarea.scrollHeight;
+    }
+    var onPlayClick = async function() {
+        let messages_textarea = document.getElementById("console");
+        messages_textarea.value = "";
+        let csound_ = await get_csound(csound_message_callback);
+        if (csound_ == null) {
+            return;
+        }
+        let csd = document.getElementById('csd').value;
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
+        await csound_.CompileCsdText(csd);
+        await csound_.Start();
+        await csound_.Perform();
+        
+    }
+    var onPlayStop = async function() {
+        let csound_ = await get_csound(csound_message_callback);
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
+    }
+  </script>
+<h1 style="font-family:sans-serif;">atsa</h1>
+<p>
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will spend a few seconds loading, then play. You can edit this code and replay it. 
+</p>
+<p>
+<input type="button" value="Play" onclick="onPlayClick()"/>
+<input type="button" value="Stop" onclick="onPlayStop()"/>
+<input type="button" value="Back" onclick="window.history.back()"/>
+<p>
+<textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;"><CsoundSynthesizer>
+<CsOptions>
+; Select audio/midi flags here according to platform
+-odac   -m0 --limiter=.95 ;;;realtime audio out, with limiter protection
+; For Non-realtime ouput leave only the line below:
+; -o atsa.wav -W ;;; for file output any platform
+</CsOptions>
+<CsInstruments>
+
+; Required settings for WebAudio:
+
+sr = 48000
+ksmps = 128
+nchnls = 2
+nchnls_i = 1
+
+; sr = 44100
+; ksmps = 32
+; nchnls = 2
+0dbfs  = 1
+
+; by Menno Knevel 2021
+
+gilen  filelen "fox.wav"	    ; get length of soundfile
+
+; analyze sound file and output result to 3 ats files. ATSA wants a mono file!
+ires1 system_i 1,{{ atsa fox.wav fox1.ats }}            ; default settings
+ires2 system_i 1,{{ atsa -h.8 fox.wav fox2.ats }}       ; some smearing
+ires3 system_i 1,{{ atsa -h.1 -c2 fox.wav fox3.ats }}   ; only 2 cycles
+
+instr 1 ; untreated signal
+asig    diskin2   "fox.wav", 1
+prints  "\n---***YOU NOW HEAR THE UNTREATED SOUND SAMPLE***---\n"
+prints "---*duration of soundfile is %f seconds*---\\n",gilen
+outs    asig, asig
+endin
+
+instr 2
+prints  "\n---***YOU NOW HEAR THE RESULT OF THIS ANALYZED FILE:***---\n"
+ktime line 0, p3, gilen                         ; timepointer = equal to soundfile duration
+asig ATSsinnoi ktime, 1, .4, 1, p4, 167         ; maximum # of partials = 167
+outs asig, asig	    
+endin
+
+</CsInstruments>
+<CsScore>
+
+i1 2 2.76               ; original sample
+
+i2 5 2.76  "fox1.ats"	; whole sentence
+i2 10 2.76 "fox2.ats"	; whole sentence, but analyzed with different settings
+i2 15 2.76 "fox3.ats"	; whole sentence, and again analyzed with different settings
+e
+</CsScore>
+</CsoundSynthesizer>
+</textarea>
+<textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
+</textarea>
+</body>
+</html>

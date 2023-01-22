@@ -6,7 +6,7 @@
     <title>JackoAudioOutConnect</title>
     <link rel="stylesheet" type="text/css" href="csound.css" />
     <link rel="stylesheet" type="text/css" href="syntax-highlighting.css" />
-    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
     <link rel="prev" href="JackoAudioOut.html" title="JackoAudioOut" />
@@ -38,22 +38,12 @@
       Creates an audio connection from Csound to a Jack port.
      </p>
       </div>
-      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-        <table border="0" summary="Note">
-          <tr>
-            <td rowspan="2" align="center" valign="top" width="25">
-              <img alt="[Note]" src="images/note.png" />
-            </td>
-            <th align="left">Note</th>
-          </tr>
-          <tr>
-            <td align="left" valign="top">plugin: Requires jacko plugin</td>
-          </tr>
-        </table>
-      </div>
       <div class="refsect1">
-        <a id="idm115418"></a>
+        <a id="idp105545864110056"></a>
         <h2>Description</h2>
+        <p>
+    Plugin opcode in jacko. This opcode is part of the plugin repository and has to be installed separately. 
+    The plugin repository can be found here: <a class="ulink" href="https://github.com/csound/plugins" target="_top"><em class="citetitle">https://github.com/csound/plugins</em></a></p>
         <p>
       In the orchestra header, creates an audio connection 
       from a Jack audio output port inside this instance 
@@ -61,12 +51,12 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm115421"></a>
+        <a id="idp105545864112104"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>JackoAudioOutConnect </strong></span>ScsoundPortName, SexternalPortName</pre>
       </div>
       <div class="refsect1">
-        <a id="idm115425"></a>
+        <a id="idp105545864113768"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>ScsoundPortName</em></span> -- The short name ("portname") 
@@ -78,7 +68,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm115431"></a>
+        <a id="idp105545864116072"></a>
         <h2>Performance</h2>
         <p>
       The actual audio must be written with the JackoAudioOut 
@@ -86,14 +76,14 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm115434"></a>
+        <a id="idp105545864117224"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the JackoAudioOutConnect opcode. <a class="ulink" href="examples/jacko.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">jacko.csd</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm115439"></a>
+        <a id="idp105545864119016"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="JackoOpcodes.html" title="Jacko Opcodes"><em class="citetitle">The Jacko Opcodes</em></a>, 
@@ -112,7 +102,7 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm115468"></a>
+        <a id="idp105545864128488"></a>
         <h2>Credits</h2>
         <p>By: Michael Gogins 2010</p>
       </div>

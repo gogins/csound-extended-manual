@@ -6,7 +6,7 @@
     <title>ftsr</title>
     <link rel="stylesheet" type="text/css" href="csound.css" />
     <link rel="stylesheet" type="text/css" href="syntax-highlighting.css" />
-    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
     <link rel="prev" href="ftslicei.html" title="ftslicei" />
@@ -39,82 +39,83 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm98395"></a>
+        <a id="idp105545797537128"></a>
         <h2>Description</h2>
         <p>
       Returns the sampling-rate of a stored function table.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98398"></a>
+        <a id="idp105545797538280"></a>
         <h2>Syntax</h2>
         <pre class="synopsis"><span class="command"><strong>ftsr</strong></span>(x) (init-rate args only)</pre>
       </div>
       <div class="refsect1">
-        <a id="idm98402"></a>
+        <a id="idp105545797539944"></a>
         <h2>Performance</h2>
         <p>
       Returns the sampling-rate of a <a class="link" href="GEN01.html" title="GEN01"><em class="citetitle">GEN01</em></a> generated table. The sampling-rate is determined from the header of the original file. If the original file has no header or the table was not created by these GEN01, <span class="emphasis"><em>ftsr</em></span> returns 0. New in Csound version 3.49.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98408"></a>
+        <a id="idp105545797542120"></a>
         <h2>Examples</h2>
         <p>
       Here is an example of the ftsr opcode. <a class="ulink" href="examples/ftsr.csd.html" target="_top" style="background-color:LightGray;border-color:LightGray;border-style:outset;border-radius:7px;color:Black;padding:.4em;text-decoration:none;font-family:sans-serif;"> Play <em class="citetitle">ftsr.csd</em></a>
       </p>
         <div class="example">
-          <a id="idm98413"></a>
+          <a id="idp105545797543656"></a>
           <p class="title">
-            <strong>Example 399. Example of the ftsr opcode.</strong>
+            <strong>Example 403. Example of the ftsr opcode.</strong>
           </p>
           <div class="example-contents">
             <p>See the sections <a class="link" href="UsingRealTime.html" title="Real-Time Audio"><em class="citetitle">Real-time Audio</em></a> and <a class="link" href="CommandFlags.html" title="Csound command line"><em class="citetitle">Command Line Flags</em></a> for more information on using command line flags.</p>
             <div class="refsect1">
-              <a id="idm98420"></a>
+              <a id="idp105548210772200"></a>
               <pre class="programlisting">
 <span class="nt">&lt;CsoundSynthesizer&gt;</span> 
 <span class="nt">&lt;CsOptions&gt;</span> 
 <span class="c1">; Select audio/midi flags here according to platform </span>
 -odac     <span class="c1">;;;realtime audio out </span>
-<span class="c1">;-iadc    ;;;uncomment -iadc if realtime audio input is needed too </span>
 <span class="c1">; For Non-realtime ouput leave only the line below: </span>
 <span class="c1">; -o ftsr.wav -W ;;; for file output any platform </span>
 <span class="nt">&lt;/CsOptions&gt;</span> 
-<span class="nt">&lt;CsInstruments&gt;</span> 
+<span class="nt">&lt;CsInstruments&gt;</span><span class="w"> 
 
-<span class="vg">sr</span> <span class="o">=</span> <span class="mi">44100</span> 
-<span class="vg">ksmps</span> <span class="o">=</span> <span class="mi">32</span> 
-<span class="vg">nchnls</span> <span class="o">=</span> <span class="mi">2</span> 
-<span class="vg">0dbfs</span>  <span class="o">=</span> <span class="mi">1</span> 
+</span><span class="c1">; by Menno Knevel 2022</span><span class="w">
 
-<span class="kd">instr</span> <span class="nf">1</span>
+</span><span class="vg">sr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">44100</span><span class="w"> 
+</span><span class="vg">ksmps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">32</span><span class="w"> 
+</span><span class="vg">nchnls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> 
+</span><span class="vg">0dbfs</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> 
 
-i<span class="n">tab</span> <span class="o">=</span> <span class="vi">p4</span>
-i<span class="n">sr</span> <span class="o">=</span> <span class="nb">ftsr</span><span class="p">(</span>i<span class="n">tab</span><span class="p">)</span>
-<span class="nb">prints</span> <span class="s">"sampling-rate of table number </span><span class="si">%d</span><span class="s"> = </span><span class="si">%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> i<span class="n">tab</span><span class="p">,</span> i<span class="n">sr</span>
+</span><span class="kd">instr</span><span class="w"> </span><span class="nf">1</span><span class="w">
+
+</span>i<span class="n">tab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vi">p4</span><span class="w">
+</span>i<span class="n">sr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ftsr</span><span class="p">(</span>i<span class="n">tab</span><span class="p">)</span><span class="w">
+</span><span class="nb">prints</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">sampling-rate of table number </span><span class="si">%d</span><span class="s"> = </span><span class="si">%d</span><span class="se">\n\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span>i<span class="n">tab</span><span class="p">,</span><span class="w"> </span>i<span class="n">sr</span><span class="w">
     
-<span class="kd">endin</span>
-<span class="nt">&lt;/CsInstruments&gt;</span>
-<span class="nt">&lt;CsScore&gt;</span>
-<span class="nb">f</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"kickroll.wav"</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>	<span class="c1">;stereo file</span>
-<span class="nb">f</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"ahh.aiff"</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>	<span class="c1">;&amp; different formats</span>
-<span class="nb">f</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"beats.mp3"</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="nb">f</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s">"beats.ogg"</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+</span><span class="kd">endin</span><span class="w">
+</span><span class="nt">&lt;/CsInstruments&gt;</span>
+<span class="nt">&lt;CsScore&gt;</span><span class="w">
+</span><span class="nb">f</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">"drumsSlp.wav"</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w">	</span><span class="c1">;stereo file</span><span class="w">
+</span><span class="nb">f</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">"ahh.aiff"</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w">	</span><span class="c1">;&amp; different formats</span><span class="w">
+</span><span class="nb">f</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">"beats.mp3"</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="nb">f</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">"beats.ogg"</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w">
 
-<span class="nb">i</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
-<span class="nb">i</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="mi">2</span>
-<span class="nb">i</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="mi">3</span>
-<span class="nb">i</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="mi">4</span>
-<span class="nb">e</span>
-<span class="nt">&lt;/CsScore&gt;</span>
+</span><span class="nb">i</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="nb">i</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="nb">i</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="nb">i</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="nb">e</span><span class="w">
+</span><span class="nt">&lt;/CsScore&gt;</span>
 <span class="nt">&lt;/CsoundSynthesizer&gt;</span>
 </pre>
             </div>
           </div>
         </div>
         <p><br class="example-break" />
-its output should a line like these:
+its output should lines like these:
       </p>
         <pre class="screen">
 sampling-rate of table number 1 = 44100
@@ -126,7 +127,7 @@ sampling-rate of table number 4 = 44100
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98530"></a>
+        <a id="idp105545797547240"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="ftchnls.html" title="ftchnls"><em class="citetitle">ftchnls</em></a>,
@@ -136,7 +137,7 @@ sampling-rate of table number 4 = 44100
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm98541"></a>
+        <a id="idp105545797550952"></a>
         <h2>Credits</h2>
         <p>
       </p>

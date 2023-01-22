@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Minimal Example using Csound for WebAssembly</title>
+ </head>
+<body style="background-color:LightGrey;">
+    <script src="CsoundAudioNode.js"></script>
+    <script src="csound_loader.js"></script>
+    <script>
+    var csound_message_callback = function(message) {
+        var messages_textarea = document.getElementById("console");
+        var existing = messages_textarea.value;
+        messages_textarea.value = existing + message;
+        messages_textarea.scrollTop = messages_textarea.scrollHeight;
+    }
+    var onPlayClick = async function() {
+        let messages_textarea = document.getElementById("console");
+        messages_textarea.value = "";
+        let csound_ = await get_csound(csound_message_callback);
+        if (csound_ == null) {
+            return;
+        }
+        let csd = document.getElementById('csd').value;
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
+        await csound_.CompileCsdText(csd);
+        await csound_.Start();
+        await csound_.Perform();
+        
+    }
+    var onPlayStop = async function() {
+        let csound_ = await get_csound(csound_message_callback);
+        await csound_.Stop();
+        await csound_.Cleanup();
+        await csound_.Reset();
+    }
+  </script>
+<h1 style="font-family:sans-serif;">imagesetpixel</h1>
+<p>
+This should play if your Web browser has WebAssembly enabled (most do). Most examples will play unless they need to load files. The first time you click <i>Play</i>, Csound will spend a few seconds loading, then play. You can edit this code and replay it. 
+</p>
+<p>
+<input type="button" value="Play" onclick="onPlayClick()"/>
+<input type="button" value="Stop" onclick="onPlayStop()"/>
+<input type="button" value="Back" onclick="window.history.back()"/>
+<p>
+<textarea id="csd" style="width:98vw;height:45vh;font-family:monospace;background-color:#050570;color:#F0F090;"><CsoundSynthesizer>
+<CsOptions>
+; Select audio/midi flags here according to platform
+-n ;no sound output
+</CsOptions>
+<CsInstruments>
+
+; Required settings for WebAudio:
+
+sr = 48000
+ksmps = 128
+nchnls = 2
+nchnls_i = 1
+
+; sr = 44100 
+; ksmps = 32 
+0dbfs  = 1 
+; nchnls = 2                                          ; doesn't matter because there is no sound output
+
+; by Menno Knevel 2021
+; image opcodes need a black canvas- black = no sound!
+
+giimageOLD imageload "imageOpcode02.png"            ; load this image
+giimagew, giimageh imagesize giimageOLD             ; get dimensions of imageOpcode02.png
+giimageNEW1 imagecreate giimagew,giimageh           ; and use those same dimensions     
+giimageNEW2 imagecreate giimagew,giimageh           ; for 3 new images 
+giimageNEW3 imagecreate giimagew,giimageh           ;    
+
+instr 1                                             ; copies imageOpcode02.png and transforms it
+
+kndx = 0
+kx linseg 0, p3, 1                                  ; scans x-axis
+prints "\nwidth = %d pixels, heigth = %d pixels\n\n", giimagew, giimageh
+
+myloop:
+ky = kndx/(giimageh)                                ; y-axis
+krd, kgn, kbl imagegetpixel giimageOLD, kx, ky      ; get pixels from 'old' image
+prints "\n--**giimageNEW1 zooms out**--\n"
+imagesetpixel giimageNEW1, kx*.9, ky*.5, krd, kgn, kbl
+prints "\n--**giimageNEW2 zooms in**--\n"
+imagesetpixel giimageNEW2, kx*rnd(10), ky*rnd(10), krd, kgn, kbl 
+prints "\n--**giimageNEW3 zooms in and applies offset on y-axis**--\n\n"
+imagesetpixel giimageNEW3, kx*rnd(5), (ky*rnd(5)+.2), krd, kgn, kbl
+loop_lt kndx, 0.5, giimageh, myloop
+
+endin
+
+instr 2
+imagesave giimageNEW1, "imageNEW1.png"              ; save those 3 new images
+imagesave giimageNEW2, "imageNEW2.png"
+imagesave giimageNEW3, "imageNEW3.png"
+endin
+
+instr 3
+imagefree giimageOLD                                ; unload all images
+imagefree giimageNEW1
+imagefree giimageNEW2
+imagefree giimageNEW3
+endin
+
+</CsInstruments>
+<CsScore>
+
+i1 1 2
+i2 2 1
+i3 4 .1
+e
+</CsScore>
+</CsoundSynthesizer></textarea>
+<textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
+</textarea>
+</body>
+</html>

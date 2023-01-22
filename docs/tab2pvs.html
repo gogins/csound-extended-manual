@@ -6,7 +6,7 @@
     <title>tab2pvs</title>
     <link rel="stylesheet" type="text/css" href="csound.css" />
     <link rel="stylesheet" type="text/css" href="syntax-highlighting.css" />
-    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
     <link rel="prev" href="tab2array.html" title="tab2array" />
@@ -39,20 +39,20 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm236977"></a>
+        <a id="idp105546399897064"></a>
         <h2>Description</h2>
         <p>
        Copies a pvs frame from a t-variable or k-rate array. Currently only AMP+FREQ is produced. This opcode requires the t-type to be defined, which means it only works in the new bison/flex-based parser.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm236980"></a>
+        <a id="idp105546399898216"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">fsig <span class="command"><strong>tab2pvs</strong></span> tvar|karr[][,ihopsize, iwinsize, iwintype]</pre>
         <pre class="synopsis">fsig <span class="command"><strong>tab2pvs</strong></span> kmags[], kfreqs[][,ihopsize, iwinsize, iwintype]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm236986"></a>
+        <a id="idp105546399901032"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>tvar</em></span> -- k-rate array (or t-variable) containing the input. It is produced at every k-period, but may not contain a new frame, pvs frames are produced at their own frame rate that is independent of kr. The size of this vector will determine the fftsize, N = size - 2.
@@ -74,14 +74,14 @@
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm237002"></a>
+        <a id="idp105546399907176"></a>
         <h2>Examples</h2>
         <p>
       </p>
         <div class="example">
-          <a id="idm237005"></a>
+          <a id="idp105546399908072"></a>
           <p class="title">
-            <strong>Example 1075. Example</strong>
+            <strong>Example 1086. Example</strong>
           </p>
           <div class="example-contents"><pre class="programlisting">
 karr[] init 1026
@@ -94,7 +94,7 @@ aout pvsynth fsig1
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm237009"></a>
+        <a id="idp105546399910120"></a>
         <h2>Credits</h2>
         <p>
       </p>

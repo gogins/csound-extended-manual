@@ -6,7 +6,7 @@
     <title>spat3di</title>
     <link rel="stylesheet" type="text/css" href="csound.css" />
     <link rel="stylesheet" type="text/css" href="syntax-highlighting.css" />
-    <meta name="generator" content="DocBook XSL Stylesheets V1.79.1" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="The Canonical Csound Reference Manual" />
     <link rel="up" href="OpcodesTop.html" title="Orchestra Opcodes and Operators" />
     <link rel="prev" href="spat3d.html" title="spat3d" />
@@ -39,19 +39,19 @@
           </p>
       </div>
       <div class="refsect1">
-        <a id="idm217759"></a>
+        <a id="idp105546334271464"></a>
         <h2>Description</h2>
         <p>
       This opcode positions the input sound in a 3D space, with optional simulation of room acoustics, in various output formats. With <span class="emphasis"><em>spat3di</em></span>, sound source position is set at i-time.
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm217763"></a>
+        <a id="idp105546334273000"></a>
         <h2>Syntax</h2>
         <pre class="synopsis">aW, aX, aY, aZ <span class="command"><strong>spat3di</strong></span> ain, iX, iY, iZ, idist, ift, imode [, istor]</pre>
       </div>
       <div class="refsect1">
-        <a id="idm217767"></a>
+        <a id="idp105546334274792"></a>
         <h2>Initialization</h2>
         <p>
       <span class="emphasis"><em>iX</em></span> -- Sound source X coordinate in meters (positive: right, negative: left)
@@ -89,7 +89,7 @@ delay = distance / 340 (in seconds)<br />
       </p>
         <div class="literallayout">
           <p><br />
-distance = sqrt(iX^2 + iY^2 + iZ^2)<br />
+distance = sqrt(iXˆ2 + iYˆ2 + iZˆ2)<br />
       </p>
         </div>
         <p>
@@ -99,8 +99,8 @@ distance = sqrt(iX^2 + iY^2 + iZ^2)<br />
       </p>
         <div class="literallayout">
           <p><br />
-distance from left mic = sqrt((iX + idist/2)^2 + iY^2 + iZ^2)<br />
-distance from right mic = sqrt((iX - idist/2)^2 + iY^2 + iZ^2)<br />
+distance from left mic = sqrt((iX + idist/2)ˆ2 + iYˆ2 + iZˆ2)<br />
+distance from right mic = sqrt((iX - idist/2)ˆ2 + iYˆ2 + iZˆ2)<br />
       </p>
         </div>
         <p>
@@ -276,7 +276,7 @@ aright  =  aY + aZ<br />
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm217870"></a>
+        <a id="idp105546334315624"></a>
         <h2>Performance</h2>
         <p>
       <span class="emphasis"><em>ain</em></span> -- Input signal
@@ -374,14 +374,14 @@ aright  =  aY + aZ<br />
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm217939"></a>
+        <a id="idp105546334210920"></a>
         <h2>Examples</h2>
         <p>
       See the examples for <a class="link" href="spat3d.html" title="spat3d"><em class="citetitle">spat3d</em></a>
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm217944"></a>
+        <a id="idp105546334212712"></a>
         <h2>See Also</h2>
         <p>
       <a class="link" href="spat3d.html" title="spat3d"><em class="citetitle">spat3d</em></a>, 
@@ -389,7 +389,7 @@ aright  =  aY + aZ<br />
     </p>
       </div>
       <div class="refsect1">
-        <a id="idm217951"></a>
+        <a id="idp105546334215144"></a>
         <h2>Credits</h2>
         <p>
       </p>

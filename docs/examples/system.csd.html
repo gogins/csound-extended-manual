@@ -48,24 +48,16 @@ This should play if your Web browser has WebAssembly enabled (most do). Most exa
 <CsOptions>
 ; Select audio/midi flags here according to platform
 ; Audio out   Audio in
--odac          ; -iadc    ;;;RT audio I/O
+-n   ; no sound
 ; For Non-realtime ouput leave only the line below:
 ; -o system.wav -W ;;; for file output any platform
 </CsOptions>
-<CsInstruments>
+<CsInstruments> 
 
-; Required settings for WebAudio:
-
-sr = 48000
-ksmps = 128
-nchnls = 2
-nchnls_i = 1
-
-; Initialize the global variables.
 ; sr = 44100
-; kr = 4410
-; ksmps = 10
-; nchnls = 1
+; ksmps = 32
+; nchnls = 2
+0dbfs  = 1
 
 instr 1
 ; Waits for command to execute before continuing
@@ -96,15 +88,12 @@ endin
 
 </CsInstruments>
 <CsScore>
-
-; Play Instrument #1 for thirty seconds.
 i 1 0 1
 i 2 5 1
 e
-
-
 </CsScore>
-</CsoundSynthesizer> </textarea>
+</CsoundSynthesizer> 
+</textarea>
 <textarea id="console" readonly style="width:98vw;height:40vh;font-family:monospace;background-color:DarkSlateGrey;color:LawnGreen;">
 </textarea>
 </body>
