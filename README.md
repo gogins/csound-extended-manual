@@ -7,7 +7,7 @@ http://michaelgogins.tumblr.com
 ## Introduction
 
 This repository hosts, and serves, an online version of the **_Csound Reference 
-Manual_** that embeds the csound-extended-wasm build of Csound to play 
+Manual_** that embeds the csound-wasm build of Csound to play 
 examples live in standard Web browsers.
 
 ## Usage
